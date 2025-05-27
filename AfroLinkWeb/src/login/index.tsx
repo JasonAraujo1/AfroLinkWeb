@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router'
 import { fetchApiUsers } from '../services/fetchApi'
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.svg'
 
 
 export default function Login() {
@@ -21,7 +21,7 @@ export default function Login() {
 
     return (
         <div >
-            <img src={logo} />
+            <img src={logo} className="Logo"/>
             <div>
                 <input placeholder='E-mail' onChange={(event) => setUserInputEmail(event.target.value)} />
                 <input placeholder='Senha' onChange={(event)=> setUserInputSenha(event.target.value)} />

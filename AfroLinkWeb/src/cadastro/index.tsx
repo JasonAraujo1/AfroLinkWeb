@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { NavLink, useNavigate } from "react-router"
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.svg'
 import { fetchApiUserCep } from '../services/fetchApi'
 
 
@@ -63,13 +63,11 @@ export default function Cadastro() {
     } else {
       alert("CEP não encontrado!")
     }
-    console.log(cidade, estado, bairro, endereco, complemento);
-
   }
 
   return (
     <div>
-      <img src={logo} />
+      <img src={logo} className="Logo"/>
 
       <div>
         <input placeholder='Nome completo' onChange={(event) => setNomeCompleto(event.target.value)} />
@@ -88,7 +86,7 @@ export default function Cadastro() {
         <input placeholder='Senha' onChange={(event) => setSenha(event.target.value)} />
         <br />
         <input placeholder='CEP' onChange={(event) => setCepUsuario(event.target.value)} />
-        <button title="Cadastrar" onClick={handleCepUsuario}>Buscar cep</button>
+        <button title="Cadastrar" onClick={handleCepUsuario}>🔍</button>
         <br />
         <input placeholder='Cpf' onChange={(event) => setCpf(event.target.value)} />
         <br />
