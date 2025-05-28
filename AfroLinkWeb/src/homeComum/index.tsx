@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import Logo from '../assets/logo.svg';
 import Context from '../context/Context';
 export default function HomeComum() {
@@ -6,6 +6,9 @@ export default function HomeComum() {
    
 const {dadosUser} = useContext(Context);
 
+useEffect(()=>{
+  const profissionaisMap = ((item)=>{item})
+},[])
 
 
   return (
@@ -26,10 +29,10 @@ const {dadosUser} = useContext(Context);
       <div className='Flex Border'>
         <img src="" alt="fotoUser" className='Border'/>
         <div>
-          <h4>Nome Profissional</h4>
+          <h4>{dadosUser?.nome_completo}</h4>
           <span>Profissão</span>
-          <span><img src="" alt="" />(avaliação)</span>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam eveniet ab </p>
+          <span><img src="" alt="" />(Avaliação)</span>
+          <p>Texto descrição</p>
           
         </div>
       </div>

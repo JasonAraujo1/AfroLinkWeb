@@ -8,6 +8,7 @@ export default function Login() {
 
     const [userInputEmail, setUserInputEmail] = useState('')
     const [userInputSenha, setUserInputSenha] = useState('')
+   
 
     const navigate = useNavigate()
 
@@ -18,8 +19,9 @@ export default function Login() {
             navigate('/homeProfissional')
         }else(
             navigate('/homeComum')
-        )
+        );
         localStorage.setItem("userEncontrado", JSON.stringify(userEncontrado))
+        localStorage.setItem("dadosTodosUsers", JSON.stringify(data))
 
 
     }
