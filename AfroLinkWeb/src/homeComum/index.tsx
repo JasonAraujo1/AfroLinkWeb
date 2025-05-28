@@ -4,11 +4,14 @@ import Context from '../context/Context';
 export default function HomeComum() {
   
    
-const {dadosUser} = useContext(Context);
-
-useEffect(()=>{
-  const profissionaisMap = ((item)=>{item})
-},[])
+  
+  const {dadosUser} = useContext(Context);
+  const {dadosTodosUsers} = useContext(Context);
+useEffect(() => {
+  const dadosTodosUsers = JSON.parse(localStorage.getItem("dadosUsers") || "[]");
+  const profissionais = dadosTodosUsers.filter(user => user.tipo === 'profissional');
+  console.log(profissionais);
+}, []);
 
 
   return (
