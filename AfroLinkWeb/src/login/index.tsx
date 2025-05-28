@@ -19,6 +19,9 @@ export default function Login() {
         }else(
             navigate('/homeComum')
         )
+        localStorage.setItem("userEncontrado", JSON.stringify(userEncontrado))
+
+
     }
 
     return (

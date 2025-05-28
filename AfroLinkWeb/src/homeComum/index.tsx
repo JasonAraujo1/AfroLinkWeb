@@ -1,5 +1,11 @@
 import Logo from '../assets/logo.svg';
 export default function HomeComum() {
+  
+   const dadosUser = JSON.parse(localStorage.getItem("userEncontrado"))
+
+
+
+
   return (
     <div>
       <div>
@@ -7,12 +13,12 @@ export default function HomeComum() {
         <img src="" alt="avatarUser" />
       </div>
       <img src={Logo} className='Logo' alt="" />
-
+   
     <div>
       <input type="text" />
       <button>🔍</button>
     </div>
-
+    <h1>{dadosUser?.nome_completo}</h1>
     <span>Alguns dos profissionais negros do Brasil</span>
     <div>
       <div>
@@ -22,6 +28,7 @@ export default function HomeComum() {
           <span>Profissão</span>
           <span><img src="" alt="" />(avaliação)</span>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam eveniet ab </p>
+          
         </div>
       </div>
     </div>
