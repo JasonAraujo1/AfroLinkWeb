@@ -13,8 +13,8 @@ export default function Login() {
 
     async function handleLogin() {
         const data = await fetchApiUsers()
-        const userFound = data.find(user => user.email === userInputEmail && user.senha === userInputSenha)
-        if (userFound.tipo === 'profissional') {
+        const userEncontrado = data.find(user => user.email === userInputEmail && user.senha === userInputSenha)
+        if (userEncontrado.tipo === 'profissional') {
             navigate('/homeProfissional')
         }else(
             navigate('/homeComum')
