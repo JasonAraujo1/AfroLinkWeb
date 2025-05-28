@@ -1,8 +1,10 @@
+import { useContext } from 'react';
 import Logo from '../assets/logo.svg';
+import Context from '../context/Context';
 export default function HomeComum() {
   
-   const dadosUser = JSON.parse(localStorage.getItem("userEncontrado"))
-
+   
+const {dadosUser} = useContext(Context);
 
 
 
@@ -14,15 +16,15 @@ export default function HomeComum() {
       </div>
       <img src={Logo} className='Logo' alt="" />
    
-    <div>
+    <div >
       <input type="text" />
       <button>🔍</button>
     </div>
-    <h1>{dadosUser?.nome_completo}</h1>
+
     <span>Alguns dos profissionais negros do Brasil</span>
-    <div>
-      <div>
-        <img src="" alt="fotoUser" />
+    <div className='Flex '>
+      <div className='Flex Border'>
+        <img src="" alt="fotoUser" className='Border'/>
         <div>
           <h4>Nome Profissional</h4>
           <span>Profissão</span>

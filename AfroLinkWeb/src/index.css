@@ -71,3 +71,16 @@ button:focus-visible {
   height: 200px;
   margin-bottom: 1rem;
 }
+
+.Flex{
+  display: flex;
+}
+.FlexColumn{
+  display: flex;
+  flex-direction: column;
+}
+.Border{
+  border: 1px solid #646cff;
+  border-radius: 8px;
+
+}
