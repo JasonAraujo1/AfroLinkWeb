@@ -17,7 +17,7 @@ export default function HomeComum() {
 
 
   return (
-    <div>
+    <div className='FlexColumn'>
       <div>
         <img src="" alt="menu" />
         <img src="" alt="avatarUser" />
