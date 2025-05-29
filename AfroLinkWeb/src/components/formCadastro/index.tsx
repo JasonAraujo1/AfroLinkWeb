@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { fetchApiUserCep } from '../services/fetchApi'
 
 
-export default function index() {
+export default function formCadastro() {
 
     const [nome_completo, setNomeCompleto] = useState('')
     const [tipo, setTipo] = useState('')
@@ -19,6 +19,7 @@ export default function index() {
     async function handleCepUsuario() {
         fetchApiUserCep(cepUsuario)
         const dataCepUser = await fetchApiUserCep(cepUsuario)
+        const dataCep = await fetchApiUserCep()
 
         if (dataCepUser) {
             setCidade(dataCepUser.localidade)
@@ -29,6 +30,7 @@ export default function index() {
         } else {
             alert("CEP não encontrado!")
         }
+         localStorage.setItem("dadosFetchCep", JSON.stringify(dataCep));
     }
 
 

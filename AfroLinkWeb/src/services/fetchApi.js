@@ -17,3 +17,21 @@ export async function fetchApiUserCep(cepUsuario) {
     console.log("erro no fetch", error)
   }
 }
+export async function fetchApiEstados() {
+  try {
+    const response = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados`)
+    const data = await response.json()
+    return data
+  } catch (error) {
+    console.log("erro no fetch", error)
+  }
+}
+export async function fetchApiMunicipios({UF}) {
+  try {
+    const response = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${UF}/municipios`)
+    const data = await response.json()
+    return data
+  } catch (error) {
+    console.log("erro no fetch", error)
+  }
+}

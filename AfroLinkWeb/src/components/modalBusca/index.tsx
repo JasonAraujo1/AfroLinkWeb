@@ -1,7 +1,29 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import CloseIcon from '@mui/icons-material/Close';
+import InputBusca from '../ui/inputBusca';
+import Context from '../../context/Context';
+import { fetchApiEstados } from '../../services/fetchApi';
+import ComboBox from '../ui/comboBox';
+
 
 export default function ModalBusca() {
+    const { dadosCepApi } = useContext(Context);
+
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    async function handleLogin() {
+
+        const data = await fetchApiEstados()
+    }
+            // const userEncontrado = data.find(user => user.email === userInputEmail && user.senha === userInputSenha)
+            // if (!userEncontrado) {
+            //     alert('Usuário ou senha incorretos');
+            //     return;
+            // }
+    
+            // localStorage.setItem("userEncontrado", JSON.stringify(userEncontrado));
+            // localStorage.setItem("dadosTodosUsers", JSON.stringify(data));
+    
 
     function abrirModal() {
         setIsModalOpen(true);
@@ -12,31 +34,19 @@ export default function ModalBusca() {
     }
     return (
         <div>
-            <span onClick={abrirModal}><input placeholder='Buscar Profissional'/>🔍</span>
+            <InputBusca onClick={abrirModal} />
+
             {isModalOpen && (
                 <div className='modalOverlay'>
                     <div className='modalContent FlexColumn'>
-                        <button onClick={fecharModal}>❌</button>
-                        <input placeholder='Buscar profissional...' type="text" />
-                        <h2>Filtrar Busca</h2>
+                        
+                            <CloseIcon onClick={fecharModal} />                   
+                            <ComboBox/>
+                           
+                           
+                       
 
-                        <span>Profissão</span>
-                        <select onChange={(event) => setTipo(event.target.value)}>
-                            <option value="" >-- Profissão --</option>
-                            <option value="" >1</option>
-                        </select>
 
-                        <span>Estado</span>
-                        <select onChange={(event) => setTipo(event.target.value)}>
-                            <option value="" >-- Estado --</option>
-                            <option value="" >2</option>
-                        </select>
-
-                        <span>Cidade</span>
-                        <select onChange={(event) => setTipo(event.target.value)}>
-                            <option value="" >-- Cidade --</option>
-                            <option value="" >3</option>
-                        </select>
                         <button>Aplicar</button>
 
                     </div>

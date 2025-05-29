@@ -4,9 +4,12 @@ import Context from '../context/Context';
 import ModalBusca from '../components/modalBusca';
 
 
+
+
 export default function HomeComum() {
 
   const { dadosUser, dadosTodosUsers } = useContext(Context);
+
   const [dadosProfissionais, setDadosProfissionais] = useState([]);
 
   useEffect(() => {
@@ -18,12 +21,12 @@ export default function HomeComum() {
   return (
     <div className='FlexColumn'>
       <div>
-        <img src="" alt="menu" />
+
         <img src="" alt="avatarUser" />
       </div>
       <img src={Logo} className='Logo' alt="" />
-     
-      <ModalBusca/>
+
+      <ModalBusca />
 
       <span>Alguns dos profissionais negros do Brasil</span>
       <div className='Flex FlexColumn'>
