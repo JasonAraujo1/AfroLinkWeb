@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import Logo from '../assets/logo.svg';
 import Context from '../context/Context';
+import ModalBusca from '../components/modalBusca';
 
 
 export default function HomeComum() {
@@ -9,11 +10,13 @@ export default function HomeComum() {
   const [dadosProfissionais, setDadosProfissionais] = useState([]);
 
   useEffect(() => {
-   
+
     const profissionaisFilter = dadosTodosUsers.filter(user => user.tipo === 'profissional')
     setDadosProfissionais(profissionaisFilter)
   }, [dadosTodosUsers]);
- 
+
+
+
 
 
   return (
@@ -24,10 +27,10 @@ export default function HomeComum() {
       </div>
       <img src={Logo} className='Logo' alt="" />
 
-      <div >
-        <input type="text" />
-        <button>🔍</button>
-      </div>
+    
+
+        
+      <ModalBusca/>
 
       <span>Alguns dos profissionais negros do Brasil</span>
       <div className='Flex FlexColumn'>
