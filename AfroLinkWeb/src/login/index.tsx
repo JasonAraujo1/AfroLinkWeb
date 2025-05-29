@@ -8,30 +8,34 @@ export default function Login() {
 
     const [userInputEmail, setUserInputEmail] = useState('')
     const [userInputSenha, setUserInputSenha] = useState('')
-   
+
 
     const navigate = useNavigate()
 
     async function handleLogin() {
         const data = await fetchApiUsers()
         const userEncontrado = data.find(user => user.email === userInputEmail && user.senha === userInputSenha)
+        if (!userEncontrado) {
+            alert('Usuário ou senha incorretos');
+            return;
+        }
+
+        localStorage.setItem("userEncontrado", JSON.stringify(userEncontrado));
+        localStorage.setItem("dadosTodosUsers", JSON.stringify(data));
+
         if (userEncontrado.tipo === 'profissional') {
-            navigate('/homeProfissional')
-        }else(
-            navigate('/homeComum')
-        );
-        localStorage.setItem("userEncontrado", JSON.stringify(userEncontrado))
-        localStorage.setItem("dadosTodosUsers", JSON.stringify(data))
-
-
+            navigate('/homeProfissional');
+        } else {
+            navigate('/homeComum');
+        }
+        
     }
-
     return (
         <div >
-            <img src={logo} className="Logo"/>
-            <div>
+            <img src={logo} className="Logo" />
+            <div className='FlexColumn'>
                 <input placeholder='E-mail' onChange={(event) => setUserInputEmail(event.target.value)} />
-                <input placeholder='Senha' onChange={(event)=> setUserInputSenha(event.target.value)} />
+                <input placeholder='Senha' onChange={(event) => setUserInputSenha(event.target.value)} />
                 <button onClick={handleLogin}>Entrar</button>
             </div>
 
