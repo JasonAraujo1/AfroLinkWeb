@@ -15,10 +15,6 @@ export default function HomeComum() {
     setDadosProfissionais(profissionaisFilter)
   }, [dadosTodosUsers]);
 
-
-
-
-
   return (
     <div className='FlexColumn'>
       <div>
@@ -26,10 +22,7 @@ export default function HomeComum() {
         <img src="" alt="avatarUser" />
       </div>
       <img src={Logo} className='Logo' alt="" />
-
-    
-
-        
+     
       <ModalBusca/>
 
       <span>Alguns dos profissionais negros do Brasil</span>
