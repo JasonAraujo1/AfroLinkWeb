@@ -1,57 +1,60 @@
-import { useContext, useState } from 'react'
+import { useEffect, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import InputBusca from '../ui/inputBusca';
-import Context from '../../context/Context';
-import { fetchApiEstados } from '../../services/fetchApi';
+import { fetchApiEstados, fetchApiMunicipios } from '../../services/fetchApi';
 import ComboBox from '../ui/comboBox';
 
-
 export default function ModalBusca() {
-    const { dadosCepApi } = useContext(Context);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [dadosEstados, setDadosEstados] = useState([]);
+  const [dadosMunicipios, setDadosMunicipios] = useState([]);
+  const [estadoSelecionado, setEstadoSelecionado] = useState('');
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    async function handleLogin() {
-
-        const data = await fetchApiEstados()
+  useEffect(() => {
+    async function carregarEstados() {
+      const data = await fetchApiEstados();
+      setDadosEstados(data);
     }
-            // const userEncontrado = data.find(user => user.email === userInputEmail && user.senha === userInputSenha)
-            // if (!userEncontrado) {
-            //     alert('Usuário ou senha incorretos');
-            //     return;
-            // }
-    
-            // localStorage.setItem("userEncontrado", JSON.stringify(userEncontrado));
-            // localStorage.setItem("dadosTodosUsers", JSON.stringify(data));
-    
+    carregarEstados();
+  }, []);
 
-    function abrirModal() {
-        setIsModalOpen(true);
+  useEffect(() => {
+    async function carregarMunicipios() {
+      if (estadoSelecionado) {
+        const estado = dadosEstados.find(item => item.nome === estadoSelecionado);
+        if (estado) {
+          const municipios = await fetchApiMunicipios({ UF_ID: estado.id });
+          setDadosMunicipios(municipios);
+        }
+      }
     }
+    carregarMunicipios();
+  }, [estadoSelecionado]);
 
-    function fecharModal() {
-        setIsModalOpen(false);
-    }
-    return (
-        <div>
-            <InputBusca onClick={abrirModal} />
+  function abrirModal() {
+    setIsModalOpen(true);
+  }
 
-            {isModalOpen && (
-                <div className='modalOverlay'>
-                    <div className='modalContent FlexColumn'>
-                        
-                            <CloseIcon onClick={fecharModal} />                   
-                            <ComboBox/>
-                           
-                           
-                       
+  function fecharModal() {
+    setIsModalOpen(false);
+  }
 
+  const nomesEstados = dadosEstados.map(estado => estado.nome);
+  const nomesMunicipios = dadosMunicipios.map(cidade => cidade.nome);
 
-                        <button>Aplicar</button>
-
-                    </div>
-                </div>
-            )}
+  return (
+    <div>
+      <InputBusca onClick={abrirModal} />
+      {isModalOpen && (
+        <div className="modalOverlay">
+          <div className="modalContent FlexColumn">
+            <CloseIcon onClick={fecharModal} />
+            <ComboBox dados={nomesEstados} texto="Estado" onChange={setEstadoSelecionado} />
+            <ComboBox dados={nomesMunicipios} texto="Município" />
+            <button>Aplicar</button>
+          </div>
         </div>
-    )
+      )}
+    </div>
+  );
 }

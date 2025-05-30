@@ -26,9 +26,9 @@ export async function fetchApiEstados() {
     console.log("erro no fetch", error)
   }
 }
-export async function fetchApiMunicipios({UF}) {
+export async function fetchApiMunicipios({UF_ID}) {
   try {
-    const response = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${UF}/municipios`)
+    const response = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${UF_ID}/municipios`)
     const data = await response.json()
     return data
   } catch (error) {

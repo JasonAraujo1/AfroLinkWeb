@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router'
 import { fetchApiUsers } from '../services/fetchApi'
 import logo from '../assets/logo.svg'
+import ButtonPreto from '../components/ui/buttonPreto'
 
 
 export default function Login() {
@@ -36,7 +37,7 @@ export default function Login() {
             <div className='FlexColumn'>
                 <input placeholder='E-mail' onChange={(event) => setUserInputEmail(event.target.value)} />
                 <input placeholder='Senha' onChange={(event) => setUserInputSenha(event.target.value)} />
-                <button onClick={handleLogin}>Entrar</button>
+                <ButtonPreto onClick={handleLogin} texto="Entrar"/>
             </div>
 
             <div>
