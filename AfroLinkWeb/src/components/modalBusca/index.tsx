@@ -42,6 +42,7 @@ export default function ModalBusca() {
 
   const nomesEstados = dadosEstados.map(estado => estado.nome);
   const nomesMunicipios = dadosMunicipios.map(cidade => cidade.nome);
+ 
 
   return (
     <div>
@@ -49,7 +50,8 @@ export default function ModalBusca() {
       <InputTexto
         onClick={abrirModal}
         placeholder="Qual profissional deseja?"
-        src='../../assets/search.png'
+        src={search} 
+
       />
 
       {isModalOpen && (
