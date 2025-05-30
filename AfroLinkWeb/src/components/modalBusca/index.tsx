@@ -16,10 +16,6 @@ export default function ModalBusca() {
       const data = await fetchApiEstados();
       setDadosEstados(data);
     }
-    carregarEstados();
-  }, []);
-
-  useEffect(() => {
     async function carregarMunicipios() {
       if (estadoSelecionado) {
         const estado = dadosEstados.find(item => item.nome === estadoSelecionado);
@@ -29,8 +25,10 @@ export default function ModalBusca() {
         }
       }
     }
-    carregarMunicipios();
+    carregarMunicipios()
+    carregarEstados()
   }, [estadoSelecionado]);
+
 
   function abrirModal() {
     setIsModalOpen(true);
@@ -42,7 +40,7 @@ export default function ModalBusca() {
 
   const nomesEstados = dadosEstados.map(estado => estado.nome);
   const nomesMunicipios = dadosMunicipios.map(cidade => cidade.nome);
- 
+
 
   return (
     <div>
@@ -50,7 +48,7 @@ export default function ModalBusca() {
       <InputTexto
         onClick={abrirModal}
         placeholder="Qual profissional deseja?"
-        src={search} 
+        src={search}
 
       />
 
