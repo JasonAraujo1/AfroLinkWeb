@@ -4,7 +4,7 @@ export default function ButtonPreto({ texto, onClick }) {
             backgroundColor: 'black',
             color: 'white',
             border: 'none',
-            padding: '10px 20px',
+            padding: '14px 20px',
             borderRadius: '10px',
             cursor: 'pointer'
         }}>

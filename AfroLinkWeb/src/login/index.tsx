@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from 'react-router'
 import { fetchApiUsers } from '../services/fetchApi'
 import logo from '../assets/logo.svg'
 import ButtonPreto from '../components/ui/buttonPreto'
+import InputTexto from '../components/ui/inputTexto'
 
 
 export default function Login() {
@@ -35,8 +36,9 @@ export default function Login() {
         <div >
             <img src={logo} className="Logo" />
             <div className='FlexColumn'>
-                <input placeholder='E-mail' onChange={(event) => setUserInputEmail(event.target.value)} />
-                <input placeholder='Senha' onChange={(event) => setUserInputSenha(event.target.value)} />
+                <InputTexto placeholder='E-mail' onChange={(event) => setUserInputEmail(event.target.value)}/>
+                <InputTexto placeholder='Senha' onChange={(event) => setUserInputSenha(event.target.value)}/>
+               
                 <ButtonPreto onClick={handleLogin} texto="Entrar"/>
             </div>
 

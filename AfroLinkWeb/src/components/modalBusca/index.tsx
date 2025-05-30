@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
-import InputBusca from '../ui/inputBusca';
 import { fetchApiEstados, fetchApiMunicipios } from '../../services/fetchApi';
 import ComboBox from '../ui/comboBox';
+import InputTexto from '../ui/inputTexto';
+import search from '../../assets/search.png'
 
 export default function ModalBusca() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -44,7 +45,13 @@ export default function ModalBusca() {
 
   return (
     <div>
-      <InputBusca onClick={abrirModal} />
+
+      <InputTexto
+        onClick={abrirModal}
+        placeholder="Qual profissional deseja?"
+        src='../../assets/search.png'
+      />
+
       {isModalOpen && (
         <div className="modalOverlay">
           <div className="modalContent FlexColumn">
