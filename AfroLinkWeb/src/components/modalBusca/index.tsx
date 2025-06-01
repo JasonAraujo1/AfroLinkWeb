@@ -27,15 +27,15 @@ export default function ModalBusca() {
     }
     carregarMunicipios()
     carregarEstados()
-  }, [estadoSelecionado]);
+  }, [estadoSelecionado])
 
 
   function abrirModal() {
-    setIsModalOpen(true);
+    setIsModalOpen(true)
   }
 
   function fecharModal() {
-    setIsModalOpen(false);
+    setIsModalOpen(false)
   }
 
   const nomesEstados = dadosEstados.map(estado => estado.nome);
