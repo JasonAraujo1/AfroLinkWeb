@@ -8,15 +8,17 @@ import ModalBusca from '../components/modalBusca';
 
 export default function HomeComum() {
 
-  const { dadosUser, dadosTodosUsers } = useContext(Context);
+  const { dadosUser, dadosTodosUsers, filtros } = useContext(Context);
 
   const [dadosProfissionais, setDadosProfissionais] = useState([]);
 
   useEffect(() => {
-
     const profissionaisFilter = dadosTodosUsers.filter(user => user.tipo === 'profissional')
     setDadosProfissionais(profissionaisFilter)
-  }, [dadosTodosUsers]);
+    setDadosProfissionais(filtros)
+  }, [dadosTodosUsers, filtros]);
+
+  console.log('dadosProfissionais', dadosProfissionais);
 
   return (
     <div className='FlexColumn'>
@@ -35,7 +37,7 @@ export default function HomeComum() {
             <img src="" alt="fotoUser" className='Border' />
             <div>
               <h4>{item.nome_completo}</h4>
-              <span>Profissão</span>
+              <span>{item.profissao}</span>
               <span><img src="" alt="" />(Avaliação)</span>
               <p>Texto descrição</p>
             </div>

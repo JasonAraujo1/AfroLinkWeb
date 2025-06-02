@@ -1,15 +1,21 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
-import { fetchApiEstados, fetchApiMunicipios } from '../../services/fetchApi';
+import { fetchApiEstados, fetchApiMunicipios, fetchApiProfissoes } from '../../services/fetchApi';
 import ComboBox from '../ui/comboBox';
 import InputTexto from '../ui/inputTexto';
 import search from '../../assets/search.png'
+import Context from '../../context/Context';
 
 export default function ModalBusca() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [dadosEstados, setDadosEstados] = useState([]);
   const [dadosMunicipios, setDadosMunicipios] = useState([]);
+  const [profissoes, setProfissoes] = useState([]);
   const [estadoSelecionado, setEstadoSelecionado] = useState('');
+  const [municipioSelecionado, setMunicipioSelecionado] = useState('');
+  const [profissaoSelecionada, setProfissaoSelecionada] = useState('');
+
+  const { setFiltros } = useContext(Context)
 
   useEffect(() => {
     async function carregarEstados() {
@@ -24,9 +30,15 @@ export default function ModalBusca() {
           setDadosMunicipios(municipios);
         }
       }
+
+    }
+    async function carregarProfissoes() {
+      const data = await fetchApiProfissoes();
+      setProfissoes(data);
     }
     carregarMunicipios()
     carregarEstados()
+    carregarProfissoes()
   }, [estadoSelecionado])
 
 
@@ -38,8 +50,19 @@ export default function ModalBusca() {
     setIsModalOpen(false)
   }
 
-  const nomesEstados = dadosEstados.map(estado => estado.nome);
-  const nomesMunicipios = dadosMunicipios.map(cidade => cidade.nome);
+  function handleFiltroProfissional() {
+     setFiltros({
+      estado: estadoSelecionado,
+      municipio: municipioSelecionado,
+      profissao: profissaoSelecionada,
+    })
+    fecharModal()
+
+  }
+
+  const nomesEstados = dadosEstados.map(item => item.nome);
+  const nomesMunicipios = dadosMunicipios.map(item => item.nome);
+  const nomesProfissoes = profissoes.map(item => item.nome);
 
 
   return (
@@ -56,9 +79,10 @@ export default function ModalBusca() {
         <div className="modalOverlay">
           <div className="modalContent FlexColumn">
             <CloseIcon onClick={fecharModal} />
+            <ComboBox dados={nomesProfissoes} texto="Profissão" onChange={setProfissaoSelecionada} />
             <ComboBox dados={nomesEstados} texto="Estado" onChange={setEstadoSelecionado} />
-            <ComboBox dados={nomesMunicipios} texto="Município" />
-            <button>Aplicar</button>
+            <ComboBox dados={nomesMunicipios} texto="Município" onChange={setMunicipioSelecionado} />
+            <button onClick={handleFiltroProfissional}>Aplicar</button>
           </div>
         </div>
       )}
