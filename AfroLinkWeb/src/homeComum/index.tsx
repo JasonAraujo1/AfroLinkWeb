@@ -13,12 +13,19 @@ export default function HomeComum() {
   const [dadosProfissionais, setDadosProfissionais] = useState([]);
 
   useEffect(() => {
-    const profissionaisFilter = dadosTodosUsers.filter(user => user.tipo === 'profissional')
-    setDadosProfissionais(profissionaisFilter)
-    setDadosProfissionais(filtros)
+    console.log("Filtros recebidos:", filtros);
+
+    const profissionaisFilter = dadosTodosUsers.filter(user => user.tipo === 'profissional');
+
+    const filtroAplicado = profissionaisFilter.filter(user =>
+      (!filtros?.profissao || user.profissao === filtros.profissao) &&
+      (!filtros?.estado || user.estado === filtros.estado) &&
+      (!filtros?.municipio || user.cidade === filtros.municipio)
+    );
+
+    setDadosProfissionais(filtroAplicado);
   }, [dadosTodosUsers, filtros]);
 
-  console.log('dadosProfissionais', dadosProfissionais);
 
   return (
     <div className='FlexColumn'>

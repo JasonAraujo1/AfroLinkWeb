@@ -11,7 +11,6 @@ function Provider({ children }) {
     function onLoad() {
       const userEncontrado = JSON.parse(localStorage.getItem("userEncontrado") || "null");
       const dadosUsers = JSON.parse(localStorage.getItem("dadosTodosUsers") || "[]");
-      // const dadosFetchCep = JSON.parse(localStorage.getItem("dadosFetchCep") || "[]");
       setDadosUser(userEncontrado);
       setDadosTodosUsers(dadosUsers);
     }
