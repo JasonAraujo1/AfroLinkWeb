@@ -20,7 +20,7 @@ export default function HomeComum() {
     const filtroAplicado = profissionaisFilter.filter(user =>
       (!filtros?.profissao || user.profissao === filtros.profissao) &&
       (!filtros?.estado || user.estado === filtros.estado) &&
-      (!filtros?.municipio || user.cidade === filtros.municipio)
+      (!filtros?.municipio || user.municipio === filtros.municipio)
     );
 
     setDadosProfissionais(filtroAplicado);
