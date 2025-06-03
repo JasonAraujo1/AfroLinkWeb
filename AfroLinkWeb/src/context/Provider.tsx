@@ -16,7 +16,7 @@ function Provider({ children }) {
       console.log("filtrosProvider atualizado:", filtros);
     }
     onLoad();
-  }, [filtros]);
+  }, []);
 
 
 
