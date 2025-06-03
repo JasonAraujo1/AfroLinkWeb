@@ -2,6 +2,8 @@ import { useContext, useEffect, useState } from 'react';
 import Logo from '../assets/logo.svg';
 import Context from '../context/Context';
 import ModalBusca from '../components/modalBusca';
+import LetterAvatars from '../components/ui/letterAvatars';
+
 
 export default function HomeComum() {
 
@@ -19,23 +21,26 @@ export default function HomeComum() {
     );
 
     setDadosProfissionais(filtroAplicado);
-    
+
   }, [dadosTodosUsers, filtros]);
 
 
   return (
-    <div className='FlexColumn'>
+    <div className='FlexColumn '>
       <div>
-        <img src="" alt="avatarUser" />
+        <LetterAvatars />
       </div>
       <img src={Logo} className='Logo' alt="" />
 
-      <ModalBusca />
+      <div className='JustifyCenter'>
+        <ModalBusca />
+      </div>
 
       <span>Alguns dos profissionais negros do Brasil</span>
       <div className='Flex FlexColumn'>
         {dadosProfissionais.map((item) => (
           <div className='Flex Border'>
+
             <img src="" alt="fotoUser" className='Border' />
             <div>
               <h4>{item.nome_completo}</h4>

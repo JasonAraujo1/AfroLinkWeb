@@ -6,6 +6,7 @@ export default function InputTexto({ onChange, placeholder, onClick, src }) {
         display: 'flex',
         alignItems: 'center',
         width: '100%',
+        minWidth: '300px',  
         maxWidth: '400px',
       }}
     >
@@ -18,7 +19,7 @@ export default function InputTexto({ onChange, placeholder, onClick, src }) {
           backgroundColor: 'white',
           color: 'black',
           border: '1px solid rgba(124, 120, 120, 0.63)',
-          padding: '14px 20px 14px 40px', // espaço para o ícone
+          padding: '14px 20px 14px 40px',
           borderRadius: '10px',
           width: '100%',
           boxSizing: 'border-box',

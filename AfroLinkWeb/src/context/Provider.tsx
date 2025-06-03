@@ -6,19 +6,15 @@ function Provider({ children }) {
   const [dadosTodosUsers, setDadosTodosUsers] = useState([]);
   const [filtros, setFiltros] = useState(null);
 
-
   useEffect(() => {
     function onLoad() {
       const userEncontrado = JSON.parse(localStorage.getItem("userEncontrado") || "null");
       const dadosUsers = JSON.parse(localStorage.getItem("dadosTodosUsers") || "[]");
       setDadosUser(userEncontrado);
       setDadosTodosUsers(dadosUsers);
-      console.log("filtrosProvider atualizado:", filtros);
     }
     onLoad();
   }, []);
-
-
 
   const contextValue = {
     dadosUser,
@@ -32,9 +28,6 @@ function Provider({ children }) {
       {children}
     </Context.Provider>
   )
- 
-
 }
-
 
 export default Provider;
