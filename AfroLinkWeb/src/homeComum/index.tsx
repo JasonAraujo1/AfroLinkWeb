@@ -3,15 +3,11 @@ import Logo from '../assets/logo.svg';
 import Context from '../context/Context';
 import ModalBusca from '../components/modalBusca';
 
-
-
-
 export default function HomeComum() {
 
   const { dadosUser, dadosTodosUsers, filtros } = useContext(Context);
 
   const [dadosProfissionais, setDadosProfissionais] = useState([]);
-
   useEffect(() => {
 
     const profissionaisFilter = dadosTodosUsers.filter(user => user.tipo === 'profissional');
@@ -23,13 +19,13 @@ export default function HomeComum() {
     );
 
     setDadosProfissionais(filtroAplicado);
+    
   }, [dadosTodosUsers, filtros]);
 
 
   return (
     <div className='FlexColumn'>
       <div>
-
         <img src="" alt="avatarUser" />
       </div>
       <img src={Logo} className='Logo' alt="" />

@@ -13,9 +13,10 @@ function Provider({ children }) {
       const dadosUsers = JSON.parse(localStorage.getItem("dadosTodosUsers") || "[]");
       setDadosUser(userEncontrado);
       setDadosTodosUsers(dadosUsers);
+      console.log("filtrosProvider atualizado:", filtros);
     }
     onLoad();
-  }, []);
+  }, [filtros]);
 
 
 
@@ -26,12 +27,13 @@ function Provider({ children }) {
     setFiltros,
   }
 
-
   return (
     <Context.Provider value={contextValue}>
       {children}
     </Context.Provider>
   )
+ 
+
 }
 
 
