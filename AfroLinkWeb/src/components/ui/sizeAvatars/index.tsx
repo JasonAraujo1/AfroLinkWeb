@@ -7,7 +7,6 @@ export default function SizeAvatars() {
     const {filtroIDProfissionalSelecionado } = useContext(Context);
   return (
     <Stack direction="row" spacing={2} >
-
       <Avatar
         alt={filtroIDProfissionalSelecionado?.nome_completo}
         src={filtroIDProfissionalSelecionado?.foto || undefined}

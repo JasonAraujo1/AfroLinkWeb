@@ -4,11 +4,16 @@ import Context from '../context/Context';
 
 export default function VerMaisProfissional() {
    const {filtroIDProfissionalSelecionado } = useContext(Context);
-      console.log(filtroIDProfissionalSelecionado);
-  return (
-    <div>
-      <h1>{filtroIDProfissionalSelecionado.nome_completo}</h1>
+
+   return (
+    <div className='FlexColumn'>
       <SizeAvatars/>
+      <span>{filtroIDProfissionalSelecionado.nome_completo}</span>
+      <span>{filtroIDProfissionalSelecionado.profissao}</span>
+      <span>{filtroIDProfissionalSelecionado.avaliacoes}</span>
+
+      <span>Sobre</span>
+      <span>{filtroIDProfissionalSelecionado.descricao}</span>
       
     </div>
   )
