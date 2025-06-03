@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { NavLink, useNavigate } from "react-router"
 import logo from '../assets/logo.svg'
+import InputTexto from "../components/ui/inputTexto"
+import ButtonPreto from "../components/ui/buttonPreto"
 
 
 
@@ -33,19 +35,14 @@ export default function Cadastro() {
     navigate("/login")
   }
 
-
-
   return (
-    <div>
+    <div >
       <img src={logo} className="Logo" />
 
-      <div>
-        <input placeholder='E-mail' onChange={(event) => setEmail(event.target.value)} />
-        <br />
-        <input placeholder='Senha' onChange={(event) => setSenha(event.target.value)} />
-        <br />
-        <button title="Cadastrar" onClick={handleCadastro}>Cadastrar</button>
-
+      <div  className='FlexColumn'>
+        <InputTexto placeholder='E-mail' onChange={(event) => setEmail(event.target.value)}/>
+        <InputTexto placeholder='Senha' onChange={(event) => setSenha(event.target.value)} />
+        <ButtonPreto texto="Cadastrar" onClick={handleCadastro}/>
       </div>
 
       <div>

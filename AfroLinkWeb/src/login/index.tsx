@@ -38,7 +38,6 @@ export default function Login() {
             <div className='FlexColumn'>
                 <InputTexto placeholder='E-mail' onChange={(event) => setUserInputEmail(event.target.value)}/>
                 <InputTexto placeholder='Senha' onChange={(event) => setUserInputSenha(event.target.value)}/>
-               
                 <ButtonPreto onClick={handleLogin} texto="Entrar"/>
             </div>
 

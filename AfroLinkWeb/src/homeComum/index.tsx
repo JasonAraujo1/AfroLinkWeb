@@ -25,8 +25,6 @@ export default function HomeComum() {
 
   }, [dadosTodosUsers, filtros]);
 
-
-
   return (
     <div className='FlexColumn '>
       <div>
