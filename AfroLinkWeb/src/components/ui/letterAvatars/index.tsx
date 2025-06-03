@@ -17,10 +17,11 @@ export default function LetterAvatars() {
   if (!dadosUser) return null;
 
   return (
-    <Stack direction="row" spacing={2}>
+    <Stack direction="row" spacing={2} sx={{ justifyContent: 'flex-end', width: '100%' }}>
       <Avatar sx={{ bgcolor: deepOrange[500] }}>
         {letra}
       </Avatar>
     </Stack>
+
   );
 }

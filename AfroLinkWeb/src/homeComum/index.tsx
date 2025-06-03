@@ -3,6 +3,7 @@ import Logo from '../assets/logo.svg';
 import Context from '../context/Context';
 import ModalBusca from '../components/modalBusca';
 import LetterAvatars from '../components/ui/letterAvatars';
+import { NavLink } from 'react-router';
 
 
 export default function HomeComum() {
@@ -25,6 +26,7 @@ export default function HomeComum() {
   }, [dadosTodosUsers, filtros]);
 
 
+
   return (
     <div className='FlexColumn '>
       <div>
@@ -37,18 +39,20 @@ export default function HomeComum() {
       </div>
 
       <span>Alguns dos profissionais negros do Brasil</span>
-      <div className='Flex FlexColumn'>
+      <div className='Flex FlexColumn' >
         {dadosProfissionais.map((item) => (
-          <div className='Flex Border'>
-
-            <img src="" alt="fotoUser" className='Border' />
-            <div>
-              <h4>{item.nome_completo}</h4>
-              <span>{item.profissao}</span>
-              <span><img src="" alt="" />(Avaliação)</span>
-              <p>Texto descrição</p>
+          <NavLink to={'/verMais'}>
+            <div className='Flex Border'>
+              <img src="" alt="fotoUser" className='Border' />
+              <div>
+                <h4>{item.nome_completo}</h4>
+                <span>{item.profissao}</span>
+                <span><img src="" alt="" />(Avaliação)</span>
+                <p>Texto descrição</p>
+              </div>
             </div>
-          </div>
+          </NavLink>
+
         ))}
       </div>
     </div>
