@@ -3,14 +3,17 @@ import Logo from '../assets/logo.svg';
 import Context from '../context/Context';
 import ModalBusca from '../components/modalBusca';
 import LetterAvatars from '../components/ui/letterAvatars';
-import { NavLink } from 'react-router';
+import { useNavigate } from 'react-router';
 
 
 export default function HomeComum() {
 
-  const { dadosUser, dadosTodosUsers, filtros } = useContext(Context);
+
+  const { dadosUser, dadosTodosUsers, filtros, setFiltroIDProfissionalSelecionado } = useContext(Context);
 
   const [dadosProfissionais, setDadosProfissionais] = useState([]);
+
+  const navigate = useNavigate()
   useEffect(() => {
 
     const profissionaisFilter = dadosTodosUsers.filter(user => user.tipo === 'profissional');
@@ -25,6 +28,14 @@ export default function HomeComum() {
 
   }, [dadosTodosUsers, filtros]);
 
+  function handleVerMais(id) {
+    const profissional = dadosTodosUsers.find(item => item.id === id);
+    setFiltroIDProfissionalSelecionado(profissional)
+    console.log(profissional);
+    navigate('/verMais')
+  }
+
+
   return (
     <div className='FlexColumn '>
       <div>
@@ -37,20 +48,17 @@ export default function HomeComum() {
       </div>
 
       <span>Alguns dos profissionais negros do Brasil</span>
-      <div className='Flex FlexColumn' >
+      <div className='Flex FlexColumn'  >
         {dadosProfissionais.map((item) => (
-          <NavLink to={'/verMais'}>
-            <div className='Flex Border'>
-              <img src="" alt="fotoUser" className='Border' />
-              <div>
-                <h4>{item.nome_completo}</h4>
-                <span>{item.profissao}</span>
-                <span><img src="" alt="" />(Avaliação)</span>
-                <p>Texto descrição</p>
-              </div>
+          <div className='Flex Border' onClick={() => handleVerMais(item.id)} >
+            <img src="" alt="fotoUser" className='Border' />
+            <div>
+              <h4>{item.nome_completo}</h4>
+              <span>{item.profissao}</span>
+              <span><img src="" alt="" />(Avaliação)</span>
+              <p>Texto descrição</p>
             </div>
-          </NavLink>
-
+          </div>
         ))}
       </div>
     </div>

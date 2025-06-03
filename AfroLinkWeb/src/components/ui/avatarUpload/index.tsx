@@ -7,7 +7,7 @@ export default function UploadAvatars() {
   const handleAvatarChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
-      // Read the file as a data URL
+      
       const reader = new FileReader();
       reader.onload = () => {
         setAvatarSrc(reader.result as string);
@@ -20,7 +20,7 @@ export default function UploadAvatars() {
     <ButtonBase
       component="label"
       role={undefined}
-      tabIndex={-1} // prevent label from tab focus
+      tabIndex={-1} 
       aria-label="Avatar image"
       sx={{
         borderRadius: '40px',
