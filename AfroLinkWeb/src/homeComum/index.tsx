@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router';
 export default function HomeComum() {
 
 
-  const { dadosUser, dadosTodosUsers, filtros, setFiltroIDProfissionalSelecionado } = useContext(Context);
+  const { dadosTodosUsers, filtros, setFiltroIDProfissionalSelecionado } = useContext(Context);
 
   const [dadosProfissionais, setDadosProfissionais] = useState([]);
 
@@ -31,8 +31,8 @@ export default function HomeComum() {
   function handleVerMais(id) {
     const profissional = dadosTodosUsers.find(item => item.id === id);
     setFiltroIDProfissionalSelecionado(profissional)
-    console.log(profissional);
     navigate('/verMais')
+    
   }
 
 
