@@ -5,7 +5,7 @@ function Provider({ children }) {
   const [dadosUser, setDadosUser] = useState(null);
   const [dadosTodosUsers, setDadosTodosUsers] = useState([]);
   const [filtros, setFiltros] = useState(null);
-const [filtroIDProfissionalSelecionado, setFiltroIDProfissionalSelecionado] = useState(null);
+  const [filtroIDProfissionalSelecionado, setFiltroIDProfissionalSelecionado] = useState(null);
 
   useEffect(() => {
     function onLoad() {
