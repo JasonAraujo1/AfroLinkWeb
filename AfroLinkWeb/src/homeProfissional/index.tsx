@@ -6,7 +6,7 @@ export default function HomeProfissional() {
 
   const [todasSolicitacoes, setTodasSolicitacoes] = useState([]);
 
-  const { dadosUser } = useContext(Context);
+  const { dadosUser, dadosTodosUsers } = useContext(Context);
   
 
   useEffect(() => {
@@ -18,9 +18,10 @@ export default function HomeProfissional() {
   }, [])
   
   const solicitacoesFilter = todasSolicitacoes.filter((item)=>(item.id_usuario_profissional === dadosUser.id))
-  const usuarioComumFind = solicitacoesFilter.find((item) => item.id_usuario_comum === dadosUser.id)
-  const usuarioComumNome = usuarioComumFind ? usuarioComumFind.nome : 'Usuário Comum Não Encontrado';
-  console.log('usuarioComumNome', usuarioComumNome)
+  const usuarioComumFind = dadosTodosUsers.filter((item) => item.id === solicitacoesFilter.id_usuario_comum )
+  console.log('TESTE', usuarioComumFind)
+
+  
   return (
     <div>
       <h1></h1>
