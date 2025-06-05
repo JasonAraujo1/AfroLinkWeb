@@ -4,14 +4,10 @@ import logo from '../assets/logo.svg'
 import InputTexto from "../components/ui/inputTexto"
 import ButtonPreto from "../components/ui/buttonPreto"
 
-
-
 export default function Cadastro() {
-
 
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
-
 
   const navigate = useNavigate()
 

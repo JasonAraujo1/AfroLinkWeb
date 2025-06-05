@@ -11,7 +11,6 @@ export default function Login() {
     const [userInputEmail, setUserInputEmail] = useState('')
     const [userInputSenha, setUserInputSenha] = useState('')
 
-
     const navigate = useNavigate()
 
     async function handleLogin() {
@@ -21,7 +20,7 @@ export default function Login() {
             alert('Usuário ou senha incorretos');
             return;
         }
-
+       
         localStorage.setItem("userEncontrado", JSON.stringify(userEncontrado));
         localStorage.setItem("dadosTodosUsers", JSON.stringify(data));
 

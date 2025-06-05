@@ -37,7 +37,7 @@ export default function VerMaisProfissional() {
     const res = await req.json()
 
     alert("Solicitação feita!")
-    console.log(filtroIDProfissionalSelecionado)
+    console.log(dadosUser.id)
   }
 
   return (
