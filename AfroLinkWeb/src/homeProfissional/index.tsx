@@ -20,13 +20,14 @@ export default function HomeProfissional() {
 
   return (
     <div>
-      <h1>Solicitações Recebidas</h1>
+      <h1>Ola, {dadosUser.nome_completo}</h1>
+      <h2>Solicitações Recebidas:</h2>
       {solicitacoesFilter.map((item) => {
         const solicitante = usuarioComum.find((user) => user.id === item.id_usuario_comum);
 
         return (
           <div key={item.id}>
-            <h2>Solicitante: {solicitante?.nome_completo || "Desconhecido"}</h2>
+            <h3>Solicitante: {solicitante?.nome_completo || "Desconhecido"}</h3>
             <p>Data da solicitação: {item.data_solicitacao}</p>
             <p>Status: {item.status}</p>
             <br />
