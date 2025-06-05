@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router'
 import './App.css'
-import HomeComum from './homeComum'
-import HomeProfissional from './homeProfissional'
-import Cadastro from './cadastro'
-import Login from './login'
-import VerMaisProfissional from './verMaisProfissional'
+import HomeComum from './pages/homeComum'
+import HomeProfissional from './pages/homeProfissional'
+import Cadastro from './pages/cadastro'
+import Login from './pages/login'
+import VerMaisProfissional from './pages/verMaisProfissional'
 
 function App() {
   return (

@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 import Context from './Context';
+import type { UserType } from "../types/userType";
+import type { AppContextType } from "../types/contextType";
 
-function Provider({ children }) {
-  const [dadosUser, setDadosUser] = useState(null);
-  const [dadosTodosUsers, setDadosTodosUsers] = useState([]);
-  const [filtros, setFiltros] = useState(null);
-  const [filtroIDProfissionalSelecionado, setFiltroIDProfissionalSelecionado] = useState(null);
+function Provider({ children }: { children: React.ReactNode }) {
+  const [dadosUser, setDadosUser] = useState<UserType | null>(null);
+  const [dadosTodosUsers, setDadosTodosUsers] = useState<UserType[]>([]);
+  const [filtros, setFiltros] = useState<UserType | null>(null);
+  const [filtroIDProfissionalSelecionado, setFiltroIDProfissionalSelecionado] = useState<UserType | null>(null);
+
 
   useEffect(() => {
     function onLoad() {
@@ -16,15 +19,17 @@ function Provider({ children }) {
     }
     onLoad();
   }, []);
-  
-  const contextValue = {
+
+  const contextValue: AppContextType = {
     dadosUser,
+    setDadosUser,
     dadosTodosUsers,
+    setDadosTodosUsers,
     filtros,
     setFiltros,
     filtroIDProfissionalSelecionado,
     setFiltroIDProfissionalSelecionado,
-  }
+  };
 
   return (
     <Context.Provider value={contextValue}>
