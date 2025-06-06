@@ -1,54 +1,41 @@
-# React + TypeScript + Vite
+# AfroLinkWeb
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AfroLinkWeb é uma aplicação web desenvolvida para conectar, valorizar e promover profissionais, empreendedores e iniciativas da comunidade negra. O objetivo é criar uma rede de apoio, visibilidade e oportunidades, fortalecendo o ecossistema afroempreendedor.
 
-Currently, two official plugins are available:
+## Por que AfroLinkWeb?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A representatividade e o acesso a oportunidades ainda são desafios para a população negra no Brasil. AfroLinkWeb surge como uma solução para:
 
-## Expanding the ESLint configuration
+- **Dar visibilidade** a profissionais e negócios negros.
+- **Facilitar conexões** entre empreendedores, clientes e parceiros.
+- **Promover eventos, cursos e iniciativas** voltadas à comunidade.
+- **Fomentar o networking** e a troca de experiências.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Como funciona
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. **Cadastro de Usuários:** Profissionais e empresas podem criar perfis detalhados, destacando suas áreas de atuação, portfólio e contatos.
+2. **Busca e Filtros:** Usuários podem pesquisar por serviços, profissionais ou negócios utilizando filtros como localização, área de atuação e avaliações.
+3. **Divulgação de Eventos:** Espaço para promover eventos, cursos e oportunidades relevantes para a comunidade.
+4. **Avaliações e Recomendações:** Clientes podem avaliar serviços e recomendar profissionais, aumentando a confiança na rede.
+5. **Painel Administrativo:** Ferramentas para gestão de perfis, eventos e monitoramento de interações.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Tecnologias Utilizadas
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Frontend:** React.js
+- **Backend:** Node.js, Express
+- **Banco de Dados:** MongoDB
+- **Hospedagem:** Azure
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Como contribuir
+
+1. Faça um fork do repositório.
+2. Crie uma branch para sua feature ou correção.
+3. Envie um pull request detalhando suas alterações.
+
+## Licença
+
+Este projeto está sob a licença MIT.
+
+---
+
+AfroLinkWeb: conectando talentos, fortalecendo histórias.
