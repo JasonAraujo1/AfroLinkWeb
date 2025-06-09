@@ -28,7 +28,7 @@ export default function Cadastro() {
     const res = await req.json()
 
     alert("Usuário cadastrado!")
-    navigate("/login")
+    navigate("/")
   }
 
   return (

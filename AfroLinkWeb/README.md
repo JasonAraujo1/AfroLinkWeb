@@ -4,7 +4,7 @@ AfroLinkWeb é uma aplicação web desenvolvida para conectar, valorizar e promo
 
 ## Por que AfroLinkWeb?
 
-A representatividade e o acesso a oportunidades ainda são desafios para a população negra no Brasil. AfroLinkWeb surge como uma solução para:
+A representatividade e o acesso a oportunidades ainda são desafinpos para a população negra no Brasil. AfroLinkWeb surge como uma solução para:
 
 - **Dar visibilidade** a profissionais e negócios negros.
 - **Facilitar conexões** entre empreendedores, clientes e parceiros.

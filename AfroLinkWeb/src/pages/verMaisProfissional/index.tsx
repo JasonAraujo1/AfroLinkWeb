@@ -13,7 +13,7 @@ export default function VerMaisProfissional() {
     const dataHora = new Date();
     const dataFormatada = dataHora.toLocaleDateString('pt-BR', {
       year: 'numeric',
-      month: '2-digit',   
+      month: '2-digit',
       day: '2-digit',
       hour: '2-digit',
       minute: '2-digit',
@@ -21,10 +21,11 @@ export default function VerMaisProfissional() {
 
     const data = {
       data_solicitacao: dataFormatada,
-      id_usuario_comum:dadosUser.id,
-      id_usuario_profissional:filtroIDProfissionalSelecionado.id,
+      id_usuario_comum: Number(dadosUser.id),
+      id_usuario_profissional: Number(filtroIDProfissionalSelecionado.id),
       status: "pendente",
-    }
+    };
+
     const url = "https://67d355c78bca322cc269d90d.mockapi.io/api/v1/solicitacoes"
 
     const req = await fetch(url, {
@@ -37,7 +38,8 @@ export default function VerMaisProfissional() {
     const res = await req.json()
 
     alert("Solicitação feita!")
-    console.log(dadosUser.id)
+    console.log("Resposta da API:", res);
+console.log("DadosUser:", dadosUser);
   }
 
   return (

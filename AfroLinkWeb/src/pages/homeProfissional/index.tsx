@@ -15,25 +15,27 @@ export default function HomeProfissional() {
   }, []);
 
   const solicitacoesFilter = todasSolicitacoes.filter((item) => item.id_usuario_profissional === dadosUser?.id)
+  const usuarioComumSolicitante = solicitacoesFilter.filter((item) => item.id_usuario_comum === dadosTodosUsers?.id);
 
-  const usuarioComum = dadosTodosUsers.filter((user) => user.tipo === "comum")
+console.log("solicitacoesFilter:", solicitacoesFilter);
+console.log("usuarioComumSolicitante:", usuarioComumSolicitante);
 
   return (
     <div>
       <h1>Ola, {dadosUser.nome_completo}</h1>
-      <h2>Solicitações Recebidas:</h2>
-      {solicitacoesFilter.map((item) => {
-        const solicitante = usuarioComum.find((user) => user.id === item.id_usuario_comum);
+      
+      <h2>Solicitações Recebidas:{usuarioComumSolicitante}</h2>
+      
 
-        return (
-          <div key={item.id}>
-            <h3>Solicitante: {solicitante?.nome_completo || "Desconhecido"}</h3>
-            <p>Data da solicitação: {item.data_solicitacao}</p>
-            <p>Status: {item.status}</p>
+      
+          <div >
+            <h3>Solicitante: </h3>
+            <p>Data da solicitação: </p>
+            <p>Status: </p>
             <br />
           </div>
-        );
-      })}
+       
+     
     </div>
   );
 }

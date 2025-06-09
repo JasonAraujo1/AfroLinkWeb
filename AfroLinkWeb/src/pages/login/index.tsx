@@ -22,7 +22,8 @@ export default function Login() {
         }
 
         localStorage.setItem("userEncontrado", JSON.stringify(userEncontrado));
-        localStorage.setItem("dadosTodosUsers", JSON.stringify(data));
+        // Remova ou atualize "dadosTodosUsers" apenas quando realmente necessário, ou busque sempre do backend
+        // localStorage.setItem("dadosTodosUsers", JSON.stringify(data));
 
         if (userEncontrado.tipo === 'profissional') {
             navigate('/homeProfissional');
