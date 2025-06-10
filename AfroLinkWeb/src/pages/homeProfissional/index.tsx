@@ -1,41 +1,34 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import Context from "../../context/Context";
-import { fetchApiSolicitacoes } from "../../services/fetchApi";
 
 export default function HomeProfissional() {
-  const [todasSolicitacoes, setTodasSolicitacoes] = useState([]);
-  const { dadosUser, dadosTodosUsers } = useContext(Context);
+  const { dadosUser, dadosTodosUsers, dadosSolicitacoes } = useContext(Context);
 
-  useEffect(() => {
-    async function onLoad() {
-      const dataSolicitacoesApi = await fetchApiSolicitacoes();
-      setTodasSolicitacoes(dataSolicitacoesApi);
-    }
-    onLoad();
-  }, []);
+  const solicitacoesFilter = dadosSolicitacoes.filter(
+    (item) => String(item.id_usuario_profissional) === String(dadosUser?.id)
+  );
 
-  const solicitacoesFilter = todasSolicitacoes.filter((item) => item.id_usuario_profissional === dadosUser?.id)
-  const usuarioComumSolicitante = solicitacoesFilter.filter((item) => item.id_usuario_comum === dadosTodosUsers?.id);
-
-console.log("solicitacoesFilter:", solicitacoesFilter);
-console.log("usuarioComumSolicitante:", usuarioComumSolicitante);
+  const usuariosComuns = dadosTodosUsers.filter((user) => user.tipo === "comum");
 
   return (
     <div>
       <h1>Ola, {dadosUser.nome_completo}</h1>
-      
-      <h2>Solicitações Recebidas:{usuarioComumSolicitante}</h2>
-      
+      <h2>Solicitações Recebidas:</h2>
 
-      
-          <div >
-            <h3>Solicitante: </h3>
-            <p>Data da solicitação: </p>
-            <p>Status: </p>
+      {solicitacoesFilter.map((item) => {
+        const solicitante = usuariosComuns.find(
+          (user) => String(user.id) === String(item.id_usuario_comum)
+        );
+
+        return (
+          <div key={item.id}>
+            <h3>Solicitante: {solicitante?.nome_completo || "Desconhecido"}</h3>
+            <p>Data da solicitação: {item.data_solicitacao}</p>
+            <p>Status: {item.status}</p>
             <br />
           </div>
-       
-     
+        );
+      })}
     </div>
   );
 }

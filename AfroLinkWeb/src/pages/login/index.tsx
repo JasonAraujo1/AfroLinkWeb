@@ -1,15 +1,19 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router'
 import { fetchApiUsers } from '../../services/fetchApi'
 import logo from '../../assets/logo.svg'
 import ButtonPreto from '../../components/ui/buttonPreto'
 import InputTexto from '../../components/ui/inputTexto'
+import Context from '../../context/Context'
 
 
 export default function Login() {
 
     const [userInputEmail, setUserInputEmail] = useState('')
     const [userInputSenha, setUserInputSenha] = useState('')
+
+      const { setDadosUser, setDadosTodosUsers } = useContext(Context);
+    
 
     const navigate = useNavigate()
 
@@ -20,10 +24,10 @@ export default function Login() {
             alert('Usuário ou senha incorretos');
             return;
         }
+        setDadosTodosUsers(data)
 
-        localStorage.setItem("userEncontrado", JSON.stringify(userEncontrado));
-        // Remova ou atualize "dadosTodosUsers" apenas quando realmente necessário, ou busque sempre do backend
-        // localStorage.setItem("dadosTodosUsers", JSON.stringify(data));
+        setDadosUser(userEncontrado);
+        
 
         if (userEncontrado.tipo === 'profissional') {
             navigate('/homeProfissional');
