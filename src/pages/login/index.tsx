@@ -12,27 +12,27 @@ export default function Login() {
     const [userInputEmail, setUserInputEmail] = useState('')
     const [userInputSenha, setUserInputSenha] = useState('')
 
-      const { setDadosUser, setDadosTodosUsers } = useContext(Context);
+      const {dadosTodosUsers, setDadosUser, setDadosTodosUsers } = useContext(Context);
     
 
     const navigate = useNavigate()
 
     async function handleLogin() {
-        const data = await fetchApiUsers()
-        const userEncontrado = data.find(user => user.email === userInputEmail && user.senha === userInputSenha)
+        const userEncontrado = dadosTodosUsers.find(user => user.email === userInputEmail && user.senha === userInputSenha)
         if (!userEncontrado) {
             alert('Usuário ou senha incorretos');
             return;
         }
-        setDadosTodosUsers(data)
+        setDadosTodosUsers(dadosTodosUsers)
 
         setDadosUser(userEncontrado);
         
+        localStorage.setItem("login", JSON.stringify(userEncontrado.id))
 
         if (userEncontrado.tipo === 'profissional') {
             navigate('/homeProfissional');
         } else {
-            navigate('/homeComum');
+            navigate('/');
         }
 
     }

@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import Context from './Context';
 import type { UserType } from "../types/userType";
 import type { AppContextType } from "../types/contextType";
-import { fetchApiSolicitacoes } from '../services/fetchApi';
+import { fetchApiSolicitacoes, fetchApiUsers } from '../services/fetchApi';
+
 
 function Provider({ children }: { children: React.ReactNode }) {
   const [dadosUser, setDadosUser] = useState<UserType | null>(null);
@@ -15,7 +16,10 @@ useEffect(() => {
   async function onLoad() {
     const dataSolicitacoesApi = await fetchApiSolicitacoes();
     setDadosSolicitacoes(dataSolicitacoesApi);
-    dadosUser
+
+    const todos = await fetchApiUsers();
+    console.log(todos)
+    setDadosTodosUsers(todos)
   }
   onLoad();
 }, []);

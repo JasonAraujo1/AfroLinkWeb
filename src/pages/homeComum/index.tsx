@@ -33,6 +33,7 @@ export default function HomeComum() {
 
   function handleVerMais(id: string) {
     const profissional = dadosTodosUsers.find(item => item.id === id);
+    console.log(profissional)
 
     if (profissional) {
       setFiltroIDProfissionalSelecionado(profissional)

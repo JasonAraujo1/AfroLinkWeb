@@ -21,6 +21,7 @@ export default function ModalBusca() {
     async function carregarEstados() {
       const data = await fetchApiEstados();
       setDadosEstados(data);
+      console.log(data)
     }
     async function carregarMunicipios() {
       if (estadoSelecionado) {

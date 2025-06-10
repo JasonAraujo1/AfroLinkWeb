@@ -9,9 +9,9 @@ import VerMaisProfissional from './pages/verMaisProfissional'
 function App() {
   return (
     <Routes>
-      <Route path="/homeComum" element={<HomeComum/>}/>
+      <Route path="/" element={<HomeComum/>}/>
       <Route path="/homeProfissional" element={<HomeProfissional/>}/>
-      <Route path="/" element={<Login/>}/>
+      <Route path="/login" element={<Login/>}/>
       <Route path="/cadastro" element={<Cadastro/>}/>
       <Route path="/verMais" element={<VerMaisProfissional/>}/>
     </Routes>

@@ -8,6 +8,27 @@ export async function fetchApiUsers() {
     console.log("erro no fetch", error)
   }
 }
+
+export async function fetchApiUsersComum() {
+  try {
+    const response = await fetch("https://67d355c78bca322cc269d90d.mockapi.io/api/v1/users?tipo=comum")
+    const data = await response.json()
+    return data
+  } catch (error) {
+    console.log("erro no fetch", error)
+  }
+}
+
+export async function fetchProfissao(profissao) {
+  try {
+    const response = await fetch(`https://67d355c78bca322cc269d90d.mockapi.io/api/v1/users?profissao=${profissao}`)
+    const data = await response.json()
+    return data
+  } catch (error) {
+    console.log("erro no fetch", error)
+  }
+}
+
 export async function fetchApiUserCep(cepUsuario) {
   try {
     const response = await fetch(`https://viacep.com.br/ws/${cepUsuario}/json/`)
