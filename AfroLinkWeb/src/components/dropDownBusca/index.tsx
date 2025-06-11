@@ -66,7 +66,7 @@ export default function DropDownBusca() {
             <ComboBox dados={nomesProfissoes} texto="Profissão" onChange={setProfissaoSelecionada} />
             <ComboBox dados={nomesEstados} texto="Estado" onChange={setEstadoSelecionado} />
             <ComboBox dados={nomesMunicipios} texto="Município" onChange={setMunicipioSelecionado} />
-            <ButtonPretoArredondado texto='Aplicar' onClick={handleFiltroProfissional}/>
+            <ButtonPretoArredondado texto='Buscar' onClick={handleFiltroProfissional}/>
           </div>
         </div>
     
