@@ -10,27 +10,27 @@ export default function IconesHome() {
         <div className='iconesContainer'>
             <div className='iconeDiv'>
                 <img src={adv} className='icone' alt="icone advogado" />
-                <span>Advogado</span>
+                <span className='spanIcone'>Advogado</span>
             </div>
 
             <div className='iconeDiv'>
                 <img src={psi} className='icone' alt="icone psicologo" />
-                <span>Psicologo</span> 
+                <span className='spanIcone'>Psicologo</span> 
             </div>
 
             <div className='iconeDiv'>
                 <img src={med} className='icone' alt="icone medico" />
-                <span>Médico</span>
+                <span className='spanIcone'>Médico</span>
             </div>
 
             <div className='iconeDiv'>
                 <img src={eng} className='icone' alt="icone engenheiro" />
-                <span>Engenheiro</span>
+                <span className='spanIcone'>Engenheiro</span>
             </div>
 
             <div className='iconeDiv'>
                 <img src={per} className='icone' alt="icone personal" />
-                <span>Personal</span>
+                <span className='spanIcone'>Personal</span>
             </div>
         </div>
     )

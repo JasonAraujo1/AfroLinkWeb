@@ -4,15 +4,14 @@
     gap: 70px;
     padding: 20px;
     color: white;
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
     padding-top: 2rem;
     
 }
 
 .icone{
-    size: 40px;
+    width: 30px;
     display: flex;
-    
 }
 
 .iconeDiv{
@@ -20,4 +19,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.spanIcone{
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.63);
 }
