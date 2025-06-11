@@ -55,7 +55,7 @@ export default function HomeComum() {
         </div>
 
         <h1 className='tituloHome'>
-          ENCONTRE SEU PROFISSIONAL <span className='tituloHome_span'>NEGRO</span>
+           ENCONTRE UM PROFISSIONAL<span className='tituloHome_span'>NEGRO</span>
         </h1>
 
         <DropDownBusca />
