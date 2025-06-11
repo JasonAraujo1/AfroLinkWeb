@@ -8,57 +8,56 @@ export default function FooterHome() {
                     <div className="footer-column">
                         <h2>Sobre</h2>
                         <ul className='footer-column_ul'>
-                            <li><a href="#">Quem somos?</a></li>
-                            <li><a href="#">Menções legais</a></li>
-                            <li><a href="#">Política de Privacidade</a></li>
-                            <li><a href="#">Superprof no mundo</a></li>
-                            <li><a href="#">Aulas Online</a></li>
-                            <li><a href="#">Estados</a></li>
-                            <li><a href="#">Trabalhe na Superprof</a></li>
+                            <li><a href="/sobre">Quem somos?</a></li>
+                            <li><a href="/termos-legais">Menções legais</a></li>
+                            <li><a href="/privacidade">Política de Privacidade</a></li>
+                            <li><a href="/afrolink-mundo">AfroLink no mundo</a></li>
+                            <li><a href="/aulas-online">Aulas Online</a></li>
+                            <li><a href="/estados">Estados</a></li>
+                            <li><a href="/trabalhe-conosco">Trabalhe na AfroLink</a></li>
                         </ul>
                     </div>
 
                     <div className="footer-column">
-                        <h2>Matérias</h2>
+                        <h2>Áreas de Atuação</h2>
                         <ul className='footer-column_ul'>
-                            <li><a href="#">Artes e Lazer</a></li>
-                            <li><a href="#">Desenvolvimento pessoal</a></li>
-                            <li><a href="#">Informática</a></li>
-                            <li><a href="#">Línguas</a></li>
-                            <li><a href="#">Música</a></li>
-                            <li><a href="#">Saúde e Bem-estar</a></li>
-                            <li><a href="#">Reforço escolar</a></li>
-                            <li><a href="#">Esportes e dança</a></li>
+                            <li><a href="/artes-e-lazer">Artes e Lazer</a></li>
+                            <li><a href="/desenvolvimento-pessoal">Desenvolvimento pessoal</a></li>
+                            <li><a href="/informatica">Informática</a></li>
+                            <li><a href="/linguas">Línguas</a></li>
+                            <li><a href="/musica">Música</a></li>
+                            <li><a href="/saude-e-bem-estar">Saúde e Bem-estar</a></li>
+                            <li><a href="/reforco-escolar">Reforço escolar</a></li>
+                            <li><a href="/esportes-e-danca">Esportes e dança</a></li>
                         </ul>
                     </div>
 
                     <div className="footer-column">
-                        <h2>Siga essa aventura</h2>
+                        <h2>Comunidade</h2>
                         <ul className='footer-column_ul'>
-                            <li><a href="#">Revista We Love Prof</a></li>
-                            <li><a href="#">Recursos pedagógicos</a></li>
+                            <li><a href="/revista">Revista AfroLink</a></li>
+                            <li><a href="/recursos">Recursos pedagógicos</a></li>
                         </ul>
                     </div>
 
                     <div className="footer-column">
                         <h2>Suporte</h2>
                         <ul className='footer-column_ul'>
-                            <li><a href="#">Página de ajuda</a></li>
-                            <li><a href="#">Contato</a></li>
+                            <li><a href="/ajuda">Página de ajuda</a></li>
+                            <li><a href="/contato">Contato</a></li>
                         </ul>
                     </div>
 
-                    <div className="footer-column">
+                    <div className="footer-column icons">
                         <h2>Siga-nos</h2>
-                        <ul className=" footer-column_ul social">
-                            <li><a href="#">📘</a></li>
-                            <li><a href="#">🐦</a></li>
-                            <li><a href="#">📸</a></li>
+                        <ul className="footer-column_ul social">
+                            <li><a href="https://facebook.com" target="_blank" rel="noreferrer"><i class="bi bi-facebook"></i></a></li>
+                            <li><a href="https://twitter.com" target="_blank" rel="noreferrer"><i class="bi bi-twitter"></i></a></li>
+                            <li><a href="https://instagram.com" target="_blank" rel="noreferrer"><i class="bi bi-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>
             </footer>
-
         </div>
     )
 }
