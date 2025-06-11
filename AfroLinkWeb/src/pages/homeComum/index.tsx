@@ -61,7 +61,7 @@ export default function HomeComum() {
         <DropDownBusca />
         <IconesHome/>
       </header>
-
+      <span className='containerHome_span'>Alguns dos nossos Profissionais pelo Brasil:</span>
       <div className=' '  >
         {dadosProfissionais.map((item) => (
           <div className=' Border' onClick={() => handleVerMais(item.id)} >

@@ -12,6 +12,15 @@ body {
     height: 100vh;
     width: 100vw;
 }
+.containerHome_span{
+    display: flex;
+    justify-content: center;
+    font-family: "Epilogue";
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 3rem;
+}
 
 .headerHome {
     background: linear-gradient(to right, #000000, #2e2e2e);
