@@ -3,16 +3,17 @@
 body {
     font-family: "Darker Grotesque", 'Poppins', 'Iconsolata', 'Epilogue';
     margin: 0;
-    background: #f9f9f9;
+    background: white;
 }
 
 .containerHome {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    width: 100vw;
+    
 }
-.containerHome_span{
+
+.containerHome_span {
     display: flex;
     justify-content: center;
     font-family: "Epilogue";
@@ -24,13 +25,12 @@ body {
 
 .headerHome {
     background: linear-gradient(to right, #000000, #2e2e2e);
-    padding: 1rem;
+    padding: 0.8rem;
 }
 
 .topHeader {
     display: flex;
     justify-content: space-between;
-
 }
 
 .Logo {
@@ -41,16 +41,17 @@ body {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
-    
+
 }
+
 .iconesContainer div {
     cursor: pointer;
 }
+
 .linksDiv {
     display: flex;
     padding: 30px;
     gap: 3rem;
-    
 }
 
 .tituloHome {
@@ -65,5 +66,39 @@ body {
 
 .tituloHome_span {
     color: #FF6624;
+}
 
+.containerTodosPerfis {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.containerPerfil {
+    display: flex;
+    flex-direction: column;
+    background-color: #F7F6F6;
+    border-radius: 2.5rem;
+    max-width: 20.5rem;
+}
+
+.containerPerfil_fotoUser {
+    padding: 1.2rem;
+    max-height: 20.5rem;
+    border-radius: 3rem;
+}
+
+.containerPerfil_div {
+    margin: 0 3rem 1.5rem;
+}
+
+.containerPerfil_div p {
+    margin: 0;
+}
+
+.containerPerfil_div_h4 {
+    margin: 0;
+    font-size: 1.2rem;
 }

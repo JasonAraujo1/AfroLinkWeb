@@ -4,9 +4,10 @@ import Context from '../../context/Context';
 import DropDownBusca from '../../components/dropDownBusca';
 import './homeComum.css';
 import { NavLink, useNavigate } from 'react-router';
-
+import foto from "../../assets/userfoto.png"
 import type { UserType } from '../../types/userType'
 import IconesHome from '../../components/iconesHome';
+import FooterHome from '../../components/footerHome';
 
 export default function HomeComum() {
   const context = useContext(Context);
@@ -61,20 +62,23 @@ export default function HomeComum() {
         <DropDownBusca />
         <IconesHome/>
       </header>
+
       <span className='containerHome_span'>Alguns dos nossos Profissionais pelo Brasil:</span>
-      <div className=' '  >
+
+      <div className='containerTodosPerfis'  >
         {dadosProfissionais.map((item) => (
-          <div className=' Border' onClick={() => handleVerMais(item.id)} >
-            <img src="" alt="fotoUser" className='Border' />
-            <div>
-              <h4>{item.nome_completo}</h4>
+          <div className='containerPerfil' onClick={() => handleVerMais(item.id)} >
+            <img src={foto} alt="fotoUser" className='containerPerfil_fotoUser' />
+            <div className='containerPerfil_div'>
+              <h4 className='containerPerfil_div_h4'>{item.nome_completo}</h4>
               <span>{item.profissao}</span>
-              <span><img src="" alt="" />(Avaliação)</span>
-              <p>Texto descrição</p>
+              <span><img src="" alt="" />({item.avaliacoes} Avaliações)</span>
+              <p>{item.descricao}</p>
             </div>
           </div>
         ))}
       </div>
+      <FooterHome/>
     </div>
   )
 }

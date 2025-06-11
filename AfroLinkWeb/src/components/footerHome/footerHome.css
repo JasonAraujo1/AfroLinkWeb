@@ -1,0 +1,36 @@
+footer{
+    border-top: 1px solid #92929250;
+    margin: 8rem 2rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-container {
+    display: flex;
+    
+    justify-content: center;
+    max-width: 80rem;
+    gap: 8rem;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;    
+}
+.footer-column h2{
+    margin-bottom:1rem 0  ;
+    font-weight: 800;
+}
+
+
+.footer-column_ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column_ul li a {
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    font-weight: 800;
+}
