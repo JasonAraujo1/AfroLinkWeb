@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from 'react';
-import Logo from '../../assets/logo.svg';
+import Logo from '../../assets/logoWhite.png';
 import Context from '../../context/Context';
-import ModalBusca from '../../components/modalBusca';
-import LetterAvatars from '../../components/ui/letterAvatars';
+import DropDownBusca from '../../components/dropDownBusca';
+import './homeComum.css';
 import { NavLink, useNavigate } from 'react-router';
 
 import type { UserType } from '../../types/userType'
+import IconesHome from '../../components/iconesHome';
 
 export default function HomeComum() {
   const context = useContext(Context);
@@ -43,22 +44,25 @@ export default function HomeComum() {
 
 
   return (
-    <div className='FlexColumn '>
-      <header >
-        <div className='Flex '>
+    <div className='containerHome'>
+      <header className='headerHome'>
+        <div className='topHeader'>
           <img src={Logo} className='Logo' alt="" />
-          <div>
-            <NavLink to={''}>Sou Profissional</NavLink>
-            <NavLink to={''}>Login</NavLink>
+          <div className='linksDiv'>
+            <NavLink className='linksHeader' to={''}>Sou Profissional</NavLink>
+            <NavLink className='linksHeader' to={''}>Login</NavLink>
           </div>
         </div>
 
-        <h1>ENCONTRE SEU PROFISSIONAL NEGRO</h1>
+        <h1 className='tituloHome'>
+          ENCONTRE SEU PROFISSIONAL <span className='tituloHome_span'>NEGRO</span>
+        </h1>
 
-        <ModalBusca />
+        <DropDownBusca />
+        <IconesHome/>
       </header>
 
-      <div className='Flex grid-container'  >
+      <div className=' '  >
         {dadosProfissionais.map((item) => (
           <div className=' Border' onClick={() => handleVerMais(item.id)} >
             <img src="" alt="fotoUser" className='Border' />

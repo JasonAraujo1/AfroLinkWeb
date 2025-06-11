@@ -1,13 +1,12 @@
 import { useContext, useEffect, useState } from 'react';
-import CloseIcon from '@mui/icons-material/Close';
 import { fetchApiEstados, fetchApiMunicipios, fetchApiProfissoes } from '../../services/fetchApi';
 import ComboBox from '../ui/comboBox';
-import InputTexto from '../ui/inputTexto';
-import search from '../../assets/search.png'
 import Context from '../../context/Context';
+import './dropDownBusca.css'
+import ButtonPretoArredondado from '../ui/buttonPretoArredondado';
 
-export default function ModalBusca() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+export default function DropDownBusca() {
+
   const [dadosEstados, setDadosEstados] = useState([]);
   const [dadosMunicipios, setDadosMunicipios] = useState([]);
   const [profissoes, setProfissoes] = useState([]);
@@ -63,11 +62,11 @@ export default function ModalBusca() {
     <div>
 
         <div >
-          <div className=" Flex">         
+          <div className="containerDropDown">         
             <ComboBox dados={nomesProfissoes} texto="Profissão" onChange={setProfissaoSelecionada} />
             <ComboBox dados={nomesEstados} texto="Estado" onChange={setEstadoSelecionado} />
             <ComboBox dados={nomesMunicipios} texto="Município" onChange={setMunicipioSelecionado} />
-            <button onClick={handleFiltroProfissional}>Aplicar</button>
+            <ButtonPretoArredondado texto='Aplicar' onClick={handleFiltroProfissional}/>
           </div>
         </div>
     

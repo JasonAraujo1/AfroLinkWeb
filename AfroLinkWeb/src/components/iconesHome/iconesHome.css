@@ -1,0 +1,23 @@
+.iconesContainer{ 
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    padding: 20px;
+    color: white;
+    padding-bottom: 4rem;
+    padding-top: 2rem;
+    
+}
+
+.icone{
+    size: 40px;
+    display: flex;
+    
+}
+
+.iconeDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

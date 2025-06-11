@@ -1,0 +1,60 @@
+/* Home.css */
+
+body {
+    font-family: "Darker Grotesque", 'Poppins', 'Iconsolata', 'Epilogue';
+    margin: 0;
+    background: #f9f9f9;
+}
+
+.containerHome {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+.headerHome {
+    background: linear-gradient(to right, #000000, #2e2e2e);
+    padding: 1rem;
+}
+
+.topHeader {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.Logo {
+    width: 6rem;
+}
+
+.linksHeader {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    
+}
+.iconesContainer div {
+    cursor: pointer;
+}
+.linksDiv {
+    display: flex;
+    padding: 30px;
+    gap: 3rem;
+    
+}
+
+.tituloHome {
+    color: #7A7A7A;
+    font-family: "Darker grotesque";
+    font-size: 4rem;
+    font-weight: 200;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.tituloHome_span {
+    color: #FF6624;
+
+}
