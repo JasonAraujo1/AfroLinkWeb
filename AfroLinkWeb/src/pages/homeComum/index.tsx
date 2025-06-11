@@ -3,7 +3,7 @@ import Logo from '../../assets/logo.svg';
 import Context from '../../context/Context';
 import ModalBusca from '../../components/modalBusca';
 import LetterAvatars from '../../components/ui/letterAvatars';
-import { useNavigate } from 'react-router';
+import { NavLink, useNavigate } from 'react-router';
 
 import type { UserType } from '../../types/userType'
 
@@ -44,19 +44,23 @@ export default function HomeComum() {
 
   return (
     <div className='FlexColumn '>
-      <div>
-        <LetterAvatars />
-      </div>
-      <img src={Logo} className='Logo' alt="" />
+      <header >
+        <div className='Flex '>
+          <img src={Logo} className='Logo' alt="" />
+          <div>
+            <NavLink to={''}>Sou Profissional</NavLink>
+            <NavLink to={''}>Login</NavLink>
+          </div>
+        </div>
 
-      <div className='JustifyCenter'>
+        <h1>ENCONTRE SEU PROFISSIONAL NEGRO</h1>
+
         <ModalBusca />
-      </div>
+      </header>
 
-      <span>Alguns dos profissionais negros do Brasil</span>
-      <div className='Flex FlexColumn'  >
+      <div className='Flex grid-container'  >
         {dadosProfissionais.map((item) => (
-          <div className='Flex Border' onClick={() => handleVerMais(item.id)} >
+          <div className=' Border' onClick={() => handleVerMais(item.id)} >
             <img src="" alt="fotoUser" className='Border' />
             <div>
               <h4>{item.nome_completo}</h4>

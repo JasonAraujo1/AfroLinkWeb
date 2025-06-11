@@ -43,13 +43,6 @@ export default function ModalBusca() {
   }, [estadoSelecionado])
 
 
-  function abrirModal() {
-    setIsModalOpen(true)
-  }
-
-  function fecharModal() {
-    setIsModalOpen(false)
-  }
 
   function handleFiltroProfissional() {
      setFiltros({
@@ -57,7 +50,7 @@ export default function ModalBusca() {
       municipio: municipioSelecionado,
       profissao: profissaoSelecionada,
     })
-    fecharModal()
+  
 
   }
 
@@ -69,24 +62,15 @@ export default function ModalBusca() {
   return (
     <div>
 
-      <InputTexto
-        onClick={abrirModal}
-        placeholder="Qual profissional deseja?"
-        src={search}
-
-      />
-
-      {isModalOpen && (
-        <div className="modalOverlay">
-          <div className="modalContent FlexColumn">
-            <CloseIcon onClick={fecharModal} />
+        <div >
+          <div className=" Flex">         
             <ComboBox dados={nomesProfissoes} texto="Profissão" onChange={setProfissaoSelecionada} />
             <ComboBox dados={nomesEstados} texto="Estado" onChange={setEstadoSelecionado} />
             <ComboBox dados={nomesMunicipios} texto="Município" onChange={setMunicipioSelecionado} />
             <button onClick={handleFiltroProfissional}>Aplicar</button>
           </div>
         </div>
-      )}
+    
     </div>
   );
 }
