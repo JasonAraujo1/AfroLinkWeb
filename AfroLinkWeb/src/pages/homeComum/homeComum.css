@@ -92,6 +92,11 @@ body {
 
 .containerPerfil_div {
     margin: 0 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.containerPerfil_div_span{
+    font-size: 1.2rem;
 }
 
 .containerPerfil_div p {
@@ -100,5 +105,13 @@ body {
 
 .containerPerfil_div_h4 {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
+
+.containerPerfil_div_p{
+    font-size: 1.1rem;
+}
+.biStar{
+    color: #FF6624;
+}
+

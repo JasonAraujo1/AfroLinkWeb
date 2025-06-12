@@ -56,11 +56,11 @@ export default function HomeComum() {
         </div>
 
         <h1 className='tituloHome'>
-           ENCONTRE UM PROFISSIONAL<span className='tituloHome_span'>NEGRO</span>
+          ENCONTRE UM PROFISSIONAL<span className='tituloHome_span'>NEGRO</span>
         </h1>
 
         <DropDownBusca />
-        <IconesHome/>
+        <IconesHome />
       </header>
 
       <span className='containerHome_span'>Alguns dos nossos Profissionais pelo Brasil:</span>
@@ -71,14 +71,16 @@ export default function HomeComum() {
             <img src={foto} alt="fotoUser" className='containerPerfil_fotoUser' />
             <div className='containerPerfil_div'>
               <h4 className='containerPerfil_div_h4'>{item.nome_completo}</h4>
-              <span>{item.profissao}</span>
-              <span><img src="" alt="" />({item.avaliacoes} Avaliações)</span>
-              <p>{item.descricao}</p>
+              <span className='containerPerfil_div_span'>{item.profissao}</span>
+              <span >
+                <i class="biStar bi-star-fill" /><span>({item.avaliacoes} Avaliações)</span>
+              </span>
+              <p className='containerPerfil_div_p'>{item.descricao}</p>
             </div>
           </div>
         ))}
       </div>
-      <FooterHome/>
+      <FooterHome />
     </div>
   )
 }
