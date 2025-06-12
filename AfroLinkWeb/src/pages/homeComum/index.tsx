@@ -75,7 +75,7 @@ export default function HomeComum() {
               <span >
                 <i class="biStar bi-star-fill" /><span>({item.avaliacoes} Avaliações)</span>
               </span>
-              <p className='containerPerfil_div_p'>{item.descricao}</p>
+              <p className='containerPerfil_div_p'>"{item.descricao}"</p>
             </div>
           </div>
         ))}

@@ -1,0 +1,15 @@
+.card {
+    position: absolute;
+    display: flex;
+    outline: none;
+    border: 1px solid gray;
+    background-color: white;
+    padding: 0.4rem;
+}
+
+.card_btn {
+    border: none;
+    background-color: white;
+
+}
+

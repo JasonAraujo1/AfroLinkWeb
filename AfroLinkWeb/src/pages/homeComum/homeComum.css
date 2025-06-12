@@ -21,6 +21,7 @@ body {
     font-weight: 600;
     font-size: 1.5rem;
     padding: 3rem;
+    color: #000000;
 }
 
 .headerHome {
@@ -110,6 +111,7 @@ body {
 
 .containerPerfil_div_p{
     font-size: 1.1rem;
+    padding: 1rem 0 0;
 }
 .biStar{
     color: #FF6624;

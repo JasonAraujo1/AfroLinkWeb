@@ -49,9 +49,21 @@ export default function DropDownBusca() {
       municipio: municipioSelecionado,
       profissao: profissaoSelecionada,
     })
-  
-
   }
+  function handleLimparFiltro(){
+    setFiltros({
+      estado: '',
+      municipio: '',
+      profissao: '',
+
+    })
+    setEstadoSelecionado('')
+    setProfissaoSelecionada('')
+    setMunicipioSelecionado('')
+    
+  }
+
+
 
   const nomesEstados = dadosEstados.map(item => item.nome);
   const nomesMunicipios = dadosMunicipios.map(item => item.nome);
@@ -66,7 +78,8 @@ export default function DropDownBusca() {
             <ComboBox dados={nomesProfissoes} texto="Profissão" onChange={setProfissaoSelecionada} />
             <ComboBox dados={nomesEstados} texto="Estado" onChange={setEstadoSelecionado} />
             <ComboBox dados={nomesMunicipios} texto="Município" onChange={setMunicipioSelecionado} />
-            <ButtonPretoArredondado texto='Buscar' onClick={handleFiltroProfissional}/>
+            <ButtonPretoArredondado texto='Buscar' OnclickLimpar={handleLimparFiltro} onClick={handleFiltroProfissional}/>
+            
           </div>
         </div>
     
