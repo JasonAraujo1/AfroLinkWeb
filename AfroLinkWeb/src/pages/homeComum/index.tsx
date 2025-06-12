@@ -47,53 +47,64 @@ export default function HomeComum() {
 
   return (
     <div className='containerHome fade-in-scale fade-delay-1'>
-      <header className='headerHome fade-delay-2'>
-        <div className='topHeader fade-delay-3'>
-          <img src={Logo} className='Logo' alt="" />
-          <div className='linksDiv fade-in-left fade-delay-4'>
-            <NavLink className='linksHeader fade-in-left fade-delay-5' to={''}>Sou Profissional</NavLink>
-            <NavLink className='linksHeader fade-in-left fade-delay-5' to={''}>Login</NavLink>
-          </div>
-        </div>
+      {dadosProfissionais.map((item, index) => (
+        <>
+          <header className='headerHome fade-delay-2'>
 
-        <h1 className='tituloHome '>
-          ENCONTRE UM PROFISSIONAL<span className='tituloHome_span'>NEGRO</span>
-        </h1>
+            <div className='topHeader fade-delay-3'>
+              <img src={Logo} className='Logo' alt="" />
 
-        <div className='fade-in-scale fade-delay-3'>
-          <DropDownBusca />
-          <IconesHome />
-        </div>
-      </header>
-
-      <span className='containerHome_span fade-in fade-delay-3'>
-        Alguns dos nossos Profissionais pelo Brasil:
-      </span>
-
-      <div className='containerTodosPerfis fade-in-scale fade-delay-3'>
-        {dadosProfissionais.map((item, index) => (
-          <div
-            className={`containerPerfil fade-in-scale fade-delay-${(index % 5) + 1}`}
-            onClick={() => handleVerMais(item.id)}
-          >
-            <img src={foto} alt="fotoUser" className='containerPerfil_fotoUser fade-in-scale' />
-            <div className='containerPerfil_div fade-in'>
-              <h4 className='containerPerfil_div_h4'>{item.nome_completo}</h4>
-              <span className='containerPerfil_div_span1'>{item.profissao}</span>
-              <span className='containerPerfil_div_span2'>
-                <img className='containerPerfil_div_star' src={star} alt="" />
-                <span>({item.avaliacoes} Avaliações)</span>
-              </span>
-              <p className='containerPerfil_div_p'>" {item.descricao} "</p>
+              <div className='linksDiv fade-in-left fade-delay-4'>
+                {item?.nome_completo ? (
+                  <span className='linksHeader'>Olá, {item.nome_completo}</span>
+                ) : (
+                  <>
+                    <NavLink className='linksHeader fade-in-left fade-delay-5' to={'/cadastro'}>Sou Profissional</NavLink>
+                    <NavLink className='linksHeader fade-in-left fade-delay-5' to={'/login'}>Login</NavLink>
+                  </>
+                )}
+              </div>
             </div>
+
+            <h1 className='tituloHome '>
+              ENCONTRE UM PROFISSIONAL<span className='tituloHome_span'>NEGRO</span>
+            </h1>
+
+            <div className='fade-in-scale fade-delay-3'>
+              <DropDownBusca />
+              <IconesHome />
+            </div>
+          </header>
+
+          <span className='containerHome_span fade-in fade-delay-3'>
+            Alguns dos nossos Profissionais pelo Brasil:
+          </span>
+
+          <div className='containerTodosPerfis fade-in-scale fade-delay-3'>
+
+            <div
+              className={`containerPerfil fade-in-scale fade-delay-${(index % 5) + 1}`}
+              onClick={() => handleVerMais(item.id)}
+            >
+              <img src={foto} alt="fotoUser" className='containerPerfil_fotoUser fade-in-scale' />
+              <div className='containerPerfil_div fade-in'>
+                <h4 className='containerPerfil_div_h4'>{item.nome_completo}</h4>
+                <span className='containerPerfil_div_span1'>{item.profissao}</span>
+                <span className='containerPerfil_div_span2'>
+                  <img className='containerPerfil_div_star' src={star} alt="" />
+                  <span>({item.avaliacoes} Avaliações)</span>
+                </span>
+                <p className='containerPerfil_div_p'>" {item.descricao} "</p>
+              </div>
+            </div>
+
           </div>
-        ))}
-      </div>
 
-      <FooterHome />
-      <span className='containerHome_footer_span'>© 2025 AfroLink</span>
+          <FooterHome />
+          <span className='containerHome_footer_span'>© 2025 AfroLink</span>
+        </>
+      ))}
     </div>
-
 
   )
 }

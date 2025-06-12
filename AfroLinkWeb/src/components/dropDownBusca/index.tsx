@@ -63,12 +63,9 @@ export default function DropDownBusca() {
     
   }
 
-
-
   const nomesEstados = dadosEstados.map(item => item.nome);
   const nomesMunicipios = dadosMunicipios.map(item => item.nome);
   const nomesProfissoes = profissoes.map(item => item.nome);
-
 
   return (
     <div>

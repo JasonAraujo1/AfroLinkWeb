@@ -1,19 +1,18 @@
 .card {
-    position: absolute;
-    display: flex;
-    outline: none;
-    border: 1px solid rgb(218, 217, 217);
-    background-color: white;
-    padding: 0.4rem;
-    transition: 5s;
+  position: absolute;
+  display: flex;
+  outline: none;
+  border: 1px solid rgb(218, 217, 217);
+  background-color: white;
+  padding: 0.4rem;
+  transition: 5s;
 }
 
 .card_btn {
-    border: none;
-    background-color: white;
-    color:gray;
-     transition: transform 3s ease, opacity 3s ease;
-
+  border: none;
+  background-color: white;
+  color: gray;
+  transition: transform 3s ease, opacity 3s ease;
 }
 
 .collapse {
@@ -28,7 +27,7 @@
 
 .collapse.show {
   opacity: 1;
-  max-height: 200px; /* ajuste conforme o conteúdo */
+  max-height: 200px;
 }
 
 .card.card-body {
