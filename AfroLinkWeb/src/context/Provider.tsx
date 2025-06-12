@@ -12,18 +12,6 @@ function Provider({ children }: { children: React.ReactNode }) {
   const [filtroIDProfissionalSelecionado, setFiltroIDProfissionalSelecionado] = useState<UserType | null>(null);
   const [dadosSolicitacoes, setDadosSolicitacoes] = useState([]);
 
-useEffect(() => {
-  async function onLoad() {
-    const dataSolicitacoesApi = await fetchApiSolicitacoes();
-    setDadosSolicitacoes(dataSolicitacoesApi);
-
-    const todos = await fetchApiUsers();
-    console.log(todos)
-    setDadosTodosUsers(todos)
-  }
-  onLoad();
-}, []);
-
 
   const contextValue: AppContextType = {
     dadosUser,

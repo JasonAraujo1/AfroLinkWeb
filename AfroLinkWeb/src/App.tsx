@@ -10,8 +10,8 @@ import AppLayout from './layout/layout'
 function App() {
   return (
     <Routes>
-      <Route element={<AppLayout/>}>
-        <Route path="/" element={<HomeComum />} />
+      <Route path='/' element={<AppLayout/>}>
+        <Route index element={<HomeComum />} />
         <Route path="/homeProfissional" element={<HomeProfissional />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
