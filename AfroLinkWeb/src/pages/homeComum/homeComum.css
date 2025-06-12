@@ -27,6 +27,7 @@ body {
 .headerHome {
     background: linear-gradient(to right, #000000, #2e2e2e);
     padding: 0.8rem;
+    z-index: 1;
 }
 
 .topHeader {
@@ -92,7 +93,7 @@ body {
 }
 
 .containerPerfil_div {
-    margin: 0 3rem 1.5rem;
+    margin: 0 3rem 0.3rem;
     display: flex;
     flex-direction: column;
 }
@@ -122,3 +123,9 @@ body {
     color: #FF6624;
 }
 
+.containerHome_footer_span{
+    display: flex;
+    justify-content: center;
+    background-color: #000000;
+    color: white;
+}

@@ -47,16 +47,16 @@ export default function HomeComum() {
 
   return (
     <div className='containerHome fade-in-scale fade-delay-1'>
-      <header className='headerHome fade-in-left fade-delay-2'>
-        <div className='topHeader fade-in-left fade-delay-3'>
-          <img src={Logo} className='Logo fade-in-scale fade-delay-4' alt="" />
+      <header className='headerHome fade-delay-2'>
+        <div className='topHeader fade-delay-3'>
+          <img src={Logo} className='Logo' alt="" />
           <div className='linksDiv fade-in-left fade-delay-4'>
             <NavLink className='linksHeader fade-in-left fade-delay-5' to={''}>Sou Profissional</NavLink>
             <NavLink className='linksHeader fade-in-left fade-delay-5' to={''}>Login</NavLink>
           </div>
         </div>
 
-        <h1 className='tituloHome fade-in fade-delay-2'>
+        <h1 className='tituloHome '>
           ENCONTRE UM PROFISSIONAL<span className='tituloHome_span'>NEGRO</span>
         </h1>
 
@@ -91,6 +91,7 @@ export default function HomeComum() {
       </div>
 
       <FooterHome />
+      <span className='containerHome_footer_span'>© 2025 AfroLink</span>
     </div>
 
 
