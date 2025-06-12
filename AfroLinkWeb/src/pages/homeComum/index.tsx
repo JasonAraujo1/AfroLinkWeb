@@ -15,7 +15,7 @@ export default function HomeComum() {
   if (!context) {
     throw new Error("HomeComum deve estar dentro do Provider do Contexto");
   }
-  const { dadosTodosUsers, filtros, setFiltroIDProfissionalSelecionado } = context;
+  const { dadosTodosUsers, filtros, setFiltroIDProfissionalSelecionado, setDadosUser } = context;
 
 
   const [dadosProfissionais, setDadosProfissionais] = useState<UserType[]>([]);
@@ -43,6 +43,11 @@ export default function HomeComum() {
       navigate('/verMais')
     }
   }
+  function handleSair() {
+    setDadosUser(null)
+    localStorage.removeItem("userEncontrado");
+    navigate('/');
+  }
 
 
   return (
@@ -55,8 +60,11 @@ export default function HomeComum() {
               <img src={Logo} className='Logo' alt="" />
 
               <div className='linksDiv fade-in-left fade-delay-4'>
-                {item?.nome_completo ? (
-                  <span className='linksHeader'>Olá, {item.nome_completo}</span>
+                {item.nome_completo ? (
+                  <div className='headerContainer_right'>
+                    <span className='spanHeader'>Olá, {item.nome_completo}</span>
+                    <button onClick={handleSair} className='buttonHeader_sair'>Sair</button>
+                  </div>
                 ) : (
                   <>
                     <NavLink className='linksHeader fade-in-left fade-delay-5' to={'/cadastro'}>Sou Profissional</NavLink>

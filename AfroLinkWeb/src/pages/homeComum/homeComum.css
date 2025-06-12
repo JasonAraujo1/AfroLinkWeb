@@ -94,10 +94,12 @@ body {
     display: flex;
     flex-direction: column;
 }
-.containerPerfil_div_span1{
+
+.containerPerfil_div_span1 {
     font-size: 1.2rem;
 }
-.containerPerfil_div_span2{
+
+.containerPerfil_div_span2 {
     display: flex;
     align-items: center;
     gap: 0.4rem;
@@ -112,17 +114,36 @@ body {
     font-size: 1.4rem;
 }
 
-.containerPerfil_div_p{
+.containerPerfil_div_p {
     font-size: 1.1rem;
-    padding: 1rem 0 ;
+    padding: 1rem 0;
 }
-.starIcon{
+
+.starIcon {
     color: #FF6624;
 }
 
-.containerHome_footer_span{
+.containerHome_footer_span {
     display: flex;
     justify-content: center;
     background-color: #000000;
     color: white;
+}
+
+.headerContainer_right{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    font-size: 1.3rem;
+}
+.spanHeader {
+    color: white;
+}
+.buttonHeader_sair {
+    color: white;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    text-decoration: underline;
+    
 }
