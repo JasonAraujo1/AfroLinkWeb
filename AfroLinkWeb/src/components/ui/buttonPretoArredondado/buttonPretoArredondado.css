@@ -2,14 +2,42 @@
     position: absolute;
     display: flex;
     outline: none;
-    border: 1px solid gray;
+    border: 1px solid rgb(218, 217, 217);
     background-color: white;
     padding: 0.4rem;
+    transition: 5s;
 }
 
 .card_btn {
     border: none;
     background-color: white;
+    color:gray;
+     transition: transform 3s ease, opacity 3s ease;
 
 }
 
+.collapse {
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  overflow: hidden;
+}
+
+.collapse:not(.show) {
+  opacity: 0;
+  max-height: 0;
+}
+
+.collapse.show {
+  opacity: 1;
+  max-height: 200px; /* ajuste conforme o conteúdo */
+}
+
+.card.card-body {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+.collapse.show .card.card-body {
+  transform: translateY(0);
+  opacity: 1;
+}
