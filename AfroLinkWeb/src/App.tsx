@@ -5,15 +5,18 @@ import HomeProfissional from './pages/homeProfissional'
 import Cadastro from './pages/cadastro'
 import Login from './pages/login'
 import VerMaisProfissional from './pages/verMaisProfissional'
+import AppLayout from './layout/layout'
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<HomeComum/>}/>
-      <Route path="/homeProfissional" element={<HomeProfissional/>}/>
-      <Route path="/login" element={<Login/>}/>
-      <Route path="/cadastro" element={<Cadastro/>}/>
-      <Route path="/verMais" element={<VerMaisProfissional/>}/>
+      <Route element={<AppLayout/>}>
+        <Route path="/" element={<HomeComum />} />
+        <Route path="/homeProfissional" element={<HomeProfissional />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/verMais" element={<VerMaisProfissional />} />
+      </Route>
     </Routes>
   )
 }

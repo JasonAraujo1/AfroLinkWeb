@@ -8,6 +8,7 @@ import foto from "../../assets/userfoto.png"
 import type { UserType } from '../../types/userType'
 import IconesHome from '../../components/iconesHome';
 import FooterHome from '../../components/footerHome';
+import star from '../../assets/star.svg'
 
 export default function HomeComum() {
   const context = useContext(Context);
@@ -45,42 +46,53 @@ export default function HomeComum() {
 
 
   return (
-    <div className='containerHome'>
-      <header className='headerHome'>
-        <div className='topHeader'>
-          <img src={Logo} className='Logo' alt="" />
-          <div className='linksDiv'>
-            <NavLink className='linksHeader' to={''}>Sou Profissional</NavLink>
-            <NavLink className='linksHeader' to={''}>Login</NavLink>
+    <div className='containerHome fade-in-scale fade-delay-1'>
+      <header className='headerHome fade-in-left fade-delay-2'>
+        <div className='topHeader fade-in-left fade-delay-3'>
+          <img src={Logo} className='Logo fade-in-scale fade-delay-4' alt="" />
+          <div className='linksDiv fade-in-left fade-delay-4'>
+            <NavLink className='linksHeader fade-in-left fade-delay-5' to={''}>Sou Profissional</NavLink>
+            <NavLink className='linksHeader fade-in-left fade-delay-5' to={''}>Login</NavLink>
           </div>
         </div>
 
-        <h1 className='tituloHome'>
+        <h1 className='tituloHome fade-in fade-delay-2'>
           ENCONTRE UM PROFISSIONAL<span className='tituloHome_span'>NEGRO</span>
         </h1>
 
-        <DropDownBusca />
-        <IconesHome />
+        <div className='fade-in-scale fade-delay-3'>
+          <DropDownBusca />
+          <IconesHome />
+        </div>
       </header>
 
-      <span className='containerHome_span'>Alguns dos nossos Profissionais pelo Brasil:</span>
+      <span className='containerHome_span fade-in fade-delay-3'>
+        Alguns dos nossos Profissionais pelo Brasil:
+      </span>
 
-      <div className='containerTodosPerfis'  >
-        {dadosProfissionais.map((item) => (
-          <div className='containerPerfil' onClick={() => handleVerMais(item.id)} >
-            <img src={foto} alt="fotoUser" className='containerPerfil_fotoUser' />
-            <div className='containerPerfil_div'>
+      <div className='containerTodosPerfis fade-in-scale fade-delay-3'>
+        {dadosProfissionais.map((item, index) => (
+          <div
+            className={`containerPerfil fade-in-scale fade-delay-${(index % 5) + 1}`}
+            onClick={() => handleVerMais(item.id)}
+          >
+            <img src={foto} alt="fotoUser" className='containerPerfil_fotoUser fade-in-scale' />
+            <div className='containerPerfil_div fade-in'>
               <h4 className='containerPerfil_div_h4'>{item.nome_completo}</h4>
-              <span className='containerPerfil_div_span'>{item.profissao}</span>
-              <span >
-                <i class="biStar bi-star-fill" /><span>({item.avaliacoes} Avaliações)</span>
+              <span className='containerPerfil_div_span1'>{item.profissao}</span>
+              <span className='containerPerfil_div_span2'>
+                <img className='containerPerfil_div_star' src={star} alt="" />
+                <span>({item.avaliacoes} Avaliações)</span>
               </span>
-              <p className='containerPerfil_div_p'>"{item.descricao}"</p>
+              <p className='containerPerfil_div_p'>" {item.descricao} "</p>
             </div>
           </div>
         ))}
       </div>
+
       <FooterHome />
     </div>
+
+
   )
 }

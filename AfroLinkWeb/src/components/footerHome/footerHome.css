@@ -18,7 +18,7 @@ footer{
     flex-direction: column;    
 }
 .footer-column h2{
-    margin-bottom: 1rem 0  ;
+    margin: 1rem 0  ;
     font-weight: 800;
     font-size: 1.7rem;
 }
@@ -26,6 +26,7 @@ footer{
 .footer-column_ul {
     list-style: none;
     padding: 0;
+    
 }
 
 .footer-column_ul li a {
@@ -33,21 +34,17 @@ footer{
     list-style: none;
     color: black;
     font-weight: 800;
-}
-
-.social{
-    display: flex;
-    gap: 0.3rem;
-}
-
-.bi{
-    color: white;
-    background-color: black;
-    border-radius: 100%;
     
-    padding: 5px 8px;
+    
 }
-.icons{
-   display: flex;
-   align-items: center;
+.social_ul{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+       
 }
+.social_ul img{
+    width: 20px;
+       
+}
+

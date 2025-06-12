@@ -1,4 +1,7 @@
 import './footerHome.css'
+import face from '../../assets/facebook.svg'
+import insta from '../../assets/instagram.svg'
+import x from '../../assets/twitter-x.svg'
 
 export default function FooterHome() {
     return (
@@ -48,12 +51,12 @@ export default function FooterHome() {
                         </ul>
                     </div>
 
-                    <div className="footer-column icons">
+                    <div className="footer-column ">
                         <h2>Siga-nos</h2>
-                        <ul className="footer-column_ul social">
-                            <li><a href="https://facebook.com" target="_blank" rel="noreferrer"><i class="bi bi-facebook"></i></a></li>
-                            <li><a href="https://twitter.com" target="_blank" rel="noreferrer"><i class="bi bi-twitter"></i></a></li>
-                            <li><a href="https://instagram.com" target="_blank" rel="noreferrer"><i class="bi bi-instagram"></i></a></li>
+                        <ul className="footer-column_ul social_ul">
+                            <li><a className='social' href="https://facebook.com" target="_blank" rel="noreferrer"><img  src={face} alt="" /></a></li>
+                            <li><a className='social' href="https://twitter.com" target="_blank" rel="noreferrer"><img src={insta} alt="" /></a></li>
+                            <li><a className='social' href="https://instagram.com" target="_blank" rel="noreferrer"><img src={x} alt="" /></a></li>
                         </ul>
                     </div>
                 </div>

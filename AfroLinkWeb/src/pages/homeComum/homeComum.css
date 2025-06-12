@@ -96,8 +96,13 @@ body {
     display: flex;
     flex-direction: column;
 }
-.containerPerfil_div_span{
+.containerPerfil_div_span1{
     font-size: 1.2rem;
+}
+.containerPerfil_div_span2{
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
 }
 
 .containerPerfil_div p {
@@ -111,9 +116,9 @@ body {
 
 .containerPerfil_div_p{
     font-size: 1.1rem;
-    padding: 1rem 0 0;
+    padding: 1rem 0 ;
 }
-.biStar{
+.starIcon{
     color: #FF6624;
 }
 
