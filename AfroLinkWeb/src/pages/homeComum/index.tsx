@@ -16,6 +16,7 @@ export default function HomeComum() {
       </span>
 
       <div className='containerTodosPerfis fade-in-scale fade-delay-3'>
+        <div className='containerTodosPerfis_div'>
 
         {
           dadosTodosUsers.map(e => (
@@ -29,13 +30,14 @@ export default function HomeComum() {
                 <span className='containerPerfil_div_span1'>{e.profissao}</span>
                 <span className='containerPerfil_div_span2'>
                   <img className='containerPerfil_div_star' src={star} alt="" />
-                  <span>Avaliações {e.avaliacoes}</span>
+                  <span> {e.avaliacoes} Avaliações</span>
                 </span>
                 <p className='containerPerfil_div_p'>{e.descricao}</p>
               </div>
             </div>
           ))
         }
+        </div>
 
       </div>
 
