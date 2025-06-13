@@ -8,8 +8,8 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    
-   
+
+
 }
 
 .containerHome_span {
@@ -69,30 +69,19 @@ body {
     color: #FF6624;
 }
 
-.containerTodosPerfis_div{
+.containerTodosPerfis_div {
     display: flex;
     flex-wrap: wrap;
     gap: 4rem;
-    padding: 2% 0 0 12% ;
-     
+    padding: 2% 0 0 12%;
 }
-.containerTodosPerfis {
-    display: flex;
-  
-    gap: 5rem;
-    width: 100%;
-    flex-wrap: wrap;
-  
-    
-    
-}
+
 .containerPerfil {
     display: flex;
     flex-direction: column;
     background-color: #F7F6F6;
     border-radius: 2.5rem;
     max-width: 20.5rem;
-    
 }
 
 .containerPerfil_fotoUser {
@@ -142,20 +131,21 @@ body {
     color: white;
 }
 
-.headerContainer_right{
+.headerContainer_right {
     display: flex;
     align-items: center;
     gap: 3rem;
     font-size: 1.3rem;
 }
+
 .spanHeader {
     color: white;
 }
+
 .buttonHeader_sair {
     color: white;
     outline: none;
     background-color: rgba(0, 0, 0, 0);
     border: none;
     text-decoration: underline;
-    
 }
