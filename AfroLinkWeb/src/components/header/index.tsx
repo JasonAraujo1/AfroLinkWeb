@@ -4,6 +4,7 @@ import DropDownBusca from '../../components/dropDownBusca';
 import IconesHome from '../../components/iconesHome';
 import Context from '../../context/Context';
 import { useContext } from 'react';
+import './header.css'
 
 export default function Header() {
     const context = useContext(Context);

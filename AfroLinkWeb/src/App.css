@@ -6,6 +6,15 @@
   
 }
 
+header{
+  position: relative;
+  z-index: 2;
+}
+body{
+  position: absolute;
+  z-index: 1;
+}
+
 /* === ANIMAÇÕES SUAVES GLOBAIS === */
 
 @keyframes fadeInUp {
@@ -72,3 +81,4 @@
 .fade-delay-5 {
   animation-delay: 1s;
 }
+

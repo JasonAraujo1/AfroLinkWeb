@@ -1,0 +1,33 @@
+
+.headerHome {
+    background: linear-gradient(to right, #000000, #2e2e2e);
+    padding: 0.8rem;
+   
+}
+
+.topHeader {
+    display: flex;
+    justify-content: space-between;
+}
+.linksHeader {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+.headerContainer_right {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    font-size: 1.3rem;
+}
+.spanHeader {
+    color: white;
+}
+
+.buttonHeader_sair {
+    color: white;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    text-decoration: underline;
+}
