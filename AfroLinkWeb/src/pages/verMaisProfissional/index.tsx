@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import SizeAvatars from '../../components/ui/sizeAvatars';
 import Context from '../../context/Context';
 import ButtonPreto from '../../components/ui/buttonPreto';
@@ -7,6 +7,8 @@ import { orange } from '@mui/material/colors';
 
 export default function VerMaisProfissional() {
   const { filtroIDProfissionalSelecionado, dadosUser } = useContext(Context);
+
+  const [profissionalData, setProfissionalData] = useState([])
 
   async function handleSolicitar() {
 
@@ -38,20 +40,33 @@ export default function VerMaisProfissional() {
     const res = await req.json()
 
     alert("Solicitação feita!")
-    console.log("Resposta da API:", res);
-console.log("DadosUser:", dadosUser);
   }
 
-  return (
-    <div className='FlexColumn'>
-      <SizeAvatars />
-      <h2>{filtroIDProfissionalSelecionado.nome_completo}</h2>
-      <span>{filtroIDProfissionalSelecionado.profissao}</span>
-      <span><Star sx={{ color: orange[900] }} />Avaliações:{filtroIDProfissionalSelecionado.avaliacoes}</span>
+  useEffect(() => {
+    async function onLoad() {
+      const req = await fetch(`https://67d355c78bca322cc269d90d.mockapi.io/api/v1/users?id=${filtroIDProfissionalSelecionado}`)
+      const res = await req.json()
+      setProfissionalData(res)
+    }
+    onLoad()
+  }, [])
+  console.log("profissionalData", profissionalData)
 
-      <h3>Sobre</h3>
-      <span>{filtroIDProfissionalSelecionado.descricao}</span>
-      <ButtonPreto onClick={handleSolicitar} texto='Solicitar contato' />
+  return (
+    <div className=''>
+      {profissionalData.map((profissional) => (
+        <div key={profissional.id}>
+          <SizeAvatars />
+          <h2>{profissional.nome_completo}</h2>
+          <span>{profissional.profissao}</span>
+          <span><Star sx={{ color: orange[900] }} /> Avaliações: {profissional.avaliacoes}</span>
+
+          <h3>Sobre</h3>
+          <span>{profissional.descricao}</span>
+          <ButtonPreto onClick={handleSolicitar} texto='Solicitar contato' />
+        </div>
+      ))}
+
     </div>
   )
 }

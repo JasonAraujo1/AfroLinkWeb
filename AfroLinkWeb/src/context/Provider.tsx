@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react';
+import {useState } from 'react';
 import Context from './Context';
 import type { UserType } from "../types/userType";
 import type { AppContextType } from "../types/contextType";
-import { fetchApiSolicitacoes, fetchApiUsers } from '../services/fetchApi';
 
 
 function Provider({ children }: { children: React.ReactNode }) {

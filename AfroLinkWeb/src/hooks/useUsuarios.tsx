@@ -1,13 +1,17 @@
 import { useContext, useEffect } from "react";
 import Context from "../context/Context";
 import { fetchApiUsers } from "../services/fetchApi";
+import { useNavigate } from "react-router";
 
 export function useUsuarios() {
+    const navigate = useNavigate();
+
     const context = useContext(Context);
+
     if (!context) {
         throw new Error("HomeComum deve estar dentro do Provider do Contexto");
     }
-    const { dadosTodosUsers, setDadosTodosUsers } = context
+    const { setFiltroIDProfissionalSelecionado, dadosTodosUsers, setDadosTodosUsers } = context
 
     useEffect(() => {
         async function onLoad() {
@@ -26,8 +30,16 @@ export function useUsuarios() {
         else setDadosTodosUsers([])
     }
 
+    async function handleVerMais(id: string) {
+
+        setFiltroIDProfissionalSelecionado(id)
+        navigate('/verMais')
+
+    }
+
     return {
         dadosTodosUsers,
-        handleNavigate
+        handleNavigate,
+        handleVerMais
     }
 }

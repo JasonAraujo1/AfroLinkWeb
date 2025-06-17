@@ -8,28 +8,19 @@ import './header.css'
 
 export default function Header() {
     const context = useContext(Context);
+
+
     if (!context) {
         throw new Error("HomeComum deve estar dentro do Provider do Contexto");
     }
     const { setDadosUser } = context;
 
 
-    function handleVerMais(id: string) {
-        // Subistituir por rota
-        // const profissional = dadosTodosUsers.find(item => item.id === id);
-        // console.log(profissional)
-
-        // if (profissional) {
-        //     setFiltroIDProfissionalSelecionado(profissional)
-        //     navigate('/verMais')
-        // }
-    }
     function handleSair() {
         setDadosUser(null)
         localStorage.removeItem("userEncontrado");
         // navigate('/');
     }
-
 
     return (
         <header className='headerHome fade-delay-2'>

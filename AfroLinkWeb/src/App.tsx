@@ -12,11 +12,11 @@ function App() {
     <Routes>
       <Route path='/' element={<AppLayout/>}>
         <Route index element={<HomeComum />} />
+      </Route>
         <Route path="/homeProfissional" element={<HomeProfissional />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/verMais" element={<VerMaisProfissional />} />
-      </Route>
     </Routes>
   )
 }
