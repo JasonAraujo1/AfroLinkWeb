@@ -1,11 +1,11 @@
 import { Outlet } from "react-router";
-import Header from "../components/header/headerComBusca";
+import HeaderSimples from "../components/header/headerSimples";
 
 
-export default function AppLayout() {
+export default function LayoutHeaderSimples() {
   return (
     <>
-      <Header />
+      <HeaderSimples />
       <main className="fade-in ">
         <Outlet />
       </main>

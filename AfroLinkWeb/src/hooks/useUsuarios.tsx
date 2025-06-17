@@ -11,7 +11,7 @@ export function useUsuarios() {
     if (!context) {
         throw new Error("HomeComum deve estar dentro do Provider do Contexto");
     }
-    const { setFiltroIDProfissionalSelecionado, dadosTodosUsers, setDadosTodosUsers } = context
+    const { setFiltroIDProfissionalSelecionado, dadosTodosUsers, setDadosTodosUsers, dadosUser } = context
 
     useEffect(() => {
         async function onLoad() {
@@ -37,9 +37,42 @@ export function useUsuarios() {
 
     }
 
+    async function handleSolicitar() {
+
+        const dataHora = new Date();
+        const dataFormatada = dataHora.toLocaleDateString('pt-BR', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+        })
+
+        const data = {
+            data_solicitacao: dataFormatada,
+            id_usuario_comum: Number(dadosUser.id),
+            id_usuario_profissional: Number(filtroIDProfissionalSelecionado.id),
+            status: "pendente",
+        };
+
+        const url = "https://67d355c78bca322cc269d90d.mockapi.io/api/v1/solicitacoes"
+
+        const req = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        const res = await req.json()
+
+        alert("Solicitação feita!")
+    }
+
     return {
         dadosTodosUsers,
         handleNavigate,
-        handleVerMais
+        handleVerMais,
+        handleSolicitar
     }
 }

@@ -1,0 +1,51 @@
+.containerPrincipal{
+    display: flex;
+    justify-content: center;
+
+}
+.containerPerfil{
+    margin-top: 2rem;
+    min-width: 90%;
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+  
+}
+
+.containerPerfil_aside{
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.containerPerfil_aside_div{
+    display: flex;
+    flex-direction: column;
+
+}
+.line{
+    border: 2px solid rgb(222, 219, 219);
+    max-height: 70%;
+}
+.containerPerfil_main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.containerPerfil_main_h3{
+    font-weight:700;
+    text-decoration: underline;
+}
+.containerPerfil_main_span{
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 2rem 0 7rem;
+}
+.containerPerfil_main_btn{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+   
+}

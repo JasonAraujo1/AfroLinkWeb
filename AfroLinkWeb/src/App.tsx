@@ -6,17 +6,20 @@ import Cadastro from './pages/cadastro'
 import Login from './pages/login'
 import VerMaisProfissional from './pages/verMaisProfissional'
 import AppLayout from './layout/layout'
+import LayoutHeaderSimples from './layout/layoutHeaderSimpes'
 
 function App() {
   return (
     <Routes>
-      <Route path='/' element={<AppLayout/>}>
+      <Route path='/' element={<AppLayout />}>
         <Route index element={<HomeComum />} />
       </Route>
-        <Route path="/homeProfissional" element={<HomeProfissional />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/cadastro" element={<Cadastro />} />
+      <Route path="/homeProfissional" element={<HomeProfissional />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/cadastro" element={<Cadastro />} />
+      <Route path='/' element={<LayoutHeaderSimples />}>
         <Route path="/verMais" element={<VerMaisProfissional />} />
+      </Route>
     </Routes>
   )
 }

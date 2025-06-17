@@ -1,3 +1,5 @@
+import './buttonPreto.css'
+
 export default function ButtonPreto({ texto, onClick }) {
     return (
         <button onClick={onClick} style={{

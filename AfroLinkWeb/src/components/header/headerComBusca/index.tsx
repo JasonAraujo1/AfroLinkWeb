@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router';
-import Logo from '../../assets/logoWhite.png';
-import DropDownBusca from '../../components/dropDownBusca';
-import IconesHome from '../../components/iconesHome';
-import Context from '../../context/Context';
+import Logo from '../../../assets/logoWhite.png';
+import DropDownBusca from '../../../components/dropDownBusca';
+import IconesHome from '../../../components/iconesHome';
+import Context from '../../../context/Context';
 import { useContext } from 'react';
 import './header.css'
 

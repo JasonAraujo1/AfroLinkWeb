@@ -4,43 +4,16 @@ import Context from '../../context/Context';
 import ButtonPreto from '../../components/ui/buttonPreto';
 import { Star } from '@mui/icons-material';
 import { orange } from '@mui/material/colors';
+import { useUsuarios } from '../../hooks/useUsuarios';
+import './verMaisProfissional.css'
 
 export default function VerMaisProfissional() {
-  const { filtroIDProfissionalSelecionado, dadosUser } = useContext(Context);
+  const { filtroIDProfissionalSelecionado } = useContext(Context);
 
   const [profissionalData, setProfissionalData] = useState([])
 
-  async function handleSolicitar() {
+  const { handleSolicitar } = useUsuarios()
 
-    const dataHora = new Date();
-    const dataFormatada = dataHora.toLocaleDateString('pt-BR', {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-    })
-
-    const data = {
-      data_solicitacao: dataFormatada,
-      id_usuario_comum: Number(dadosUser.id),
-      id_usuario_profissional: Number(filtroIDProfissionalSelecionado.id),
-      status: "pendente",
-    };
-
-    const url = "https://67d355c78bca322cc269d90d.mockapi.io/api/v1/solicitacoes"
-
-    const req = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
-    })
-    const res = await req.json()
-
-    alert("Solicitação feita!")
-  }
 
   useEffect(() => {
     async function onLoad() {
@@ -50,20 +23,28 @@ export default function VerMaisProfissional() {
     }
     onLoad()
   }, [])
-  console.log("profissionalData", profissionalData)
 
   return (
-    <div className=''>
+    <div className='containerPrincipal'>
       {profissionalData.map((profissional) => (
-        <div key={profissional.id}>
-          <SizeAvatars />
-          <h2>{profissional.nome_completo}</h2>
-          <span>{profissional.profissao}</span>
-          <span><Star sx={{ color: orange[900] }} /> Avaliações: {profissional.avaliacoes}</span>
+        <div key={profissional.id} className='containerPerfil'>
+          <div className='containerPerfil_aside'>
+            <SizeAvatars />
+            <div className='containerPerfil_aside_div'>
+              <h2>{profissional.nome_completo}</h2>
+              <span>{profissional.profissao}</span>
+              <span><Star sx={{ color: orange[900] }} /> Avaliações: {profissional.avaliacoes}</span>
+            </div>
+          </div>
+          <div className='line'></div>
+          <div className='containerPerfil_main'>
+            <h3 className='containerPerfil_main_h3'>Sobre:</h3>
+            <span className='containerPerfil_main_span'>{profissional.descricao}</span>
+            <div className='containerPerfil_main_btn'>
+              <ButtonPreto onClick={handleSolicitar} texto='Solicitar contato' />
+            </div>
+          </div>
 
-          <h3>Sobre</h3>
-          <span>{profissional.descricao}</span>
-          <ButtonPreto onClick={handleSolicitar} texto='Solicitar contato' />
         </div>
       ))}
 
