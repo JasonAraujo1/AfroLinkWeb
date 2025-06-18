@@ -16,7 +16,6 @@ export function useUsuarios() {
     useEffect(() => {
         async function onLoad() {
             const usuarios = await fetchApiUsers();
-            console.log(usuarios)
             setDadosTodosUsers(usuarios)
         }
         onLoad();
@@ -31,10 +30,9 @@ export function useUsuarios() {
     }
 
     async function handleVerMais(id: string) {
-
         setFiltroIDProfissionalSelecionado(id)
+        localStorage.setItem("profissionalId", id)
         navigate('/verMais')
-
     }
 
     async function handleSolicitar() {

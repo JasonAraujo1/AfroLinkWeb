@@ -10,7 +10,7 @@ function Provider({ children }: { children: React.ReactNode }) {
   const [filtros, setFiltros] = useState<UserType | null>(null);
   const [filtroIDProfissionalSelecionado, setFiltroIDProfissionalSelecionado] = useState<UserType | null>(null);
   const [dadosSolicitacoes, setDadosSolicitacoes] = useState([]);
-
+  const profissionalId = localStorage.getItem('profissionalId')
 
   const contextValue: AppContextType = {
     dadosUser,
@@ -23,6 +23,7 @@ function Provider({ children }: { children: React.ReactNode }) {
     setFiltroIDProfissionalSelecionado,
     dadosSolicitacoes,
     setDadosSolicitacoes,
+    profissionalId
   };
 
   return (

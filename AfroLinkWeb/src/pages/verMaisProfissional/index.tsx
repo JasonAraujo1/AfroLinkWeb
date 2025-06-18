@@ -7,7 +7,7 @@ import { useUsuarios } from '../../hooks/useUsuarios';
 import './verMaisProfissional.css'
 
 export default function VerMaisProfissional() {
-  const { filtroIDProfissionalSelecionado } = useContext(Context);
+  const { profissionalId } = useContext(Context);
 
   const [profissionalData, setProfissionalData] = useState([])
 
@@ -16,7 +16,7 @@ export default function VerMaisProfissional() {
 
   useEffect(() => {
     async function onLoad() {
-      const req = await fetch(`https://67d355c78bca322cc269d90d.mockapi.io/api/v1/users?id=${filtroIDProfissionalSelecionado}`)
+      const req = await fetch(`https://67d355c78bca322cc269d90d.mockapi.io/api/v1/users?id=${profissionalId}`)
       const res = await req.json()
       setProfissionalData(res)
     }

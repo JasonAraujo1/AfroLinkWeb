@@ -20,7 +20,6 @@ export default function DropDownBusca() {
     async function carregarEstados() {
       const data = await fetchApiEstados();
       setDadosEstados(data);
-      console.log(data)
     }
     async function carregarMunicipios() {
       if (estadoSelecionado) {
