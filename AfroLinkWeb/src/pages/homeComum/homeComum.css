@@ -24,6 +24,7 @@ body {
     flex-direction: column;
     background-color: #F7F6F6;
     border-radius: 2.5rem;
+    max-width: 20.5rem;
     
 }
 
