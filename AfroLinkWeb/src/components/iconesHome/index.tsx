@@ -1,8 +1,8 @@
 import adv from '../../assets/advogado.svg';
 import psi from '../../assets/psicologo.svg';
-import med from '../../assets/medico.svg';
-import eng from '../../assets/engenheiro.svg';
-import per from '../../assets/personal.svg';
+import des from '../../assets/desing.svg';
+import fis from '../../assets/fisio.svg';
+import nut from '../../assets/nutri.svg';
 import './iconesHome.css'
 import { useUsuarios } from '../../hooks/useUsuarios';
 
@@ -12,29 +12,29 @@ export default function IconesHome() {
 
     return (
         <div className='iconesContainer'>
-            <div className='iconeDiv' onClick={() => handleNavigate("advogado")}>
+            <div className='iconeDiv' onClick={() => handleNavigate("Advogado")}>
                 <img src={adv} className='icone' alt="icone advogado" />
                 <span className='spanIcone'>Advogado</span>
             </div>
 
-            <div className='iconeDiv' onClick={() => handleNavigate("psicólogo")}>
+            <div className='iconeDiv' onClick={() => handleNavigate("Psicólogo")}>
                 <img src={psi} className='icone' alt="icone psicologo" />
-                <span className='spanIcone'>Psicologo</span>
+                <span className='spanIcone'>Psicólogo</span>
             </div>
 
-            <div className='iconeDiv' onClick={() => handleNavigate("medico")}>
-                <img src={med} className='icone' alt="icone medico" />
-                <span className='spanIcone'>Médico</span>
+            <div className='iconeDiv' onClick={() => handleNavigate("Nutricionista")}>
+                <img src={nut} className='icone' alt="icone medico" />
+                <span className='spanIcone'>Nutricionista</span>
             </div>
 
-            <div className='iconeDiv' onClick={() => handleNavigate("engenheiro")}>
-                <img src={eng} className='icone' alt="icone engenheiro" />
-                <span className='spanIcone'>Engenheiro</span>
+            <div className='iconeDiv' onClick={() => handleNavigate("Fisioterapeuta")}>
+                <img src={fis} className='icone' alt="icone engenheiro" />
+                <span className='spanIcone'>Fisioterapeuta</span>
             </div>
 
-            <div className='iconeDiv' onClick={() => handleNavigate("personal")}>
-                <img src={per} className='icone' alt="icone personal" />
-                <span className='spanIcone'>Personal</span>
+            <div className='iconeDiv' onClick={() => handleNavigate("Designer")}>
+                <img src={des} className='icone' alt="icone personal" />
+                <span className='spanIcone'>Designer</span>
             </div>
         </div>
     )
