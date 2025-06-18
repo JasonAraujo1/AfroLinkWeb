@@ -5,16 +5,18 @@ import Context from '../../../context/Context';
 import './sizeAvatars.css'
 
 export default function SizeAvatars() {
-    const {filtroIDProfissionalSelecionado } = useContext(Context);
+  const { filtroIDProfissionalSelecionado } = useContext(Context);
   return (
-    <Stack direction="row" spacing={2} >
-      <Avatar
-        alt={filtroIDProfissionalSelecionado?.nome_completo}
-        src={filtroIDProfissionalSelecionado?.foto || undefined}
-        sx={{ width: 200, height: 200}}
-        className='avatar'
-      />
-    </Stack>
+    <div className='avatar'>
+      <Stack direction="row" spacing={2} >
+        <Avatar
+          alt={filtroIDProfissionalSelecionado?.nome_completo}
+          src={filtroIDProfissionalSelecionado?.foto || undefined}
+          sx={{ width: 300, height: 300, borderRadius: 11 }}
+          className='avatarFoto'
+        />
+      </Stack>
+    </div>
   );
 
 }

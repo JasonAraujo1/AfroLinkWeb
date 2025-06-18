@@ -21,7 +21,7 @@ export default function HomeComum() {
           {
             dadosTodosUsers.map(e => (
               <div key={e.id}
-                className={`containerPerfil fade-in-scale fade-delay-1`}
+                className={`containerPerfis fade-in-scale fade-delay-1`}
                 onClick={() => handleVerMais(e.id)}           
               >
                 <img src={foto} alt="fotoUser" className='containerPerfil_fotoUser fade-in-scale' />

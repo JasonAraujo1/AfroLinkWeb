@@ -9,47 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-
-}
-
-.containerHome_span {
-    display: flex;
-    justify-content: center;
-    font-family: "Epilogue";
-    text-decoration: underline;
-    font-weight: 600;
-    font-size: 1.5rem;
-    padding: 3rem;
-    color: #000000;
-}
-
-.Logo {
-    width: 6rem;
-}
-
-.iconesContainer div {
-    cursor: pointer;
-}
-
-.linksDiv {
-    display: flex;
-    padding: 30px;
-    gap: 3rem;
-}
-
-.tituloHome {
-    color: #7A7A7A;
-    font-family: "Epilogue";
-    font-size: 3.6rem;
-    font-weight: 140;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin: 2rem 0 3rem;
-}
-
-.tituloHome_span {
-    color: #FF6624;
+    
 }
 
 .containerTodosPerfis_div {
@@ -57,20 +17,23 @@ body {
     flex-wrap: wrap;
     gap: 4rem;
     padding: 2% 0 0 12%;
+ 
 }
 
-.containerPerfil {
+.containerPerfis {
     display: flex;
     flex-direction: column;
     background-color: #F7F6F6;
     border-radius: 2.5rem;
     max-width: 20.5rem;
+    
 }
 
 .containerPerfil_fotoUser {
     padding: 1.2rem;
     max-height: 20.5rem;
     border-radius: 3rem;
+    
 }
 
 .containerPerfil_div {

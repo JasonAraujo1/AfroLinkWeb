@@ -2,8 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import SizeAvatars from '../../components/ui/sizeAvatars';
 import Context from '../../context/Context';
 import ButtonPreto from '../../components/ui/buttonPreto';
-import { Star } from '@mui/icons-material';
-import { orange } from '@mui/material/colors';
+import star from '../../assets/star.svg'
 import { useUsuarios } from '../../hooks/useUsuarios';
 import './verMaisProfissional.css'
 
@@ -31,9 +30,12 @@ export default function VerMaisProfissional() {
           <div className='containerPerfil_aside'>
             <SizeAvatars />
             <div className='containerPerfil_aside_div'>
-              <h2>{profissional.nome_completo}</h2>
-              <span>{profissional.profissao}</span>
-              <span><Star sx={{ color: orange[900] }} /> Avaliações: {profissional.avaliacoes}</span>
+              <h2 className='containerPerfil_aside_h2'>{profissional.nome_completo}</h2>
+              <span className='containerPerfil_aside_profissao'>{profissional.profissao}</span>
+              <span className='containerPerfil_aside_avaliacao'>
+                <img className='containerPerfil_div_star' src={star} alt="" /> {profissional.avaliacoes} 
+                <span>Avaliações</span>
+              </span>
             </div>
           </div>
           <div className='line'></div>
@@ -41,7 +43,7 @@ export default function VerMaisProfissional() {
             <h3 className='containerPerfil_main_h3'>Sobre:</h3>
             <span className='containerPerfil_main_span'>{profissional.descricao}</span>
             <div className='containerPerfil_main_btn'>
-              <ButtonPreto onClick={handleSolicitar} texto='Solicitar contato' />
+              <ButtonPreto onClick={handleSolicitar} texto='Solicitar Contato' />
             </div>
           </div>
 

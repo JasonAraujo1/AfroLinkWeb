@@ -4,7 +4,45 @@
     padding: 0.8rem;
    
 }
+.containerHome_span {
+    display: flex;
+    justify-content: center;
+    font-family: "Epilogue";
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 3rem;
+    color: #000000;
+}
 
+.Logo {
+    width: 6rem;
+}
+
+.iconesContainer div {
+    cursor: pointer;
+}
+
+.linksDiv {
+    display: flex;
+    padding: 30px;
+    gap: 3rem;
+}
+
+.tituloHome {
+    color: #7A7A7A;
+    font-family: "Epilogue";
+    font-size: 3.6rem;
+    font-weight: 140;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0 3rem;
+}
+
+.tituloHome_span {
+    color: #FF6624;
+}
 .topHeader {
     display: flex;
     justify-content: space-between;
