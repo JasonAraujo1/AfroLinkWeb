@@ -3,11 +3,22 @@ import foto from "../../assets/userfoto.png"
 import FooterHome from '../../components/footerHome';
 import star from '../../assets/star.svg'
 import { useUsuarios } from '../../hooks/useUsuarios';
+import { useEffect, useState } from 'react';
 
 export default function HomeComum() {
 
-  const { dadosTodosUsers, handleVerMais } = useUsuarios()
+  const { handleVerMais } = useUsuarios()
 
+  const[profissional , setProfissional] = useState([])
+
+  useEffect(()=>{
+   async function onLoad(){
+     const req = await fetch(`https://67d355c78bca322cc269d90d.mockapi.io/api/v1/users?tipo=profissional`)
+     const res = await req.json()
+     setProfissional(res)
+   }
+   onLoad() 
+  },[])
 
   return (
     <div className='containerHome fade-in-scale fade-delay-1'>
@@ -17,9 +28,7 @@ export default function HomeComum() {
 
       <div className='containerTodosPerfis fade-in-scale fade-delay-3'>
         <div className='containerTodosPerfis_div'>
-
-          {
-            dadosTodosUsers.map(e => (
+          {profissional.map(e => (
               <div key={e.id}
                 className={`containerPerfis fade-in-scale fade-delay-1`}
                 onClick={() => handleVerMais(e.id)}           
@@ -38,9 +47,7 @@ export default function HomeComum() {
             ))
           }
         </div>
-
       </div>
-
       <FooterHome />
       <span className='containerHome_footer_span'>© 2025 AfroLink</span>
     </div>
