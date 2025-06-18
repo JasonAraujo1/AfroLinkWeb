@@ -43,12 +43,16 @@ export default function DropDownBusca() {
 
 
   function handleFiltroProfissional() {
-     setFiltros({
-      estado: estadoSelecionado,
-      municipio: municipioSelecionado,
-      profissao: profissaoSelecionada,
-    })
-  }
+  const novoFiltro = {
+    estado: estadoSelecionado,
+    municipio: municipioSelecionado,
+    profissao: profissaoSelecionada,
+  };
+
+  setFiltros(novoFiltro);
+  localStorage.setItem('filtrosBusca', JSON.stringify(novoFiltro));
+}
+
   function handleLimparFiltro(){
     setFiltros({
       estado: '',

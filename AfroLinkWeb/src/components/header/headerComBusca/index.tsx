@@ -9,7 +9,6 @@ import './header.css'
 export default function Header() {
     const context = useContext(Context);
 
-
     if (!context) {
         throw new Error("HomeComum deve estar dentro do Provider do Contexto");
     }
@@ -34,8 +33,12 @@ export default function Header() {
                     </div>
 
                     <>
-                        <NavLink className='linksHeader fade-in-left fade-delay-5' to={'/cadastro'}>Sou Profissional</NavLink>
-                        <NavLink className='linksHeader fade-in-left fade-delay-5' to={'/login'}>Login</NavLink>
+                        <NavLink className='linksHeader fade-in-left fade-delay-5' to={'/cadastro'}>
+                            Sou Profissional
+                        </NavLink>
+                        <NavLink className='linksHeader fade-in-left fade-delay-5' to={'/login'}>
+                            Login
+                        </NavLink>
                     </>
                 </div>
             </div>
