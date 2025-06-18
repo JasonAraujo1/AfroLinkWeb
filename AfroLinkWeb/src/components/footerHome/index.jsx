@@ -54,13 +54,14 @@ export default function FooterHome() {
                     <div className="footer-column ">
                         <h2>Siga-nos</h2>
                         <ul className="footer-column_ul social_ul">
-                            <li><a className='social' href="https://facebook.com" target="_blank" rel="noreferrer"><img  src={face} alt="" /></a></li>
+                            <li><a className='social' href="https://facebook.com" target="_blank" rel="noreferrer"><img src={face} alt="" /></a></li>
                             <li><a className='social' href="https://twitter.com" target="_blank" rel="noreferrer"><img src={insta} alt="" /></a></li>
                             <li><a className='social' href="https://instagram.com" target="_blank" rel="noreferrer"><img src={x} alt="" /></a></li>
                         </ul>
                     </div>
                 </div>
             </footer>
+            <span className='containerHome_footer_span'>© 2025 AfroLink</span>
         </div>
     )
 }

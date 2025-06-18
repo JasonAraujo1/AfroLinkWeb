@@ -1,4 +1,4 @@
-import {useState } from 'react';
+import { useState } from 'react';
 import Context from './Context';
 import type { UserType } from "../types/userType";
 import type { AppContextType } from "../types/contextType";
@@ -11,6 +11,7 @@ function Provider({ children }: { children: React.ReactNode }) {
   const [filtroIDProfissionalSelecionado, setFiltroIDProfissionalSelecionado] = useState<UserType | null>(null);
   const [dadosSolicitacoes, setDadosSolicitacoes] = useState([]);
   const profissionalId = localStorage.getItem('profissionalId')
+  const profissionalEscohidoInput = JSON.parse(localStorage.getItem('profissionalEscohidoInput') || '[]');
 
   const contextValue: AppContextType = {
     dadosUser,
@@ -23,7 +24,8 @@ function Provider({ children }: { children: React.ReactNode }) {
     setFiltroIDProfissionalSelecionado,
     dadosSolicitacoes,
     setDadosSolicitacoes,
-    profissionalId
+    profissionalId,
+    profissionalEscohidoInput
   };
 
   return (

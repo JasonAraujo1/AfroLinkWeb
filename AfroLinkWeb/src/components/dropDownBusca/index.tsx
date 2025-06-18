@@ -2,11 +2,11 @@ import { useContext, useEffect, useState } from 'react';
 import { fetchApiEstados, fetchApiMunicipios, fetchApiProfissoes } from '../../services/fetchApi';
 import ComboBox from '../ui/comboBox';
 import Context from '../../context/Context';
-import './dropDownBusca.css'
+import './dropDownBusca.css';
 import ButtonPretoArredondado from '../ui/buttonPretoArredondado';
+import { useNavigate } from 'react-router';
 
 export default function DropDownBusca() {
-
   const [dadosEstados, setDadosEstados] = useState([]);
   const [dadosMunicipios, setDadosMunicipios] = useState([]);
   const [profissoes, setProfissoes] = useState([]);
@@ -14,7 +14,8 @@ export default function DropDownBusca() {
   const [municipioSelecionado, setMunicipioSelecionado] = useState('');
   const [profissaoSelecionada, setProfissaoSelecionada] = useState('');
 
-  const { setFiltros } = useContext(Context)
+  const { setFiltros, dadosTodosUsers } = useContext(Context);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function carregarEstados() {
@@ -29,41 +30,49 @@ export default function DropDownBusca() {
           setDadosMunicipios(municipios);
         }
       }
-
     }
     async function carregarProfissoes() {
       const data = await fetchApiProfissoes();
       setProfissoes(data);
     }
-    carregarMunicipios()
-    carregarEstados()
-    carregarProfissoes()
-  }, [estadoSelecionado])
 
-
+    carregarEstados();
+    carregarMunicipios();
+    carregarProfissoes();
+  }, [estadoSelecionado]);
 
   function handleFiltroProfissional() {
-  const novoFiltro = {
-    estado: estadoSelecionado,
-    municipio: municipioSelecionado,
-    profissao: profissaoSelecionada,
-  };
+    const filtrosAtivos = {
+      estado: estadoSelecionado,
+      municipio: municipioSelecionado,
+      profissao: profissaoSelecionada,
+    };
 
-  setFiltros(novoFiltro);
-  localStorage.setItem('filtrosBusca', JSON.stringify(novoFiltro));
-}
+    setFiltros(filtrosAtivos);
 
-  function handleLimparFiltro(){
+    // Filtra localmente os dados disponíveis
+    const resultados = dadosTodosUsers.filter(user => {
+      const matchEstado = !estadoSelecionado || user.estado === estadoSelecionado;
+      const matchMunicipio = !municipioSelecionado || user.municipio === municipioSelecionado;
+      const matchProfissao = !profissaoSelecionada || user.profissao === profissaoSelecionada;
+      return matchEstado && matchMunicipio && matchProfissao;
+    });
+
+    if (resultados.length > 0) {
+      localStorage.setItem("profissionalEscohidoInput", JSON.stringify(resultados));
+      navigate('/resultado')
+    }
+  }
+
+  function handleLimparFiltro() {
     setFiltros({
       estado: '',
       municipio: '',
       profissao: '',
-
-    })
-    setEstadoSelecionado('')
-    setProfissaoSelecionada('')
-    setMunicipioSelecionado('')
-    
+    });
+    setEstadoSelecionado('');
+    setProfissaoSelecionada('');
+    setMunicipioSelecionado('');
   }
 
   const nomesEstados = dadosEstados.map(item => item.nome);
@@ -72,17 +81,12 @@ export default function DropDownBusca() {
 
   return (
     <div>
-
-        <div >
-          <div className="containerDropDown">         
-            <ComboBox dados={nomesProfissoes} texto="Profissão" onChange={setProfissaoSelecionada} />
-            <ComboBox dados={nomesEstados} texto="Estado" onChange={setEstadoSelecionado} />
-            <ComboBox dados={nomesMunicipios} texto="Município" onChange={setMunicipioSelecionado} />
-            <ButtonPretoArredondado texto='Buscar' OnclickLimpar={handleLimparFiltro} onClick={handleFiltroProfissional}/>
-            
-          </div>
-        </div>
-    
+      <div className="containerDropDown">
+        <ComboBox dados={nomesProfissoes} texto="Profissão" onChange={setProfissaoSelecionada} value={profissaoSelecionada} />
+        <ComboBox dados={nomesEstados} texto="Estado" onChange={setEstadoSelecionado} value={estadoSelecionado} />
+        <ComboBox dados={nomesMunicipios} texto="Município" onChange={setMunicipioSelecionado} value={municipioSelecionado} />
+        <ButtonPretoArredondado texto='Buscar' onClick={handleFiltroProfissional} OnclickLimpar={handleLimparFiltro} />
+      </div>
     </div>
   );
 }

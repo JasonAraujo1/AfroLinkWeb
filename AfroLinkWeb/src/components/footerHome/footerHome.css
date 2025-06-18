@@ -48,3 +48,9 @@ footer{
        
 }
 
+.containerHome_footer_span {
+    display: flex;
+    justify-content: center;
+    background-color: #000000;
+    color: white;
+}

@@ -7,6 +7,7 @@ import Login from './pages/login'
 import VerMaisProfissional from './pages/verMaisProfissional'
 import AppLayout from './layout/layout'
 import LayoutHeaderSimples from './layout/layoutHeaderSimpes'
+import ResultadoBusca from './pages/resultadoBusca'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/cadastro" element={<Cadastro />} />
       <Route path='/' element={<LayoutHeaderSimples />}>
         <Route path="/verMais" element={<VerMaisProfissional />} />
+        <Route path="/resultado" element={<ResultadoBusca />} />
       </Route>
     </Routes>
   )

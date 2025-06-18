@@ -9,4 +9,5 @@ export type AppContextType = {
     setFiltros: React.Dispatch<React.SetStateAction<UserType | null>>;
     filtroIDProfissionalSelecionado: UserType | null; // 👈 alterado aqui
     setFiltroIDProfissionalSelecionado: React.Dispatch<React.SetStateAction<UserType | null>>; // 👈 e aqui
+    
 };

@@ -2,13 +2,14 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import './comboBox.css'
 
-export default function ComboBox({ dados, texto, onChange }) {
+export default function ComboBox({ dados, texto, onChange, value }) {
   return (
-
     <Autocomplete
       className="comboBox"
       disablePortal
       options={dados}
+      value={value || null} // ← valor selecionado
+      onChange={(event, newValue) => onChange && onChange(newValue)}
       sx={{
         width: 210,
         '& .MuiOutlinedInput-root': {
@@ -28,7 +29,6 @@ export default function ComboBox({ dados, texto, onChange }) {
           padding: '10px',
         },
       }}
-      onInputChange={(event, newValue) => onChange && onChange(newValue)}
       renderInput={(params) => (
         <TextField
           {...params}
@@ -37,7 +37,5 @@ export default function ComboBox({ dados, texto, onChange }) {
         />
       )}
     />
-
-
   );
 }

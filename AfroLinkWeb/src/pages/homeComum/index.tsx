@@ -1,6 +1,5 @@
 import './homeComum.css';
 import foto from "../../assets/userfoto.png"
-import FooterHome from '../../components/footerHome';
 import star from '../../assets/star.svg'
 import { useUsuarios } from '../../hooks/useUsuarios';
 import { useEffect, useState } from 'react';
@@ -11,6 +10,8 @@ export default function HomeComum() {
 
   const[profissional , setProfissional] = useState([])
 
+
+
   useEffect(()=>{
    async function onLoad(){
      const req = await fetch(`https://67d355c78bca322cc269d90d.mockapi.io/api/v1/users?tipo=profissional`)
@@ -19,7 +20,7 @@ export default function HomeComum() {
    }
    onLoad() 
   },[])
-
+   
 
   return (
     <div className='containerHome fade-in-scale fade-delay-1'>
@@ -49,8 +50,8 @@ export default function HomeComum() {
           }
         </div>
       </div>
-      <FooterHome />
-      <span className='containerHome_footer_span'>© 2025 AfroLink</span>
+   
+       
     </div>
 
   )
