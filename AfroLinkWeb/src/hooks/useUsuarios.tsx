@@ -67,6 +67,9 @@ export function useUsuarios() {
         alert("Solicitação feita!")
     }
 
+
+
+
     return {
         handleNavigate,
         handleVerMais,
