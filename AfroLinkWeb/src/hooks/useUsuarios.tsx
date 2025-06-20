@@ -11,7 +11,7 @@ export function useUsuarios() {
     if (!context) {
         throw new Error("HomeComum deve estar dentro do Provider do Contexto");
     }
-    const { setFiltroIDProfissionalSelecionado, setDadosTodosUsers, dadosUser } = context
+    const { setFiltroIDProfissionalSelecionado, setDadosTodosUsers, dadosUser, dadosTodosUsers } = context
 
     useEffect(() => {
         async function onLoad() {
@@ -21,13 +21,7 @@ export function useUsuarios() {
         onLoad();
     }, []);
 
-    const handleNavigate = async (profissao: string) => {
-        const req = await fetch(`https://67d355c78bca322cc269d90d.mockapi.io/api/v1/users?profissao=${profissao}`)
-        const res = await req.json()
 
-        if (Array.isArray(res)) setDadosTodosUsers(res)
-        else setDadosTodosUsers([])
-    }
 
     async function handleVerMais(id: string) {
         setFiltroIDProfissionalSelecionado(id)
@@ -67,12 +61,23 @@ export function useUsuarios() {
         alert("Solicitação feita!")
     }
 
+    function handleBuscaPorIcone(profissao: string) {
+        const resultados = dadosTodosUsers.filter(user => user.profissao === profissao);
+
+        if (resultados.length > 0) {
+            localStorage.setItem("profissionalEscohidoInput", JSON.stringify(resultados));
+            navigate("/resultado");
+        } else {
+            alert("Nenhum profissional encontrado para: " + profissao);
+            navigate("/");
+        }
+    }
 
 
 
     return {
-        handleNavigate,
         handleVerMais,
-        handleSolicitar
+        handleSolicitar,
+        handleBuscaPorIcone
     }
 }

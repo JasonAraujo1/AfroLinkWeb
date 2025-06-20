@@ -15,11 +15,11 @@ export default function Header() {
     const { setDadosUser } = context;
 
 
-    function handleSair() {
-        setDadosUser(null)
-        localStorage.removeItem("userEncontrado");
-        // navigate('/');
-    }
+    // function handleSair() {
+    //     setDadosUser(null)
+    //     localStorage.removeItem("userEncontrado");
+    //     // navigate('/');
+    // }
 
     return (
         <header className='headerHome fade-delay-2'>

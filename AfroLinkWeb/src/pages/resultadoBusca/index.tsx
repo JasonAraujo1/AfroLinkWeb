@@ -22,7 +22,7 @@ export default function ResultadoBusca() {
             <span className='containerHome_span fade-in fade-delay-3'>
               
                 <div key={item.id}>
-                    <h1>{item.profissao}s encontrados:</h1>
+                    <h1>Profissionais encontrados:</h1>
                 </div>
  
             </span> ))}
