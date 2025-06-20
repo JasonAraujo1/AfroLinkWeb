@@ -73,8 +73,6 @@ export function useUsuarios() {
         }
     }
 
-
-
     return {
         handleVerMais,
         handleSolicitar,
