@@ -3,7 +3,10 @@
     background: linear-gradient(to right, #000000, #2e2e2e);
     padding: 0.8rem;
     width: 100vw;
+
+    
 }
+
 .containerHome_span {
     display: flex;
     justify-content: center;
@@ -27,6 +30,7 @@
     display: flex;
     padding: 30px;
     gap: 3rem;
+    
 }
 
 .tituloHome {
@@ -45,22 +49,15 @@
 }
 .topHeader {
     display: flex;
-    justify-content: space-between;
+ 
 }
 .linksHeader {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
 }
-.headerContainer_right {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    font-size: 1.3rem;
-}
-.spanHeader {
-    color: white;
-}
+
+
 
 .buttonHeader_sair {
     color: white;

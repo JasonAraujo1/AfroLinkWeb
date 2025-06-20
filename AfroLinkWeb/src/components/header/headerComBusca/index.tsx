@@ -27,14 +27,9 @@ export default function Header() {
                 <img src={Logo} className='Logo' alt="" />
 
                 <div className='linksDiv fade-in-left fade-delay-4'>
-                    <div className='headerContainer_right'>
-                        <span className='spanHeader'>Olá,</span>
-                        <button onClick={() => { }} className='buttonHeader_sair'>Sair</button>
-                    </div>
-
                     <>
                         <NavLink className='linksHeader fade-in-left fade-delay-5' to={'/cadastro'}>
-                            Sou Profissional
+                            Cadastro
                         </NavLink>
                         <NavLink className='linksHeader fade-in-left fade-delay-5' to={'/login'}>
                             Login
