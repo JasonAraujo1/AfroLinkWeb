@@ -4,8 +4,6 @@ import des from '../../assets/desing.svg';
 import fis from '../../assets/fisio.svg';
 import nut from '../../assets/nutri.svg';
 import './iconesHome.css';
-import { useContext } from 'react';
-import Context from '../../context/Context';
 import { useUsuarios } from '../../hooks/useUsuarios';
 
 export default function IconesHome() {
