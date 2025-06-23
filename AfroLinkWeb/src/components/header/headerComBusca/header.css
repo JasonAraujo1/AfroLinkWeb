@@ -2,9 +2,7 @@
 .headerHome {
     background: linear-gradient(to right, #000000, #2e2e2e);
     padding: 0.8rem;
-    width: 100vw;
-
-    
+    width: 100vw; 
 }
 
 .containerHome_span {
@@ -49,8 +47,11 @@
 }
 .topHeader {
     display: flex;
- 
+    justify-content: space-between; /* ALINHA os dois lados */
+    align-items: center;
+    padding: 0 2rem;
 }
+
 .linksHeader {
     color: white;
     text-decoration: none;

@@ -8,7 +8,7 @@
     font-size: 1.3rem;
 }
 
-.topHeader {
+.topHeaderSimples {
     display: flex;
     justify-content: left;
     gap: 4rem;
