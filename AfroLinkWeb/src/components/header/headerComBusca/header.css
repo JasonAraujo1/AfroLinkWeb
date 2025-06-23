@@ -52,13 +52,11 @@
     padding: 0 2rem;
 }
 
-.linksHeader {
+.linksHeader, .userNome{
     color: white;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
-
-
 
 .buttonHeader_sair {
     color: white;

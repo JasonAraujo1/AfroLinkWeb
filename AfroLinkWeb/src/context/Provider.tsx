@@ -26,7 +26,7 @@ function Provider({ children }: { children: React.ReactNode }) {
     setDadosSolicitacoes,
     profissionalId,
     profissionalEscohidoInput,
-    
+
   };
 
   return (
