@@ -3,7 +3,7 @@
 AfroLinkWeb é uma plataforma web criada para conectar, valorizar e promover profissionais, empreendedores e iniciativas da comunidade negra. A aplicação oferece recursos para ampliar a visibilidade, facilitar conexões e fortalecer o ecossistema afroempreendedor.
 
 <h2>Desing</h2>
-<img src='./AfroLinkWeb/src/assets/desing.png'></img>
+<img src='./AfroLinkWeb/src/assets/desingAplication.png'></img>
 
 ## O que a aplicação oferece
 
