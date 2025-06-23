@@ -33,7 +33,7 @@ export default function Cadastro() {
   }
 
   return (
-    <div >
+    <div className="container_principal">
       <div className='container_header'>
         <h1>Cadastro</h1>
         <span>Preencha os campos para cadastrar</span>
