@@ -1,7 +1,5 @@
 import { useContext, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router'
-import { fetchApiUsers } from '../../services/fetchApi'
-import logo from '../../assets/logo.svg'
 import ButtonPreto from '../../components/ui/buttonPreto'
 import InputTexto from '../../components/ui/inputTexto'
 import Context from '../../context/Context'
@@ -12,8 +10,8 @@ export default function Login() {
     const [userInputEmail, setUserInputEmail] = useState('')
     const [userInputSenha, setUserInputSenha] = useState('')
 
-      const {dadosTodosUsers, setDadosUser, setDadosTodosUsers } = useContext(Context);
-    
+    const { dadosTodosUsers, setDadosUser, setDadosTodosUsers } = useContext(Context);
+
 
     const navigate = useNavigate()
 
@@ -26,7 +24,7 @@ export default function Login() {
         setDadosTodosUsers(dadosTodosUsers)
 
         setDadosUser(userEncontrado);
-        
+
         localStorage.setItem("login", JSON.stringify(userEncontrado.id))
 
         if (userEncontrado.tipo === 'profissional') {
@@ -38,7 +36,10 @@ export default function Login() {
     }
     return (
         <div >
-            <img src={logo} className="Logo" />
+            <div>
+                <h1>Cadastro</h1>
+                <span>Preencha com seus dados</span>
+            </div>
             <div className='FlexColumn'>
                 <InputTexto placeholder='E-mail' onChange={(event) => setUserInputEmail(event.target.value)} />
                 <InputTexto placeholder='Senha' onChange={(event) => setUserInputSenha(event.target.value)} />

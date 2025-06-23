@@ -16,13 +16,14 @@ export default function InputTexto({ onChange, placeholder, onClick, src }) {
         onChange={onChange}
         placeholder={placeholder}
         style={{
-          backgroundColor: 'white',
+          backgroundColor: ' #F7F6F6',
           color: 'black',
-          border: '1px solid rgba(124, 120, 120, 0.63)',
+          border: 'none',
           padding: '14px 20px 14px 40px',
           borderRadius: '10px',
-          width: '100%',
+          width: '50%',
           boxSizing: 'border-box',
+          marginBottom:'10px'
         }}
       />
        {src && (
