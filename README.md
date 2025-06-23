@@ -4,7 +4,7 @@ AfroLinkWeb é uma plataforma web criada para conectar, valorizar e promover pro
 
 <h2>Desing preview</h2>
 
-[Clique aqui para ver o desing completo](https://app.moqups.com)
+[Clique aqui para ver o desing completo](https://app.moqups.com/XP5xM4ITUGhXBA3tsJyrNh7nnfbGUq0d/view/page/a7bc758b4)
 
 Mobile
 <img src='./AfroLinkWeb/src/assets/desingMobile.jpeg'></img>
