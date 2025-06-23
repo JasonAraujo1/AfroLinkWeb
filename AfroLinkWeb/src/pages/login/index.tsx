@@ -24,9 +24,8 @@ export default function Login() {
         }
         setDadosTodosUsers(dadosTodosUsers)
 
-        setDadosUser(userEncontrado);
-
         localStorage.setItem("login", JSON.stringify(userEncontrado.id))
+        localStorage.setItem("userEncontrado", JSON.stringify(userEncontrado))
 
         if (userEncontrado.tipo === 'profissional') {
             navigate('/homeProfissional');

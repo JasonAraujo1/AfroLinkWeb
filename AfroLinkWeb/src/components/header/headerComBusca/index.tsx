@@ -12,7 +12,6 @@ export default function Header() {
 
 
     // function handleSair() {
-    //     setDadosUser(null)
     //     localStorage.removeItem("userEncontrado");
     //     // navigate('/');
     // }
