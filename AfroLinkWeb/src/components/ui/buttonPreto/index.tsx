@@ -2,7 +2,7 @@ import './buttonPreto.css'
 
 export default function ButtonPreto({ texto, onClick }) {
     return (
-        <button onClick={onClick} style={{
+        <button className='btnBlack' onClick={onClick} style={{
             backgroundColor: 'black',
             color: 'white',
             border: 'none',

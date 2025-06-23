@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router"
 import logo from '../../assets/logo.svg'
 import InputTexto from "../../components/ui/inputTexto"
 import ButtonPreto from "../../components/ui/buttonPreto"
+import './cadastro.css'
 
 export default function Cadastro() {
 
@@ -33,17 +34,22 @@ export default function Cadastro() {
 
   return (
     <div >
-      <img src={logo} className="Logo" />
-
-      <div  className='FlexColumn'>
-        <InputTexto placeholder='E-mail' onChange={(event) => setEmail(event.target.value)}/>
-        <InputTexto placeholder='Senha' onChange={(event) => setSenha(event.target.value)} />
-        <ButtonPreto texto="Cadastrar" onClick={handleCadastro}/>
+      <div className='container_header'>
+        <h1>Cadastro</h1>
+        <span>Preencha os campos para cadastrar</span>
       </div>
 
-      <div>
-        <span>Ja tem conta?</span>
-        <NavLink to="/">Fazer login</NavLink>
+      <div className='container_body'>
+        <div className='divInputs'>
+          <InputTexto placeholder='E-mail' onChange={(event) => setEmail(event.target.value)} />
+          <InputTexto placeholder='Senha' onChange={(event) => setSenha(event.target.value)} />
+          <ButtonPreto texto="Cadastrar" onClick={handleCadastro} />
+        </div>
+
+        <div className='containerLogin'>
+          <span className='spanLogin'>Ja tem conta?</span>
+          <NavLink  className='linklogin' to="/login">Fazer login</NavLink>
+        </div>
       </div>
     </div>
   )

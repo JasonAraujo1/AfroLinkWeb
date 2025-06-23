@@ -21,7 +21,7 @@ export default function InputTexto({ onChange, placeholder, onClick, src }) {
           border: 'none',
           padding: '14px 20px 14px 40px',
           borderRadius: '10px',
-          width: '50%',
+          width: '100%',
           boxSizing: 'border-box',
           marginBottom:'10px'
         }}
