@@ -1,23 +1,19 @@
 # AfroLinkWeb
 
-AfroLinkWeb é uma aplicação web desenvolvida para conectar, valorizar e promover profissionais, empreendedores e iniciativas da comunidade negra. O objetivo é criar uma rede de apoio, visibilidade e oportunidades, fortalecendo o ecossistema afroempreendedor.
+AfroLinkWeb é uma plataforma web criada para conectar, valorizar e promover profissionais, empreendedores e iniciativas da comunidade negra. A aplicação oferece recursos para ampliar a visibilidade, facilitar conexões e fortalecer o ecossistema afroempreendedor.
 
-## Por que AfroLinkWeb?
+<h2>Desing</h2>
+<img src='./src/assets/desing.png'></img>
 
-A representatividade e o acesso a oportunidades ainda são desafinpos para a população negra no Brasil. AfroLinkWeb surge como uma solução para:
+## O que a aplicação oferece
 
-- **Dar visibilidade** a profissionais e negócios negros.
-- **Facilitar conexões** entre empreendedores, clientes e parceiros.
-- **Promover eventos, cursos e iniciativas** voltadas à comunidade.
-- **Fomentar o networking** e a troca de experiências.
-
-## Como funciona
-
-1. **Cadastro de Usuários:** Profissionais e empresas podem criar perfis detalhados, destacando suas áreas de atuação, portfólio e contatos.
-2. **Busca e Filtros:** Usuários podem pesquisar por serviços, profissionais ou negócios utilizando filtros como localização, área de atuação e avaliações.
-3. **Divulgação de Eventos:** Espaço para promover eventos, cursos e oportunidades relevantes para a comunidade.
-4. **Avaliações e Recomendações:** Clientes podem avaliar serviços e recomendar profissionais, aumentando a confiança na rede.
-5. **Painel Administrativo:** Ferramentas para gestão de perfis, eventos e monitoramento de interações.
+- **Cadastro de Perfis:** Profissionais, empresas e iniciativas podem criar perfis completos, incluindo áreas de atuação, portfólio, contatos e redes sociais.
+- **Busca Avançada:** Permite pesquisar profissionais, serviços e negócios utilizando filtros como localização, área de atuação, avaliações e palavras-chave.
+- **Divulgação de Eventos e Oportunidades:** Espaço dedicado para promover eventos, cursos, vagas de emprego e outras oportunidades relevantes para a comunidade.
+- **Avaliações e Recomendações:** Usuários podem avaliar serviços e recomendar profissionais, aumentando a confiança e a credibilidade na rede.
+- **Painel Administrativo:** Ferramentas para gestão de perfis, eventos, oportunidades e monitoramento de interações.
+- **Networking e Mensagens:** Possibilidade de enviar mensagens e estabelecer conexões diretas entre membros da plataforma.
+- **Feed de Notícias:** Atualizações sobre novidades, conquistas e conteúdos relevantes para a comunidade afroempreendedora.
 
 ## Tecnologias Utilizadas
 
@@ -25,6 +21,12 @@ A representatividade e o acesso a oportunidades ainda são desafinpos para a pop
 - **Backend:** Node.js, Express
 - **Banco de Dados:** MongoDB
 - **Hospedagem:** Azure
+
+## Design
+
+O design da aplicação foi criado por mim utilizando o site [app.moqups](https://app.moqups.com), buscando refletir a identidade e os valores da comunidade.
+
+O protótipo inclui telas principais como login, cadastro, feed de notícias, perfil de usuário e funcionalidades de interação. As cores, fontes e elementos visuais foram escolhidos para promover inclusão, representatividade e fácil navegação. O design também prioriza a responsividade, garantindo uma boa experiência tanto em dispositivos móveis quanto em desktops.
 
 ## Como contribuir
 
