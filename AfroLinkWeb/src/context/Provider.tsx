@@ -11,8 +11,9 @@ function Provider({ children }: { children: React.ReactNode }) {
   const [dadosSolicitacoes, setDadosSolicitacoes] = useState([]);
   const profissionalId = localStorage.getItem('profissionalId')
   const profissionalEscohidoInput = JSON.parse(localStorage.getItem('profissionalEscohidoInput') || '[]');
-  const dadosUser = JSON.parse(localStorage.getItem('userEncontrado') || '[]');
- 
+  const userSalvo = localStorage.getItem('userEncontrado');
+  const dadosUser = userSalvo ? JSON.parse(userSalvo) : null;
+
 
   const contextValue: AppContextType = {
     dadosUser,

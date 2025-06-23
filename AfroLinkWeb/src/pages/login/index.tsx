@@ -11,7 +11,7 @@ export default function Login() {
     const [userInputEmail, setUserInputEmail] = useState('')
     const [userInputSenha, setUserInputSenha] = useState('')
 
-    const { dadosTodosUsers, setDadosUser, setDadosTodosUsers } = useContext(Context);
+    const { dadosTodosUsers, setDadosTodosUsers } = useContext(Context);
 
 
     const navigate = useNavigate()

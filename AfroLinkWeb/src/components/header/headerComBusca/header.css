@@ -1,8 +1,7 @@
-
 .headerHome {
     background: linear-gradient(to right, #000000, #2e2e2e);
     padding: 0.8rem;
-    width: 100vw; 
+    width: 100vw;
 }
 
 .containerHome_span {
@@ -28,7 +27,7 @@
     display: flex;
     padding: 30px;
     gap: 3rem;
-    
+
 }
 
 .tituloHome {
@@ -45,23 +44,37 @@
 .tituloHome_span {
     color: #FF6624;
 }
+
 .topHeader {
     display: flex;
-    justify-content: space-between; /* ALINHA os dois lados */
+    justify-content: space-between;
+    /* ALINHA os dois lados */
     align-items: center;
     padding: 0 2rem;
 }
 
-.linksHeader, .userNome{
+.linksHeader,
+.userNome {
     color: white;
     text-decoration: none;
     font-size: 1.5rem;
 }
 
-.buttonHeader_sair {
+.sair {
     color: white;
-    outline: none;
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
+    text-decoration: none;
+    font-size: 1.5rem;
     text-decoration: underline;
+    cursor: pointer;
+}
+
+.containerNomeSair {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.linha {
+    border: 1px solid rgb(114, 112, 112);
+    height: 1.5rem;
 }

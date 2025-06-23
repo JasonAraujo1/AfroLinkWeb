@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router';
+import { NavLink, useNavigate } from 'react-router';
 import Logo from '../../../assets/logoWhite.png';
 import DropDownBusca from '../../../components/dropDownBusca';
 import IconesHome from '../../../components/iconesHome';
@@ -9,13 +9,14 @@ import './header.css'
 export default function Header() {
 
     const { dadosUser } = useContext(Context);
+    const navigate = useNavigate()
 
-
-    // function handleSair() {
-    //     localStorage.removeItem("userEncontrado");
-    //     // navigate('/');
-    // }
-
+    function handleSair() {
+        localStorage.removeItem("userEncontrado");
+        window.location.reload();
+        navigate('/')
+    }
+   console.log(dadosUser)
     return (
         <header className='headerHome fade-delay-2'>
             <div className='topHeader fade-delay-3'>
@@ -23,7 +24,11 @@ export default function Header() {
 
                 <div className='linksDiv fade-in-left fade-delay-4'>
                     {dadosUser ? (
-                        <span className='userNome'>Olá, {dadosUser.nome_completo}</span>
+                        <div className='containerNomeSair'>
+                            <span className='userNome'>Olá, {dadosUser.nome_completo}</span>
+                            <span className='linha'></span>
+                            <span className='sair' onClick={handleSair}>Sair</span>
+                        </div>
                     ) : (
                         <>
                             <NavLink className='linksHeader fade-in-left fade-delay-5' to={'/cadastro'}>
