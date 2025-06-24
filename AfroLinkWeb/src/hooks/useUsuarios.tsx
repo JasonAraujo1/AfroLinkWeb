@@ -24,9 +24,7 @@ export function useUsuarios() {
 
 
     async function handleVerMais(id: string) {
-        setFiltroIDProfissionalSelecionado(id)
-        localStorage.setItem("profissionalId", id)
-        navigate('/verMais')
+        navigate(`/ver-mais/${id}`)
     }
 
     async function handleSolicitar() {
