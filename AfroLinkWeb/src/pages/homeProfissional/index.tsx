@@ -1,14 +1,24 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import Context from "../../context/Context";
+import './homeProfissional.css'
 
 export default function HomeProfissional() {
-  const { dadosUser, dadosTodosUsers, dadosSolicitacoes } = useContext(Context);
+  const { dadosUser, dadosSolicitacoes } = useContext(Context);
+
+  const[usuariosComuns , setUsuariosComuns] = useState([])
+  
+    useEffect(()=>{
+     async function onLoad(){
+       const req = await fetch(`https://67d355c78bca322cc269d90d.mockapi.io/api/v1/users?tipo=comum`)
+       const res = await req.json()
+       setUsuariosComuns(res)
+     }
+     onLoad() 
+    },[])
 
   const solicitacoesFilter = dadosSolicitacoes.filter(
     (item) => String(item.id_usuario_profissional) === String(dadosUser?.id)
   );
-
-  const usuariosComuns = dadosTodosUsers.filter((user) => user.tipo === "comum");
 
   return (
     <div>

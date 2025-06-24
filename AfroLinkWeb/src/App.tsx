@@ -15,8 +15,8 @@ function App() {
       <Route path='/' element={<AppLayout />}>
         <Route index element={<HomeComum />} />
       </Route>
-      <Route path="/homeProfissional" element={<HomeProfissional />} />
       <Route path='/' element={<LayoutHeaderSimples />}>
+        <Route path="/homeProfissional" element={<HomeProfissional />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/verMais" element={<VerMaisProfissional />} />
