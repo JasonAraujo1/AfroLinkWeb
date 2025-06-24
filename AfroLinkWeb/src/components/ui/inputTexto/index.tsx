@@ -7,10 +7,8 @@ export default function InputTexto({ onChange, placeholder, onClick, src }) {
         alignItems: 'center',
         width: '100%',
         minWidth: '300px',  
-
       }}
     >
-
       <input
         onClick={onClick}
         onChange={onChange}
