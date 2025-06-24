@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { NavLink, useNavigate } from "react-router"
-import logo from '../../assets/logo.svg'
 import InputTexto from "../../components/ui/inputTexto"
 import ButtonPreto from "../../components/ui/buttonPreto"
 import './cadastro.css'
