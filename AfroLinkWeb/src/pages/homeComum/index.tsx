@@ -24,10 +24,10 @@ export default function HomeComum() {
 
   return (
     <div className='containerHome fade-in-scale fade-delay-1'>
+     
       <span className='containerHome_span fade-in fade-delay-3'>
         Alguns dos nossos Profissionais pelo Brasil:
       </span>
-
       <div className='containerTodosPerfis fade-in-scale fade-delay-3'>
         <div className='containerTodosPerfis_div'>
           {profissional.map(e => (

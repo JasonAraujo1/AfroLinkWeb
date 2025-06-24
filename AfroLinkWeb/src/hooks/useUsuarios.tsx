@@ -11,7 +11,7 @@ export function useUsuarios() {
     if (!context) {
         throw new Error("HomeComum deve estar dentro do Provider do Contexto");
     }
-    const { setFiltroIDProfissionalSelecionado, setDadosTodosUsers, dadosUser, dadosTodosUsers } = context
+    const { setDadosTodosUsers, dadosUser, dadosTodosUsers } = context
 
     useEffect(() => {
         async function onLoad() {
@@ -71,9 +71,16 @@ export function useUsuarios() {
         }
     }
 
+    function handleSair() {
+        localStorage.removeItem("userEncontrado");
+        window.location.reload();
+        navigate('/')
+    }
+
     return {
         handleVerMais,
         handleSolicitar,
-        handleBuscaPorIcone
+        handleBuscaPorIcone,
+        handleSair
     }
 }

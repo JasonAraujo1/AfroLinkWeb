@@ -1,3 +1,5 @@
+import './inputTexto.css'
+
 export default function InputTexto({ onChange, placeholder, onClick, src }) {
   return (
     <div
@@ -21,7 +23,8 @@ export default function InputTexto({ onChange, placeholder, onClick, src }) {
           borderRadius: '10px',
           width: '100%',
           boxSizing: 'border-box',
-          marginBottom:'10px'
+          marginBottom:'10px',
+     
         }}
       />
        {src && (

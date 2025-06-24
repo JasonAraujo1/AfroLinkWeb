@@ -27,11 +27,9 @@ export default function Login() {
         localStorage.setItem("login", JSON.stringify(userEncontrado.id))
         localStorage.setItem("userEncontrado", JSON.stringify(userEncontrado))
 
-        if (userEncontrado.tipo === 'profissional') {
-            navigate('/homeProfissional');
-        } else {
+        
             navigate('/');
-        }
+
 
     }
     return (

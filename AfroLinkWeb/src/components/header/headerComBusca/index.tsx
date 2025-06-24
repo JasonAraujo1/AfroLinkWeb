@@ -5,17 +5,15 @@ import IconesHome from '../../../components/iconesHome';
 import Context from '../../../context/Context';
 import { useContext } from 'react';
 import './header.css'
+import MenuLateral from '../../menuLateral/menuLateral';
 
 export default function Header() {
 
     const { dadosUser } = useContext(Context);
+
     const navigate = useNavigate()
 
-    function handleSair() {
-        localStorage.removeItem("userEncontrado");
-        window.location.reload();
-        navigate('/')
-    }
+
    console.log(dadosUser)
     return (
         <header className='headerHome fade-delay-2'>
@@ -27,7 +25,7 @@ export default function Header() {
                         <div className='containerNomeSair'>
                             <span className='userNome'>Olá, {dadosUser.nome_completo}</span>
                             <span className='linha'></span>
-                            <span className='sair' onClick={handleSair}>Sair</span>
+                            <MenuLateral/>
                         </div>
                     ) : (
                         <>
