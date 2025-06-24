@@ -12,23 +12,29 @@ import { useUsuarios } from '../../hooks/useUsuarios';
 export default function MenuLateral() {
     const [open, setOpen] = React.useState(false);
 
-        const {handleSair} = useUsuarios()
+    const { handleSair } = useUsuarios()
 
     return (
         <React.Fragment>
-            <div className='testee'>
-
-           
             <MenuOpen
-                sx={{fontSize: '2.5rem'}}
+                sx={{ fontSize: '2.5rem' }}
                 className='IconButton'
                 variant="outlined"
-                color="neutral"
+                color="white"
                 onClick={() => setOpen(true)}>
                 <Menu />
             </MenuOpen>
-            <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
-
+            <Drawer
+                anchor="right"
+                open={open}
+                onClose={() => setOpen(false)}
+                PaperProps={{
+                    sx: {
+                        backgroundColor: '#fff',
+                        color: '#000',
+                    },
+                }}
+            >
                 <Box
                     sx={{
                         display: 'flex',
@@ -42,7 +48,7 @@ export default function MenuLateral() {
                     <Typography
                         component="label"
                         htmlFor="close-icon"
-                        sx={{ fontSize: 'md', fontWeight: 'lg', cursor: 'pointer',  }}
+                        sx={{ fontSize: 'md', fontWeight: 'lg', cursor: 'pointer', }}
                     >
 
                     </Typography>
@@ -55,7 +61,7 @@ export default function MenuLateral() {
                         <Close />
                     </IconButton>
                 </Box>
-                
+
                 <List
                     size="lg"
                     component="nav"
@@ -68,10 +74,9 @@ export default function MenuLateral() {
                     <ListItemButton to={'/'} sx={{ justifyContent: 'center' }}>Home</ListItemButton>
                     <ListItemButton >Minha Conta</ListItemButton>
                     <ListItemButton>Solicitações</ListItemButton>
-                    <ListItemButton sx={{color:'#f63232'}} onClick={handleSair}>Sair</ListItemButton>
+                    <ListItemButton sx={{ color: '#f63232' }} onClick={handleSair}>Sair</ListItemButton>
                 </List>
             </Drawer>
-             </div>
         </React.Fragment>
     );
 }
