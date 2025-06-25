@@ -31,6 +31,7 @@ export default function Solicitacoes() {
       ...item,
       nome_completo: usuario?.nome_completo || "Usuário não encontrado",
       foto: usuario?.foto || {},
+      tipo: usuario?.tipo || "comum",
     };
   });
 

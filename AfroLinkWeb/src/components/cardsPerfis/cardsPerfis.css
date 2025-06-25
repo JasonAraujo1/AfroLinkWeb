@@ -1,3 +1,5 @@
+
+
 .containerTodosPerfis_div {
     display: flex;
     flex-wrap: wrap;
@@ -11,14 +13,18 @@
     flex-direction: column;
     background-color: #F7F6F6;
     border-radius: 2.5rem;
-    max-width: 20.5rem;
+    width: 20.5rem;
     
+
 }
 
 .containerPerfil_fotoUser {
     padding: 1.2rem;
     max-height: 30.5rem;
     border-radius: 3rem;
+    min-height: 15rem;
+
+  
 }
 
 .containerPerfil_div {
