@@ -72,8 +72,8 @@ export default function MenuLateral() {
                     }}
                 >
                     <ListItemButton to={'/'} sx={{ justifyContent: 'center' }}>Home</ListItemButton>
-                    <ListItemButton >Minha Conta</ListItemButton>
-                    <ListItemButton>Solicitações</ListItemButton>
+                    <ListItemButton sx={{ justifyContent: 'center' }}>Minha Conta</ListItemButton>
+                    <ListItemButton to={'/solicitacoes'} sx={{ justifyContent: 'center' }}>Solicitações</ListItemButton>
                     <ListItemButton sx={{ color: '#f63232' }} onClick={handleSair}>Sair</ListItemButton>
                 </List>
             </Drawer>

@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router'
 import './App.css'
 import HomeComum from './pages/homeComum'
-import HomeProfissional from './pages/homeProfissional'
+import Solicitacoes from './pages/Solicitacoes'
 import Cadastro from './pages/cadastro'
 import Login from './pages/login'
 import VerMaisProfissional from './pages/verMaisProfissional'
@@ -16,7 +16,7 @@ function App() {
         <Route index element={<HomeComum />} />
       </Route>
       <Route path='/' element={<LayoutHeaderSimples />}>
-        <Route path="/homeProfissional" element={<HomeProfissional />} />
+        <Route path="/solicitacoes" element={<Solicitacoes />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/ver-mais/:id" element={<VerMaisProfissional />} />

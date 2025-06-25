@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import Context from "../../context/Context";
-import './homeProfissional.css'
+import './solicitacoes.css'
 
-export default function HomeProfissional() {
+export default function Solicitacoes() {
   const { dadosUser, dadosSolicitacoes, setDadosSolicitacoes} = useContext(Context);
 
   const [usuariosComuns, setUsuariosComuns] = useState([])
