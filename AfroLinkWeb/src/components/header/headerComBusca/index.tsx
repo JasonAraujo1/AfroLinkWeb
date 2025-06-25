@@ -11,10 +11,7 @@ export default function Header() {
 
     const { dadosUser } = useContext(Context);
 
-    const navigate = useNavigate()
 
-
-   console.log(dadosUser)
     return (
         <header className='headerHome fade-delay-2'>
             <div className='topHeader fade-delay-3'>
