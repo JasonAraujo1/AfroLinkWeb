@@ -1,11 +1,10 @@
 
-
 .containerTodosPerfis_div {
     display: flex;
     flex-wrap: wrap;
     gap: 4rem;
     padding: 2% 0 0 12%;
- 
+    margin: 0;
 }
 
 .containerPerfis {
@@ -15,7 +14,7 @@
     border-radius: 2.5rem;
     width: 20.5rem;
     
-
+    
 }
 
 .containerPerfil_fotoUser {
@@ -23,8 +22,8 @@
     max-height: 30.5rem;
     border-radius: 3rem;
     min-height: 15rem;
-
-  
+    
+    
 }
 
 .containerPerfil_div {
@@ -68,6 +67,26 @@
     color: white;
 }
 
-.containerPerfil_div_button{
-    border: 2px solid red;
+.divBtn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1rem;
+    
+}
+.divBtn_span1{
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.divBtn_span2{
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-decoration: underline;
+    color: #FF6624;
+    margin: 0 0 1rem;
+    cursor: pointer;
+}
+.divBtn_span2:hover{ 
+    color: #c84d18;
+    transition: 0.4s;
 }

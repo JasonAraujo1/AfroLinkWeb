@@ -61,6 +61,10 @@ export default function DropDownBusca() {
     if (resultados.length > 0) {
       localStorage.setItem("profissionalEscohidoInput", JSON.stringify(resultados));
       navigate('/resultado')
+    }else{
+      alert('Nenhum profissional encontrado com os filtros selecionados.');
+     
+
     }
   }
 

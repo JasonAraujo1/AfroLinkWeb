@@ -1,6 +1,7 @@
 import './cardsPerfis.css'
 import star from '../../assets/star.svg'
 import fotoAvatar from "../../assets/userfoto.png"
+import ButtonPreto from '../ui/buttonPreto'
 
 
 export default function CardPerfis({ dados, funcaoClick }) {
@@ -27,7 +28,11 @@ export default function CardPerfis({ dados, funcaoClick }) {
                                 </span>
                                 <p className='containerPerfil_div_p'>{e.descricao}</p>
                                 {e.tipo === 'comum' && (
-                                    <button className='containerPerfil_div_button'>Ver mais</button>
+                                    <div className='divBtn'>
+                                        <ButtonPreto onClick={''} texto="Aceitar"/>                    
+                                        <span className='divBtn_span1'>Ou</span> 
+                                        <span className='divBtn_span2'>Ver mais</span>                
+                                    </div>
                                 )}
                             </div>
                         </div>
