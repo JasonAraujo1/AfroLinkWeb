@@ -12,7 +12,7 @@ import { useUsuarios } from '../../hooks/useUsuarios';
 export default function MenuLateral() {
     const [open, setOpen] = React.useState(false);
 
-    const { handleSair } = useUsuarios()
+    const { handleSair, handleSolicitacoes } = useUsuarios()
 
     return (
         <React.Fragment>
@@ -73,7 +73,7 @@ export default function MenuLateral() {
                 >
                     <ListItemButton to={'/'} sx={{ justifyContent: 'center' }}>Home</ListItemButton>
                     <ListItemButton sx={{ justifyContent: 'center' }}>Minha Conta</ListItemButton>
-                    <ListItemButton to={'/solicitacoes'} sx={{ justifyContent: 'center' }}>Solicitações</ListItemButton>
+                    <ListItemButton onClick={handleSolicitacoes} sx={{ justifyContent: 'center' }}>Solicitações</ListItemButton>
                     <ListItemButton sx={{ color: '#f63232' }} onClick={handleSair}>Sair</ListItemButton>
                 </List>
             </Drawer>

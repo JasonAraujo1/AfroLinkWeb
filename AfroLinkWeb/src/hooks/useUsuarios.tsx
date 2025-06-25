@@ -26,6 +26,9 @@ export function useUsuarios() {
     async function handleVerMais(id: string) {
         navigate(`/ver-mais/${id}`)
     }
+    async function handleSolicitacoes() {
+        navigate(`/solicitacoes/${dadosUser.id}`)
+    }
 
     async function handleSolicitar() {
 
@@ -81,6 +84,7 @@ export function useUsuarios() {
         handleVerMais,
         handleSolicitar,
         handleBuscaPorIcone,
-        handleSair
+        handleSair,
+        handleSolicitacoes
     }
 }
