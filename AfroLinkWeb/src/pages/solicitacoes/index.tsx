@@ -24,7 +24,7 @@ export default function Solicitacoes() {
   }, [params.id]);
 
   const usuariosComSolicitacoes = dadosSolicitacoes.map((item) => {
-    const usuario = dadosTodosUsers.filter(
+    const usuario = dadosTodosUsers.find(
       (user) => String(user.id) === String(item.id_usuario_comum)
     );
     return {
@@ -33,6 +33,8 @@ export default function Solicitacoes() {
       foto: usuario?.foto || {},
     };
   });
+
+  console.log("Usuários com solicitações:", usuariosComSolicitacoes);
 
   return (
     <div>
