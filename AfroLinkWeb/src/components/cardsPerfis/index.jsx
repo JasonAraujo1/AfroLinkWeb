@@ -1,7 +1,9 @@
 import './cardsPerfis.css'
 import star from '../../assets/star.svg'
+import fotoAvatar from "../../assets/userfoto.png"
 
-export default function CardPerfis({dados,}) {
+
+export default function CardPerfis({dados, funcaoClick}) {
     return (
         <div>
             <div className='containerTodosPerfis fade-in-scale fade-delay-3'>
@@ -9,9 +11,13 @@ export default function CardPerfis({dados,}) {
                     {dados.map(e => (
                         <div key={e.id}
                             className={`containerPerfis fade-in-scale fade-delay-1`}
-                            onClick={() => handleVerMais(e.id)}
+                            onClick={() => funcaoClick(e.id)}
                         >
-                            <img src={e.foto} alt="fotoUser" className='containerPerfil_fotoUser fade-in-scale' />
+                            {e.foto?(
+                                <img src={fotoAvatar} alt="fotoUser" className='containerPerfil_fotoUser' />    
+                            ):(
+                                <img src={e.foto} alt="fotoUser" className='containerPerfil_fotoUser fade-in-scale' />
+                            )}
                             <div className='containerPerfil_div fade-in'>
                                 <h4 className='containerPerfil_div_h4'>{e.nome_completo}</h4>
                                 <span className='containerPerfil_div_span1'>{e.profissao}</span>
@@ -20,10 +26,8 @@ export default function CardPerfis({dados,}) {
                                     <span> {e.avaliacoes} Avaliações</span>
                                 </span>
                                 <p className='containerPerfil_div_p'>{e.descricao}</p>
-                                {e.tipo === 'comum' ? (
+                                {e.tipo === 'comum' &&(
                                     <button className='containerPerfil_div_button'>Ver mais</button>
-                                ) : (
-                                    <button className='containerPerfil_div_button'>Contratar</button>
                                 )}
                             </div>
                         </div>

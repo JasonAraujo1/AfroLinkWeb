@@ -16,7 +16,7 @@ function App() {
         <Route index element={<HomeComum />} />
       </Route>
       <Route path='/' element={<LayoutHeaderSimples />}>
-        <Route path="/solicitacoes" element={<Solicitacoes />} />
+        <Route path="/solicitacoes/:id" element={<Solicitacoes />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/ver-mais/:id" element={<VerMaisProfissional />} />
