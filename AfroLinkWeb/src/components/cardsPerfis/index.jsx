@@ -27,11 +27,15 @@ export default function CardPerfis({ dados, funcaoClick }) {
                                     <span> {e.avaliacoes} Avaliações</span>
                                 </span>
                                 <p className='containerPerfil_div_p'>{e.descricao}</p>
-                                {e.tipo === 'comum' && (
+                                {e.tipo === 'comum' ? (
                                     <div className='divBtn'>
-                                        <ButtonPreto onClick={''} texto="Aceitar"/>                    
-                                        <span className='divBtn_span1'>Ou</span> 
-                                        <span className='divBtn_span2'>Ver mais</span>                
+                                        <ButtonPreto onClick={''} texto="Aceitar" />
+                                        <span className='divBtn_span1'>Ou</span>
+                                        <span className='divBtn_span2'>Ver mais</span>
+                                    </div>
+                                ) : (
+                                    <div className='divBtn'>
+                                        <span className='span_solicitacao'>Solicitação: {e.status}</span>
                                     </div>
                                 )}
                             </div>

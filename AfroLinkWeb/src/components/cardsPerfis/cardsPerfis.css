@@ -90,3 +90,8 @@
     color: #c84d18;
     transition: 0.4s;
 }
+
+.span_solicitacao{
+    font-size: 1.3rem;
+    font-weight: 700;
+}
