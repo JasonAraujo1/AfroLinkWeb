@@ -4,6 +4,7 @@ import { fetchApiUsers } from "../services/fetchApi";
 import { useNavigate } from "react-router";
 
 export function useUsuarios() {
+
     const navigate = useNavigate();
 
     const context = useContext(Context);
@@ -20,8 +21,6 @@ export function useUsuarios() {
         }
         onLoad();
     }, []);
-
-
 
     async function handleVerMais(id: string) {
         navigate(`/ver-mais/${id}`)
@@ -76,8 +75,8 @@ export function useUsuarios() {
 
     function handleSair() {
         localStorage.removeItem("userEncontrado");
-        window.location.reload();
         navigate('/')
+        window.location.reload();
     }
 
     return {
