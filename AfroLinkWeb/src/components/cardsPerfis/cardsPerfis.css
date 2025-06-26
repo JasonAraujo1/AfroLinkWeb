@@ -6,73 +6,57 @@
     padding: 2% 0 0 12%;
     margin: 0;
 }
-
 .containerPerfis {
     display: flex;
     flex-direction: column;
     background-color: #F7F6F6;
     border-radius: 2.5rem;
     width: 20.5rem;
-    
-    
 }
-
 .containerPerfil_fotoUser {
     padding: 1.2rem;
     max-height: 30.5rem;
     border-radius: 3rem;
     min-height: 15rem;
-    
-    
 }
-
 .containerPerfil_div {
     margin: 0 3rem 0.3rem;
     display: flex;
     flex-direction: column;
 }
-
 .containerPerfil_div_span1 {
     font-size: 1.2rem;
 }
-
 .containerPerfil_div_span2 {
     display: flex;
     align-items: center;
     gap: 0.4rem;
 }
-
 .containerPerfil_div p {
     margin: 0;
 }
-
 .containerPerfil_div_h4 {
     margin: 0;
     font-size: 1.4rem;
 }
-
 .containerPerfil_div_p {
     font-size: 1.1rem;
     padding: 1rem 0;
 }
-
 .starIcon {
     color: #FF6624;
 }
-
 .containerHome_footer_span {
     display: flex;
     justify-content: center;
     background-color: #000000;
     color: white;
 }
-
 .divBtn{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.1rem;
-    
+    gap: 0.1rem;   
 }
 .divBtn_span1{
     font-weight: 700;
@@ -90,7 +74,6 @@
     color: #c84d18;
     transition: 0.4s;
 }
-
 .span_solicitacao{
     font-size: 1.3rem;
     font-weight: 700;
