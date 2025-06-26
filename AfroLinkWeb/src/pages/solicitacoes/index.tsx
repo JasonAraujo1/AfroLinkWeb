@@ -49,9 +49,6 @@ export default function Solicitacoes() {
   });
 
 
-  console.log("usuariosSolicitacoes", usuariosSolicitacoes);
-
-
   return (
     <div>
       <h1 className="divH1">Olá, {dadosUser?.nome_completo || "Usuário"}</h1>

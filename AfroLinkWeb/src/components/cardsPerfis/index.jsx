@@ -34,10 +34,13 @@ export default function CardPerfis({ dados, funcaoClick }) {
                                         <span className='divBtn_span2'>Ver mais</span>
                                     </div>
                                 ) : (
-                                    <div className='divBtn'>
-                                        <span className='span_solicitacao'>Solicitação: {e.status}</span>
-                                    </div>
+                                    e.status && (
+                                        <div className='divBtnStatus'>
+                                            <ButtonPreto texto={`Solicitação ${e.status}`} />
+                                        </div>
+                                    )
                                 )}
+
                             </div>
                         </div>
                     ))
