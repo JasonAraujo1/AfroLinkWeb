@@ -10,7 +10,99 @@
 
 .topHeaderSimples {
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     gap: 4rem;
     align-items: center;
+    margin: 0 2rem;
+
+}
+.logoAndLink{
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+}
+
+.headerHome {
+    background: linear-gradient(to right, #000000, #2e2e2e);
+    padding: 0.8rem;
+    width: 100vw;
+}
+
+.containerHome_span {
+    display: flex;
+    justify-content: center;
+    font-family: "Epilogue";
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 3rem;
+    color: #000000;
+}
+
+.Logo {
+    width: 6rem;
+}
+
+.iconesContainer div {
+    cursor: pointer;
+}
+
+.linksDiv {
+    display: flex;
+    padding: 30px;
+    gap: 3rem;
+
+}
+
+.tituloHome {
+    color: #7A7A7A;
+    font-family: "Epilogue";
+    font-size: 3.6rem;
+    font-weight: 140;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0 3rem;
+}
+
+.tituloHome_span {
+    color: #FF6624;
+}
+
+.topHeader {
+    display: flex;
+    justify-content: space-between;
+    /* ALINHA os dois lados */
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.linksHeader, .userNome {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+     
+}
+.linksHeader:hover {
+    text-decoration: underline;
+}
+
+.sair {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.containerNomeSair {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    
+}
+
+.linha {
+    border: 1px solid rgb(114, 112, 112);
+    height: 1.5rem;
 }
