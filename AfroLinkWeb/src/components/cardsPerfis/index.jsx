@@ -30,8 +30,8 @@ export default function CardPerfis({ dados, funcaoClick }) {
                                 {e.tipo === 'comum' ? (
                                     <div className='divBtn'>
                                         <ButtonPreto onClick={''} texto="Aceitar" />
-                                        <span className='divBtn_span1'>Ou</span>
-                                        <span className='divBtn_span2'>Ver mais</span>
+                                        <ButtonPreto onClick={''} texto="Recusar" />
+                                      
                                     </div>
                                 ) : (
                                      e.status && (
