@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { fetchApiEstados, fetchApiMunicipios, fetchApiProfissoes } from '../../services/fetchApi';
 import ComboBox from '../ui/comboBox';
-import Context from '../../context/Context';
 import './dropDownBusca.css';
 import ButtonPretoArredondado from '../ui/buttonPretoArredondado';
 import { useNavigate } from 'react-router';
@@ -84,16 +83,7 @@ export default function DropDownBusca() {
 
   }
 
-  function handleLimparFiltro() {
-    setFiltros({
-      estado: '',
-      municipio: '',
-      profissao: '',
-    });
-    setEstadoSelecionado('');
-    setProfissaoSelecionada('');
-    setMunicipioSelecionado('');
-  }
+ 
 
   const nomesEstados = dadosEstados.map(item => item.nome);
   const nomesMunicipios = dadosMunicipios.map(item => item.nome);
@@ -105,7 +95,7 @@ export default function DropDownBusca() {
         <ComboBox dados={nomesProfissoes} texto="Profissão" onChange={setProfissaoSelecionada} value={profissaoSelecionada} />
         <ComboBox dados={nomesEstados} texto="Estado" onChange={setEstadoSelecionado} value={estadoSelecionado} />
         <ComboBox dados={nomesMunicipios} texto="Município" onChange={setMunicipioSelecionado} value={municipioSelecionado} />
-        <ButtonPretoArredondado texto='Buscar' onClick={handleFiltroProfissional} OnclickLimpar={handleLimparFiltro} />
+        <ButtonPretoArredondado texto='Buscar' onClick={handleFiltroProfissional} />
       </div>
     </div>
   );

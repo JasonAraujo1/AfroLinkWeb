@@ -1,5 +1,5 @@
 import './buttonPretoArredondado.css'
-export default function ButtonPretoArredondado({ texto, onClick, OnclickLimpar }) {
+export default function ButtonPretoArredondado({ texto, onClick }) {
     return (
         <div>
             <div className="btn " type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -13,12 +13,6 @@ export default function ButtonPretoArredondado({ texto, onClick, OnclickLimpar }
                 }}>
                     {texto}
                 </button>
-            </div>
-
-            <div className="collapse" id="collapseExample">
-                <div className="card card-body" >
-                    <button className='card_btn' data-bs-toggle="collapse" data-bs-target="#collapseExample" onClick={OnclickLimpar}>Limpar filtros</button>
-                </div>
             </div>
         </div>
     );
