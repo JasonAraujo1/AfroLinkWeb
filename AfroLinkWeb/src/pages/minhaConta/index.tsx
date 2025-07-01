@@ -1,3 +1,4 @@
+import UploadBtn from '../../components/ui/uploadBtn';
 import './minhaConta.css';
 export default function MinhaConta() {
   return (
@@ -20,7 +21,7 @@ export default function MinhaConta() {
         <aside className='divAside'>
           <div>
             <img src="fotouser" alt="fotoUser" />
-            <button>Adicionar foto</button>
+            <UploadBtn/>
           </div>
           <div>
             <div>
