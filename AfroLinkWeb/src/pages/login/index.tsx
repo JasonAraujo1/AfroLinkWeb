@@ -39,7 +39,7 @@ export default function Login() {
             <div className='container_body'>
                 <div className='divInputs'>
                     <InputTexto placeholder='E-mail' onChange={(event) => setUserInputEmail(event.target.value)} />
-                    <InputTexto placeholder='Senha' onChange={(event) => setUserInputSenha(event.target.value)} />
+                    <InputTexto type='password' placeholder='Senha' onChange={(event) => setUserInputSenha(event.target.value)} />
                     <ButtonPreto onClick={handleLogin} texto="Entrar" />
                 </div>
 
