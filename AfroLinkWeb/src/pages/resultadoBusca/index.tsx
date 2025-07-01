@@ -1,35 +1,43 @@
-import { useContext } from "react"
-import Context from "../../context/Context"
+import { useEffect, useState } from "react"
 import { useUsuarios } from "../../hooks/useUsuarios"
 import foto from "../../assets/userfoto.png"
 import star from '../../assets/star.svg'
+import { useLocation } from "react-router"
+import { fetchProfissao } from "../../services/fetchApi"
+
+
 
 export default function ResultadoBusca() {
-    const { profissionalEscohidoInput } = useContext(Context)
+    const [data, setData] = useState([])
 
-    if (!Array.isArray(profissionalEscohidoInput)) {
-        return <p>Nenhum dado carregado.</p>
-    }
+    const location = useLocation();
+    const query = new URLSearchParams(location.search);
 
-    if (profissionalEscohidoInput.length === 0) {
-        return <p>Nenhum profissional encontrado.</p>
-    }
-  const { handleVerMais } = useUsuarios()
+    const estado = query.get("estado");
+    const cidade = query.get("municipio");
+    const profissao = query.get("profissao");
+
+
+    useEffect(() => {
+        const load = async () => {
+            console.log(profissao)
+            if (profissao) {
+                const req = await fetchProfissao(profissao)
+                setData(req)
+            }
+        }
+
+        load()
+    }, [])
+
+
+    const { handleVerMais } = useUsuarios()
 
     return (
         <div className='containerHome fade-in-scale fade-delay-1'>
-             {profissionalEscohidoInput.map((item) => (
-            <span className='containerHome_span fade-in fade-delay-3'>
-              
-                <div key={item.id}>
-                    <h1>Profissionais encontrados:</h1>
-                </div>
- 
-            </span> ))}
-
             <div className='containerTodosPerfis fade-in-scale fade-delay-3'>
                 <div className='containerTodosPerfis_div'>
-                    {profissionalEscohidoInput.map(e => (
+                    {data.map(e => (
                         <div key={e.id}
                             className={`containerPerfis fade-in-scale fade-delay-1`}
                             onClick={() => handleVerMais(e.id)}
