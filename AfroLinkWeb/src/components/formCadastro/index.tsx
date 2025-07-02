@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { fetchApiUserCep } from '../services/fetchApi'
+import { fetchApiUserCep } from '../../services/fetchApi'
 
 
-export default function formCadastro() {
+export default function FormCadastro() {
 
     const [nome_completo, setNomeCompleto] = useState('')
     const [tipo, setTipo] = useState('')

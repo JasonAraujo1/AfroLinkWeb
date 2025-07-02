@@ -78,12 +78,16 @@ export function useUsuarios() {
         navigate('/')
         window.location.reload();
     }
+    function handleMinhaConta() {
+         navigate(`/minha-conta/${dadosUser.id}`)
+    }
 
     return {
         handleVerMais,
         handleSolicitar,
         handleBuscaPorIcone,
         handleSair,
-        handleSolicitacoes
+        handleSolicitacoes,
+        handleMinhaConta
     }
 }

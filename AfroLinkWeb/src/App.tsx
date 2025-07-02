@@ -22,7 +22,7 @@ function App() {
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/ver-mais/:id" element={<VerMaisProfissional />} />
         <Route path="/resultado" element={<ResultadoBusca />} />
-        <Route path="/conta" element={<MinhaConta />} />
+        <Route path="/minha-conta/:id" element={<MinhaConta />} />
       </Route>
     </Routes>
   )
