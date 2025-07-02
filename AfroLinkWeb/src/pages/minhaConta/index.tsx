@@ -26,62 +26,64 @@ export default function MinhaConta() {
     <div>
 
       <div className='divH1'>MinhaConta</div>
-        <div className='divContainer'>
+      <div className='divContainer'>
 
-          <main className='divMain'>
-            <div className='divMain_InformacoesGerais'>
-              <span className='divMain_InformacoesGerais_span'>Informações Gerais</span>
-              <div className='divMain_InformacoesGerais_div'>
+        <main className='divMain'>
+          <div className='divMain_InformacoesGerais'>
+            <span className='divMain_InformacoesGerais_span'>Informações Gerais</span>
+            <div className='divMain_InformacoesGerais_div'>
+              {profissionalData.profissao &&
                 <span className='divMain_InformacoesGerais_div_span'>{profissionalData.profissao}</span>
-                <span className='divMain_InformacoesGerais_div_span'>{profissionalData.nome_completo}</span>
-                <span className='divMain_InformacoesGerais_div_span'>{profissionalData.estado}</span>
-                <span className='divMain_InformacoesGerais_div_span'>{profissionalData.createdAt}</span>
-              </div>
+              }
+              <span className='divMain_InformacoesGerais_div_span'>{profissionalData.nome_completo}</span>
+              <span className='divMain_InformacoesGerais_div_span'>{profissionalData.estado}</span>
+              <span className='divMain_InformacoesGerais_div_span'>Início: {new Date(profissionalData?.createdAt).toLocaleDateString()}</span>
             </div>
+          </div>
 
-            <div>
-              <span>Tipo: {profissionalData.tipo}</span>
-              <span>Nome: {profissionalData.nome_completo}</span>
-              <span>Telefone: {profissionalData.telefone}</span>
-              <span>Email: {profissionalData.email}</span>
-              <span>CPF: {profissionalData.cpf}</span>
-              <span>Município: {profissionalData.municipio}</span>
-              <span>Estado: {profissionalData.estado}</span>
-              <span>Bairro: {profissionalData.bairro}</span>
-              <span>Endereço: {profissionalData.endereco}</span>
-              <span>Complemento: {profissionalData.complemento}</span>
-              <span>Avaliações: {profissionalData.avaliacoes}</span>
-              <span>Descrição: {profissionalData.descricao}</span>
-              <span>Profissão: {profissionalData.profissao}</span>
-            </div>
+          <div>
+            <span>Tipo: {profissionalData.tipo}</span>
+            <span>Nome: {profissionalData.nome_completo}</span>
+            <span>Telefone: {profissionalData.telefone}</span>
+            <span>Email: {profissionalData.email}</span>
+            <span>CPF: {profissionalData.cpf}</span>
+            <span>Município: {profissionalData.municipio}</span>
+            <span>Estado: {profissionalData.estado}</span>
+            <span>Bairro: {profissionalData.bairro}</span>
+            <span>Endereço: {profissionalData.endereco}</span>
+            <span>Complemento: {profissionalData.complemento}</span>
+            <span>Avaliações: {profissionalData.avaliacoes}</span>
+            <span>Descrição: {profissionalData.descricao}</span>
+            <span>Profissão: {profissionalData.profissao}</span>
+          </div>
 
-          </main>
+        </main>
 
-          <aside className='divAside'>
+        <aside className='divAside'>
+          <div>
+            <img src="fotouser" alt="fotoUser" />
+            <UploadBtn />
+          </div>
+          <div>
             <div>
-              <img src="fotouser" alt="fotoUser" />
-              <UploadBtn />
-            </div>
-            <div>
+              <span>Alterações</span>
               <div>
-                <span>Alterações</span>
+                <span>13</span>
+                <img src="" alt="userSilhueta" />
+              </div>
+              <span>Últimos contatos</span>
+              <div>
                 <div>
-                  <span>13</span>
-                  <img src="" alt="userSilhueta" />
-                </div>
-                <span>Últimos contatos</span>
-                <div>
-                  <div>
-                    <img src="" alt="userPhoto" />
-                    <span>Fulano de tal</span>
-                    <span>data</span>
-                  </div>
+                  <img src="" alt="userPhoto" />
+                  <span>Fulano de tal</span>
+                  <span>data</span>
                 </div>
               </div>
             </div>
-          </aside>
+          </div>
+        </aside>
 
-        </div>
+      </div>
     </div>
 
   )
