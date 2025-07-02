@@ -5,7 +5,7 @@ import { useParams } from 'react-router';
 
 export default function MinhaConta() {
 
-  const [profissionalData, setProfissionalData] = useState(null)
+  const [profissionalData, setProfissionalData] = useState([])
 
   const params = useParams();
 
@@ -22,12 +22,66 @@ export default function MinhaConta() {
 
 
 
-
   return (
     <div>
-      <div className='divH1'>MinhaConta</div>
 
-     
+      <div className='divH1'>MinhaConta</div>
+        <div className='divContainer'>
+
+          <main className='divMain'>
+            <div className='divMain_InformacoesGerais'>
+              <span>Informações Gerais</span>
+              <div>
+                <span>{profissionalData.nome_completo}</span>
+                <span>{profissionalData.profissao}</span>
+                <span>{profissionalData.estado}</span>
+                <span>{profissionalData.createdAt}</span>
+              </div>
+            </div>
+
+            <div>
+              <span>Tipo: {profissionalData.tipo}</span>
+              <span>Nome: {profissionalData.nome_completo}</span>
+              <span>Telefone: {profissionalData.telefone}</span>
+              <span>Email: {profissionalData.email}</span>
+              <span>CPF: {profissionalData.cpf}</span>
+              <span>Município: {profissionalData.municipio}</span>
+              <span>Estado: {profissionalData.estado}</span>
+              <span>Bairro: {profissionalData.bairro}</span>
+              <span>Endereço: {profissionalData.endereco}</span>
+              <span>Complemento: {profissionalData.complemento}</span>
+              <span>Avaliações: {profissionalData.avaliacoes}</span>
+              <span>Descrição: {profissionalData.descricao}</span>
+              <span>Profissão: {profissionalData.profissao}</span>
+            </div>
+
+          </main>
+
+          <aside className='divAside'>
+            <div>
+              <img src="fotouser" alt="fotoUser" />
+              <UploadBtn />
+            </div>
+            <div>
+              <div>
+                <span>Alterações</span>
+                <div>
+                  <span>13</span>
+                  <img src="" alt="userSilhueta" />
+                </div>
+                <span>Últimos contatos</span>
+                <div>
+                  <div>
+                    <img src="" alt="userPhoto" />
+                    <span>Fulano de tal</span>
+                    <span>data</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+        </div>
     </div>
 
   )
