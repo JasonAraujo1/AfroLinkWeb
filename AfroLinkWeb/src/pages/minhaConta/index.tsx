@@ -30,12 +30,12 @@ export default function MinhaConta() {
 
           <main className='divMain'>
             <div className='divMain_InformacoesGerais'>
-              <span>Informações Gerais</span>
-              <div>
-                <span>{profissionalData.nome_completo}</span>
-                <span>{profissionalData.profissao}</span>
-                <span>{profissionalData.estado}</span>
-                <span>{profissionalData.createdAt}</span>
+              <span className='divMain_InformacoesGerais_span'>Informações Gerais</span>
+              <div className='divMain_InformacoesGerais_div'>
+                <span className='divMain_InformacoesGerais_div_span'>{profissionalData.profissao}</span>
+                <span className='divMain_InformacoesGerais_div_span'>{profissionalData.nome_completo}</span>
+                <span className='divMain_InformacoesGerais_div_span'>{profissionalData.estado}</span>
+                <span className='divMain_InformacoesGerais_div_span'>{profissionalData.createdAt}</span>
               </div>
             </div>
 

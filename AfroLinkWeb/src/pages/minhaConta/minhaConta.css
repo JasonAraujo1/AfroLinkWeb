@@ -5,24 +5,47 @@
     margin: 3rem 10rem 1rem;
 }
 
-.divContainer{
+.divContainer {
     border: 2px solid #ff0000;
     display: flex;
 
 }
-.divMain{
-    border: 2px solid #209500;
+
+.divMain {
+
     width: 50%;
 }
-.divAside{
+
+.divAside {
     border: 2px solid #1500ff;
     width: 50%;
 }
-.divMain_InformacoesGerais{
+
+.divMain_InformacoesGerais {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 2rem 0;
+    margin: 0 5rem;
+    width: 70%;
+    background-color: #F6F7F7;
+    border-radius: 2rem;
+}
 
+.divMain_InformacoesGerais_span {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.divMain_InformacoesGerais_div {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-weight: 600;
+    color: rgb(70, 70, 70);
+}
+
+.divMain_InformacoesGerais_div_span {
+    background-color: #EEEEEF;
+    padding: ;
 }
