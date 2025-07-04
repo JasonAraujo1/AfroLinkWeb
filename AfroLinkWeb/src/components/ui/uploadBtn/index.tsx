@@ -1,7 +1,7 @@
 
 import { Button, styled, SvgIcon } from '@mui/material';
 import seta from '../../../assets/setaUpload.svg';
-
+import './uploadBtn.css'
 
 const VisuallyHiddenInput = styled('input')`
   clip: rect(0 0 0 0);
@@ -18,6 +18,7 @@ const VisuallyHiddenInput = styled('input')`
 export default function UploadBtn() {
   return (
     <Button
+    className='uploadBtn'
       component="label"
       role={undefined}
       tabIndex={-1}

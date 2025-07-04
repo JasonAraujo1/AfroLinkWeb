@@ -1,0 +1,9 @@
+.uploadBtn {
+    background-color: black;
+    color: white;
+    display: flex;
+    gap: 1rem;
+    width: 19rem;
+    border-radius: 0.8rem;
+    margin: 0.5rem 0 4rem;
+}

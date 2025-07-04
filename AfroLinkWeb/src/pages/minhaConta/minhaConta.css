@@ -6,9 +6,7 @@
 }
 
 .divContainer {
-    border: 2px solid #ff0000;
     display: flex;
-
 }
 
 .divMain {
@@ -24,8 +22,7 @@
     display: flex;
     flex-direction: column;
 
- 
-    margin: 0 5rem;
+    margin: 0 9rem;
     width: 30rem;
     background-color: #F6F7F7;
     border-radius: 2rem;
@@ -50,5 +47,12 @@
 .divMain_InformacoesGerais_div_span {
     background-color: #EEEEEF;
     padding: 0.5rem 1rem;
-    border-radius:  1rem;
+    border-radius: 1rem;
+}
+
+.divMain_InformacoesPessoais {
+    margin: 3rem 9rem 0;
+    padding: 2rem;
+    border: 0.13rem solid #ecebebe0;
+    border-radius: 2rem;
 }

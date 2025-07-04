@@ -3,7 +3,6 @@ import Stack from '@mui/material/Stack';
 import { useContext } from 'react';
 import Context from '../../../context/Context';
 import fotoPadrao from '../../../assets/userfoto.png'; // <- sua imagem local
-import './sizeAvatars.css';
 
 export default function SizeAvatars() {
   const { filtroIDProfissionalSelecionado } = useContext(Context);

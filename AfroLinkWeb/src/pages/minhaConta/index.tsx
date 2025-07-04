@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import UploadBtn from '../../components/ui/uploadBtn';
 import './minhaConta.css';
 import { useParams } from 'react-router';
+import InputBranco from '../../components/ui/inputBranco';
+import FotoPerfil from '../../components/ui/fotoPerfil';
 
 export default function MinhaConta() {
 
@@ -41,27 +43,29 @@ export default function MinhaConta() {
             </div>
           </div>
 
-          <div>
-            <span>Tipo: {profissionalData.tipo}</span>
-            <span>Nome: {profissionalData.nome_completo}</span>
-            <span>Telefone: {profissionalData.telefone}</span>
-            <span>Email: {profissionalData.email}</span>
-            <span>CPF: {profissionalData.cpf}</span>
-            <span>Município: {profissionalData.municipio}</span>
-            <span>Estado: {profissionalData.estado}</span>
-            <span>Bairro: {profissionalData.bairro}</span>
-            <span>Endereço: {profissionalData.endereco}</span>
-            <span>Complemento: {profissionalData.complemento}</span>
-            <span>Avaliações: {profissionalData.avaliacoes}</span>
-            <span>Descrição: {profissionalData.descricao}</span>
-            <span>Profissão: {profissionalData.profissao}</span>
+          <div className='divMain_InformacoesPessoais'>
+
+            <InputBranco texto='Tipo' placeholder={profissionalData.tipo} />
+            <InputBranco texto='Nome' placeholder={profissionalData.nome_completo} />
+            <InputBranco texto='Telefone' placeholder={profissionalData.telefone} />
+            <InputBranco texto='Email' placeholder={profissionalData.email} />
+            <InputBranco texto='CPF' placeholder={profissionalData.cpf} />
+            <InputBranco texto='Município' placeholder={profissionalData.municipio} />
+            <InputBranco texto='Estado' placeholder={profissionalData.estado} />
+            <InputBranco texto='Bairro' placeholder={profissionalData.bairro} />
+            <InputBranco texto='Endereço' placeholder={profissionalData.endereco} />
+            <InputBranco texto='Complemento' placeholder={profissionalData.complemento} />
+            <InputBranco texto='Avaliações' placeholder={profissionalData.avaliacoes} />
+            <InputBranco texto='Descrição' placeholder={profissionalData.descricao} />
+            <InputBranco texto='Profissão' placeholder={profissionalData.profissao} />
+
           </div>
 
         </main>
 
         <aside className='divAside'>
           <div>
-            <img src="fotouser" alt="fotoUser" />
+            <FotoPerfil/>
             <UploadBtn />
           </div>
           <div>

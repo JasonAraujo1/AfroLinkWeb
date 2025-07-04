@@ -1,0 +1,16 @@
+.divInputBranco{
+    display: flex;
+    flex-direction: column;
+    margin:0 0 1rem;
+}
+.divInputBranco_input{
+    border-radius: 0.8rem;
+    border: 0.13rem solid #f0eeeee0;
+    background-color: white;
+    padding: 0.8rem;
+    font-weight: 400;
+    max-width: 62rem;
+}
+.divInputBranco_span{
+    font-size: 1.2rem;
+}
