@@ -18,12 +18,21 @@ const VisuallyHiddenInput = styled('input')`
 export default function UploadBtn() {
   return (
     <Button
-    className='uploadBtn'
+      className="uploadBtn"
       component="label"
       role={undefined}
       tabIndex={-1}
       variant="outlined"
       color="neutral"
+      sx={{
+        backgroundColor: 'black',
+        color: '#e4e4e4',
+        '&:hover': {
+          backgroundColor: '#1a1a1a',
+        },
+        borderRadius: '0.5rem',
+        margin: '0.4rem 0 0',
+      }}
       startDecorator={
         <SvgIcon>
           <svg
@@ -42,9 +51,10 @@ export default function UploadBtn() {
         </SvgIcon>
       }
     >
-      Adicionar foto 
+      Adicionar foto
       <img src={seta} alt="" />
       <VisuallyHiddenInput type="file" />
     </Button>
+
   );
 }

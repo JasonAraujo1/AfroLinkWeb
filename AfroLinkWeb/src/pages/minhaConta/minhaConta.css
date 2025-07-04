@@ -14,7 +14,6 @@
 }
 
 .divAside {
-    border: 2px solid #1500ff;
     width: 50%;
 }
 
@@ -52,6 +51,12 @@
 
 .divMain_InformacoesPessoais {
     margin: 3rem 9rem 0;
+    padding: 2rem;
+    border: 0.13rem solid #ecebebe0;
+    border-radius: 2rem;
+}
+.divAside_Informacoes{
+    margin: 1rem 8rem 0 0;
     padding: 2rem;
     border: 0.13rem solid #ecebebe0;
     border-radius: 2rem;

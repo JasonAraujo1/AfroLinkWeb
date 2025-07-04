@@ -65,14 +65,14 @@ export default function MinhaConta() {
 
         <aside className='divAside'>
           <div>
-            <FotoPerfil/>
+            <FotoPerfil />
             <UploadBtn />
           </div>
-          <div>
+          <div className='divAside_Informacoes'>
             <div>
               <span>Alterações</span>
               <div>
-                <span>13</span>
+                <span>{profissionalData.avaliacoes}</span>
                 <img src="" alt="userSilhueta" />
               </div>
               <span>Últimos contatos</span>
