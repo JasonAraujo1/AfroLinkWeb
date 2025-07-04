@@ -44,7 +44,7 @@ export default function MinhaConta() {
           </div>
 
           <div className='divMain_InformacoesPessoais'>
-
+              <h4>editar informações</h4>
             <InputBranco texto='Tipo' placeholder={profissionalData.tipo} />
             <InputBranco texto='Nome' placeholder={profissionalData.nome_completo} />
             <InputBranco texto='Telefone' placeholder={profissionalData.telefone} />
