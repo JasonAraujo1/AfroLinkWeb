@@ -6,7 +6,10 @@ import { useParams } from "react-router";
 
 export default function Solicitacoes() {
   const { dadosUser, dadosTodosUsers } = useContext(Context);
+
   const [dadosSolicitacoes, setDadosSolicitacoes] = useState([]);
+  
+
 
   const params = useParams();
 
@@ -22,7 +25,7 @@ export default function Solicitacoes() {
       const response = await fetch(url);
       const dados = await response.json();
       setDadosSolicitacoes(dados);
-  
+
     }
 
     onLoad();
@@ -50,15 +53,17 @@ export default function Solicitacoes() {
   });
 
 
+ 
+
   return (
     <div>
       <h1 className="divH1">Olá, {dadosUser?.nome_completo || "Usuário"}</h1>
-      {dadosUser.tipo === 'comum'?(
+      {dadosUser.tipo === 'comum' ? (
         <h2 className="divH2">Solicitações feitas</h2>
       ) : (
-        <h2 className="divH2">Solicitações recebidas</h2>  
+        <h2 className="divH2">Solicitações recebidas</h2>
       )}
-     
+
 
       {usuariosSolicitacoes.length === 0 ? (
         <p>Nenhuma solicitação recebida ainda.</p>

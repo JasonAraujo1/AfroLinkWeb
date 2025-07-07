@@ -7,7 +7,6 @@ import fotoPadrao from '../../../assets/userfoto.png';
 export default function FotoPerfil() {
   const { dadosUser } = useContext(Context);
 
-  console.log('dadosUser', dadosUser);
 
   const temFotoValida = dadosUser?.foto && Object.keys(dadosUser.foto).length > 0;
   const fotoExibir = temFotoValida ? dadosUser.foto : fotoPadrao;

@@ -1,14 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import UploadBtn from '../../components/ui/uploadBtn';
 import './minhaConta.css';
 import { useParams } from 'react-router';
 import InputBranco from '../../components/ui/inputBranco';
 import FotoPerfil from '../../components/ui/fotoPerfil';
 import users from '../../assets/users.svg';
+import Context from '../../context/Context';
 
 export default function MinhaConta() {
 
   const [profissionalData, setProfissionalData] = useState([])
+
+  const{usuariosSolicitacoes} = useContext(Context);
+  const { usuarios } = usuariosSolicitacoes;
+
 
   const params = useParams();
 
@@ -24,7 +29,6 @@ export default function MinhaConta() {
   }, [])
 
 
-console.log(profissionalData)
   return (
     <div>
 
@@ -77,11 +81,16 @@ console.log(profissionalData)
                 <div className='divAside_avaliacoes'>
                   <span>{profissionalData.avaliacoes}</span>
                   <img src={users} alt="userSilhueta" />
+                  {/* {e.foto && Object.keys(e.foto).length > 0 ? (
+                    <img src={e.foto} alt="fotoUser" className='containerPerfil_fotoUser' />
+                  ) : (
+                    <img src={fotoAvatar} alt="fotoUser" className='containerPerfil_fotoUser fade-in-scale' />
+                  )} */}
                 </div>
               </div>
               <span>Últimos contatos</span>
               <div>
-                <div>
+                <div className='divAside_Informacoes_contatos'>
                   <img src={''} alt="userPhoto" />
                   <span>Fulano de tal</span>
                   <span>data</span>

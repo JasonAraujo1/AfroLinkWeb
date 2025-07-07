@@ -20,7 +20,6 @@ export default function ResultadoBusca() {
 
     useEffect(() => {
         const load = async () => {
-            console.log(profissao)
             if (profissao) {
                 const req = await fetchProfissao(profissao)
                 setData(req)
