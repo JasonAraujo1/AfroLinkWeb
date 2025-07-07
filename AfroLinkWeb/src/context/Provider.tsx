@@ -8,8 +8,6 @@ function Provider({ children }: { children: React.ReactNode }) {
   const [dadosTodosUsers, setDadosTodosUsers] = useState<UserType[]>([]);
   const [filtros, setFiltros] = useState<UserType | null>(null);
   const [filtroIDProfissionalSelecionado, setFiltroIDProfissionalSelecionado] = useState<UserType | null>(null);
-  const [dadosSolicitacoes, setDadosSolicitacoes] = useState([]);
-  const [usuariosSolicitacoes, setUsuariosSolicitacoes] = useState<UserType[]>([]);
   
   const profissionalId = localStorage.getItem('profissionalId')
   const profissionalEscohidoInput = JSON.parse(localStorage.getItem('profissionalEscohidoInput') || '[]');
@@ -25,12 +23,9 @@ function Provider({ children }: { children: React.ReactNode }) {
     setFiltros,
     filtroIDProfissionalSelecionado,
     setFiltroIDProfissionalSelecionado,
-    dadosSolicitacoes,
-    setDadosSolicitacoes,
     profissionalId,
     profissionalEscohidoInput,
-    usuariosSolicitacoes,
-    setUsuariosSolicitacoes,
+
 
   };
 

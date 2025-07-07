@@ -32,9 +32,6 @@ export default function Solicitacoes() {
   }, [params.id, dadosUser?.tipo]);
 
 
-
-
-
   const usuariosSolicitacoes = dadosSolicitacoes.map((item) => {
     const idParaBuscar = dadosUser?.tipo === 'comum'
       ? item.id_usuario_profissional

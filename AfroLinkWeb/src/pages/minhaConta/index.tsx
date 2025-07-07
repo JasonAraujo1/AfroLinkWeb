@@ -10,23 +10,41 @@ import Context from '../../context/Context';
 export default function MinhaConta() {
 
   const [profissionalData, setProfissionalData] = useState([])
+  const [solicitacoes, setSolicitacoes] = useState([])
 
-  const{usuariosSolicitacoes} = useContext(Context);
-  const { usuarios } = usuariosSolicitacoes;
+  const { dadosTodosUsers } = useContext(Context);
 
 
   const params = useParams();
-
   useEffect(() => {
     async function onLoad() {
       if (params.id) {
-        const req = await fetch(`https://67d355c78bca322cc269d90d.mockapi.io/api/v1/users/${params.id}`)
-        const res = await req.json()
-        setProfissionalData(res)
+        // Busca os dados do usuário
+        const req = await fetch(`https://67d355c78bca322cc269d90d.mockapi.io/api/v1/users/${params.id}`);
+        const res = await req.json();
+        setProfissionalData(res);
+
+        // Define se é comum ou profissional e busca as solicitações corretas
+        const filtro = res.tipo === 'comum'
+          ? `id_usuario_comum=${params.id}`
+          : `id_usuario_profissional=${params.id}`;
+
+        const reqSol = await fetch(`https://67d355c78bca322cc269d90d.mockapi.io/api/v1/solicitacoes?${filtro}`);
+        const resSol = await reqSol.json();
+        setSolicitacoes(resSol);
       }
     }
-    onLoad()
-  }, [])
+    onLoad();
+  }, []);
+
+  const solicitacoesFiltradas = solicitacoes.filter((solicitacao) =>
+    dadosTodosUsers.some(user => String(user.id) === String(
+      profissionalData.tipo === 'comum'
+        ? solicitacao.id_usuario_profissional
+        : solicitacao.id_usuario_comum
+    ))
+  );
+  console.log("solicitacoesFiltradas",solicitacoesFiltradas);
 
 
   return (
@@ -90,11 +108,13 @@ export default function MinhaConta() {
               </div>
               <span>Últimos contatos</span>
               <div>
-                <div className='divAside_Informacoes_contatos'>
-                  <img src={''} alt="userPhoto" />
-                  <span>Fulano de tal</span>
-                  <span>data</span>
-                </div>
+                {solicitacoesFiltradas.map((solicitacao) => (
+                  <div className='divAside_Informacoes_contatos'>
+                    <img src={''} alt="userPhoto" />
+                    <span>{solicitacao.nome_completo}</span>
+                    <span>data</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

@@ -2,16 +2,11 @@ import './cardsPerfis.css'
 import star from '../../assets/star.svg'
 import fotoAvatar from "../../assets/userfoto.png"
 import ButtonPreto from '../ui/buttonPreto'
-import { useContext } from 'react'
-import Context from '../../context/Context'
+
 
 
 export default function CardPerfis({ dados, funcaoClick }) {
 
-    const { setUsuariosSolicitacoes } = useContext(Context)
-
-    setUsuariosSolicitacoes(dados)
-    
     return (
         <div>
             <div className='containerTodosPerfis fade-in-scale fade-delay-3'>
