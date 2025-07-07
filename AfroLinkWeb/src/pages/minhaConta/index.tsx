@@ -4,6 +4,7 @@ import './minhaConta.css';
 import { useParams } from 'react-router';
 import InputBranco from '../../components/ui/inputBranco';
 import FotoPerfil from '../../components/ui/fotoPerfil';
+import users from '../../assets/users.svg';
 
 export default function MinhaConta() {
 
@@ -23,7 +24,7 @@ export default function MinhaConta() {
   }, [])
 
 
-
+console.log(profissionalData)
   return (
     <div>
 
@@ -44,7 +45,7 @@ export default function MinhaConta() {
           </div>
 
           <div className='divMain_InformacoesPessoais'>
-              <h4>editar informações</h4>
+            <h4>editar informações</h4>
             <InputBranco texto='Tipo' placeholder={profissionalData.tipo} />
             <InputBranco texto='Nome' placeholder={profissionalData.nome_completo} />
             <InputBranco texto='Telefone' placeholder={profissionalData.telefone} />
@@ -68,23 +69,27 @@ export default function MinhaConta() {
             <FotoPerfil />
             <UploadBtn />
           </div>
+
           <div className='divAside_Informacoes'>
             <div>
-              <span>Alterações</span>
-              <div>
-                <span>{profissionalData.avaliacoes}</span>
-                <img src="" alt="userSilhueta" />
+              <div className='divAside_Informacoes_div'>
+                <span className='divAside_Informacoes_span'>Interações</span>
+                <div className='divAside_avaliacoes'>
+                  <span>{profissionalData.avaliacoes}</span>
+                  <img src={users} alt="userSilhueta" />
+                </div>
               </div>
               <span>Últimos contatos</span>
               <div>
                 <div>
-                  <img src="" alt="userPhoto" />
+                  <img src={''} alt="userPhoto" />
                   <span>Fulano de tal</span>
                   <span>data</span>
                 </div>
               </div>
             </div>
           </div>
+
         </aside>
 
       </div>

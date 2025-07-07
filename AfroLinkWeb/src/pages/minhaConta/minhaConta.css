@@ -60,4 +60,21 @@
     padding: 2rem;
     border: 0.13rem solid #ecebebe0;
     border-radius: 2rem;
+    max-width:19rem;
+}
+.divAside_Informacoes_div{
+    display: flex;
+    justify-content: space-between;
+}
+.divAside_Informacoes_span{
+    font-weight: 600;
+    font-size: 1.2rem;
+   
+}
+.divAside_avaliacoes{
+    background-color: #EEEEEF;
+    padding: 1.3rem 1rem;
+    border-radius: 1rem;
+    display: flex;
+    gap: 0.5rem;
 }

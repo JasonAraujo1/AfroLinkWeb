@@ -22,12 +22,13 @@ export default function Solicitacoes() {
       const response = await fetch(url);
       const dados = await response.json();
       setDadosSolicitacoes(dados);
+  
     }
 
     onLoad();
   }, [params.id, dadosUser?.tipo]);
 
-  console.log("dadosSolicitacoes", dadosSolicitacoes);
+
 
 
 
