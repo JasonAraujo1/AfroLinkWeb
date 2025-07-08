@@ -106,21 +106,22 @@ export default function MinhaConta() {
               </div>
               <span>Últimos contatos</span>
               <div>
-                {interacoes.map(({ id, foto, nome_completo, data_solicitacao }) => {
-                  // verifica se foto é string e não vazia
-                  const fotoValida = typeof foto === 'string' && foto.trim() !== '';
+                {interacoes
+                  .slice(-3) // pega os 3 últimos itens
+                  .map(({ id, foto, nome_completo, data_solicitacao }) => {
+                    const fotoValida = typeof foto === 'string' && foto.trim() !== '';
 
-                  return (
-                    <div className="divAside_Informacoes_contatos" key={id}>
-                      <img className='Informacoes_contatos_avatar'
-                        src={fotoValida ? foto : avatarFoto}
-                        alt="userPhoto"
-                      />
-                      <span className='Informacoes_contatos_span'>{nome_completo}</span>
-                      <span>{new Date(data_solicitacao).toLocaleDateString()}</span>
-                    </div>
-                  );
-                })}
+                    return (
+                      <div className="divAside_Informacoes_contatos" key={id}>
+                        <img className='Informacoes_contatos_avatar'
+                          src={fotoValida ? foto : avatarFoto}
+                          alt="userPhoto"
+                        />
+                        <span className='Informacoes_contatos_span'>{nome_completo}</span>
+                        <span>{new Date(data_solicitacao).toLocaleDateString()}</span>
+                      </div>
+                    );
+                  })}
 
 
                 {interacoes.length === 0 && <span>Nenhum contato recente.</span>}
