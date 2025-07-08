@@ -86,3 +86,11 @@
     gap: 1rem;
     margin-top: 1rem;
 }
+.Informacoes_contatos_avatar{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+}
+.Informacoes_contatos_span{
+    font-weight: 600;
+}

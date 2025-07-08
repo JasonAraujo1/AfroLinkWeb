@@ -6,6 +6,7 @@ import InputBranco from '../../components/ui/inputBranco';
 import FotoPerfil from '../../components/ui/fotoPerfil';
 import users from '../../assets/users.svg';
 import Context from '../../context/Context';
+import avatarFoto from '../../assets/userfoto.png';
 
 export default function MinhaConta() {
 
@@ -16,36 +17,38 @@ export default function MinhaConta() {
 
 
   const params = useParams();
+
   useEffect(() => {
     async function onLoad() {
       if (params.id) {
-        // Busca os dados do usuário
-        const req = await fetch(`https://67d355c78bca322cc269d90d.mockapi.io/api/v1/users/${params.id}`);
-        const res = await req.json();
-        setProfissionalData(res);
+        const req = await fetch(`https://67d355c78bca322cc269d90d.mockapi.io/api/v1/users/${params.id}`)
+        const res = await req.json()
+        setProfissionalData(res)
 
-        // Define se é comum ou profissional e busca as solicitações corretas
-        const filtro = res.tipo === 'comum'
-          ? `id_usuario_comum=${params.id}`
-          : `id_usuario_profissional=${params.id}`;
-
-        const reqSol = await fetch(`https://67d355c78bca322cc269d90d.mockapi.io/api/v1/solicitacoes?${filtro}`);
-        const resSol = await reqSol.json();
-        setSolicitacoes(resSol);
+        if (res.tipo === 'profissional') {
+          const reqSol = await fetch(`https://67d355c78bca322cc269d90d.mockapi.io/api/v1/solicitacoes?id_usuario_profissional=${params.id}`)
+          const resSol = await reqSol.json()
+          setSolicitacoes(resSol)
+        } else {
+          // Se não for um profissional, buscar solicitações de usuários comuns
+          const reqSol = await fetch(`https://67d355c78bca322cc269d90d.mockapi.io/api/v1/solicitacoes?id_usuario_comum=${params.id}`)
+          const resSol = await reqSol.json()
+          setSolicitacoes(resSol);
+        }
       }
     }
-    onLoad();
-  }, []);
+    onLoad()
+  }, [params.id])
 
-  const solicitacoesFiltradas = solicitacoes.filter((solicitacao) =>
-    dadosTodosUsers.some(user => String(user.id) === String(
-      profissionalData.tipo === 'comum'
-        ? solicitacao.id_usuario_profissional
-        : solicitacao.id_usuario_comum
-    ))
-  );
-  console.log("solicitacoesFiltradas",solicitacoesFiltradas);
 
+  const interacoes = solicitacoes.map(s => {
+    const id = profissionalData.tipo === 'profissional' ? s.id_usuario_comum : s.id_usuario_profissional
+    const u = dadosTodosUsers.find(d => d.id == id)
+    return u && { ...u, data_solicitacao: s.data_solicitacao, status: s.status }
+  }).filter(Boolean)
+
+
+  console.log("interacoes", interacoes);
 
   return (
     <div>
@@ -99,22 +102,28 @@ export default function MinhaConta() {
                 <div className='divAside_avaliacoes'>
                   <span>{profissionalData.avaliacoes}</span>
                   <img src={users} alt="userSilhueta" />
-                  {/* {e.foto && Object.keys(e.foto).length > 0 ? (
-                    <img src={e.foto} alt="fotoUser" className='containerPerfil_fotoUser' />
-                  ) : (
-                    <img src={fotoAvatar} alt="fotoUser" className='containerPerfil_fotoUser fade-in-scale' />
-                  )} */}
                 </div>
               </div>
               <span>Últimos contatos</span>
               <div>
-                {solicitacoesFiltradas.map((solicitacao) => (
-                  <div className='divAside_Informacoes_contatos'>
-                    <img src={''} alt="userPhoto" />
-                    <span>{solicitacao.nome_completo}</span>
-                    <span>data</span>
-                  </div>
-                ))}
+                {interacoes.map(({ id, foto, nome_completo, data_solicitacao }) => {
+                  // verifica se foto é string e não vazia
+                  const fotoValida = typeof foto === 'string' && foto.trim() !== '';
+
+                  return (
+                    <div className="divAside_Informacoes_contatos" key={id}>
+                      <img className='Informacoes_contatos_avatar'
+                        src={fotoValida ? foto : avatarFoto}
+                        alt="userPhoto"
+                      />
+                      <span className='Informacoes_contatos_span'>{nome_completo}</span>
+                      <span>{new Date(data_solicitacao).toLocaleDateString()}</span>
+                    </div>
+                  );
+                })}
+
+
+                {interacoes.length === 0 && <span>Nenhum contato recente.</span>}
               </div>
             </div>
           </div>
