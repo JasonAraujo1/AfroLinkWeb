@@ -100,7 +100,7 @@ export default function MinhaConta() {
               <div className='divAside_Informacoes_div'>
                 <span className='divAside_Informacoes_span'>Interações</span>
                 <div className='divAside_avaliacoes'>
-                  <span>solicitações aprovadas(status)</span>
+                  <span>{interacoes.length}</span>
                   <img src={users} alt="userSilhueta" />
                 </div>
               </div>
