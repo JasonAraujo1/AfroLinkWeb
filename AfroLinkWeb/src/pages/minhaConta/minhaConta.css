@@ -61,13 +61,30 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3rem;
+    background-color: #f7f5f5b3;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
 }
 .informacoesPessoais_div_span{
     font-weight: 600;
     font-size: 1.6rem;
 }
+
 .informacoesPessoais_div_img{
     cursor: pointer;
+    background-color: #e4e2e28d;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: 1s;
+}
+.informacoesPessoais_div_btn{
+    cursor: pointer;
+    background-color: #e4e2e28d;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    color: #000;
+    border: none;
 }
 .divAside_Informacoes{
     margin: 1rem 8rem 0 0;
@@ -83,7 +100,6 @@
 .divAside_Informacoes_span{
     font-weight: 600;
     font-size: 1.2rem;
-   
 }
 .divAside_avaliacoes{
     background-color: #EEEEEF;

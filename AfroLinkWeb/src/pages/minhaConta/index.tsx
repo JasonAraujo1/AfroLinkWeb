@@ -8,6 +8,7 @@ import users from '../../assets/users.svg';
 import Context from '../../context/Context';
 import avatarFoto from '../../assets/userfoto.png';
 import editar from '../../assets/edit.svg';
+import { useUsuarios } from '../../hooks/useUsuarios';
 
 export default function MinhaConta() {
 
@@ -17,6 +18,8 @@ export default function MinhaConta() {
   const [disabledEdit, setDisabledEdit] = useState(true)
 
   const { dadosTodosUsers } = useContext(Context);
+
+  const{ handleConfirm } = useUsuarios( profissionalData, setDisabledEdit, params);
 
 
   const params = useParams();
@@ -52,12 +55,17 @@ export default function MinhaConta() {
 
 
   function handleEdit() {
-      setDisabledEdit(false);
+    setDisabledEdit(false);
   }
-  function handleConfirm() {
-      setDisabledEdit(true);
-      // Aqui você pode adicionar a lógica para salvar as alterações, se necessário
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setProfissionalData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   }
+
+
 
   return (
     <div>
@@ -82,26 +90,26 @@ export default function MinhaConta() {
           <div className='divMain_InformacoesPessoais'>
             <div className='informacoesPessoais_div'>
               <span className='informacoesPessoais_div_span'>Informações Pessoais</span>
-              {disabledEdit === true ?(
-              <img className='informacoesPessoais_div_img' src={editar} alt="editar informações" onClick={handleEdit} />
-              ):(
-                <button onClick={handleConfirm}>Confirmar</button>
+              {disabledEdit === true ? (
+                <img className='informacoesPessoais_div_img' src={editar} alt="editar informações" onClick={handleEdit} />
+              ) : (
+                <button className='informacoesPessoais_div_btn' onClick={handleConfirm}>Confirmar</button>
               )
               }
             </div>
-            <InputBranco texto='Tipo' disabled={disabledEdit} valor={profissionalData.tipo} />
-            <InputBranco texto='Nome' disabled={disabledEdit} valor={profissionalData.nome_completo} />
-            <InputBranco texto='Telefone' disabled={disabledEdit} valor={profissionalData.telefone} />
-            <InputBranco texto='Email' disabled={disabledEdit} valor={profissionalData.email} />
-            <InputBranco texto='CPF' disabled={disabledEdit} valor={profissionalData.cpf} />
-            <InputBranco texto='Município' disabled={disabledEdit} valor={profissionalData.municipio} />
-            <InputBranco texto='Estado' disabled={disabledEdit} valor={profissionalData.estado} />
-            <InputBranco texto='Bairro' disabled={disabledEdit} valor={profissionalData.bairro} />
-            <InputBranco texto='Endereço' disabled={disabledEdit} valor={profissionalData.endereco} />
-            <InputBranco texto='Complemento' disabled={disabledEdit} valor={profissionalData.complemento} />
-            <InputBranco texto='Avaliações' disabled={disabledEdit} valor={profissionalData.avaliacoes} />
-            <InputBranco texto='Descrição' disabled={disabledEdit} valor={profissionalData.descricao} />
-            <InputBranco texto='Profissão' disabled={disabledEdit} valor={profissionalData.profissao} />
+
+            <InputBranco texto='Tipo' name="tipo" disabled={disabledEdit} valor={profissionalData.tipo} onChange={handleChange} />
+            <InputBranco texto='Nome' name="nome_completo" disabled={disabledEdit} valor={profissionalData.nome_completo} onChange={handleChange} />
+            <InputBranco texto='Telefone' name="telefone" disabled={disabledEdit} valor={profissionalData.telefone} onChange={handleChange} />
+            <InputBranco texto='Email' name="email" disabled={disabledEdit} valor={profissionalData.email} onChange={handleChange} />
+            <InputBranco texto='CPF' name="cpf" disabled={disabledEdit} valor={profissionalData.cpf} onChange={handleChange} />
+            <InputBranco texto='Município' name="municipio" disabled={disabledEdit} valor={profissionalData.municipio} onChange={handleChange} />
+            <InputBranco texto='Estado' name="estado" disabled={disabledEdit} valor={profissionalData.estado} onChange={handleChange} />
+            <InputBranco texto='Bairro' name="bairro" disabled={disabledEdit} valor={profissionalData.bairro} onChange={handleChange} />
+            <InputBranco texto='Endereço' name="endereco" disabled={disabledEdit} valor={profissionalData.endereco} onChange={handleChange} />
+            <InputBranco texto='Complemento' name="complemento" disabled={disabledEdit} valor={profissionalData.complemento} onChange={handleChange} />
+            <InputBranco texto='Descrição' name="descricao" disabled={disabledEdit} valor={profissionalData.descricao} onChange={handleChange} />
+            <InputBranco texto='Profissão' name="profissao" disabled={disabledEdit} valor={profissionalData.profissao} onChange={handleChange} />
 
           </div>
 
