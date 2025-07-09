@@ -56,6 +56,19 @@
     border: 0.13rem solid #ecebebe0;
     border-radius: 2rem;
 }
+.informacoesPessoais_div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+.informacoesPessoais_div_span{
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+.informacoesPessoais_div_img{
+    cursor: pointer;
+}
 .divAside_Informacoes{
     margin: 1rem 8rem 0 0;
     padding: 2rem;

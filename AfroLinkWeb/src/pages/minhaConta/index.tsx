@@ -7,11 +7,14 @@ import FotoPerfil from '../../components/ui/fotoPerfil';
 import users from '../../assets/users.svg';
 import Context from '../../context/Context';
 import avatarFoto from '../../assets/userfoto.png';
+import editar from '../../assets/edit.svg';
 
 export default function MinhaConta() {
 
   const [profissionalData, setProfissionalData] = useState([])
   const [solicitacoes, setSolicitacoes] = useState([])
+
+  const [disabledEdit, setDisabledEdit] = useState(true)
 
   const { dadosTodosUsers } = useContext(Context);
 
@@ -48,7 +51,13 @@ export default function MinhaConta() {
   }).filter(Boolean)
 
 
-  console.log("interacoes", interacoes);
+  function handleEdit() {
+      setDisabledEdit(false);
+  }
+  function handleConfirm() {
+      setDisabledEdit(true);
+      // Aqui você pode adicionar a lógica para salvar as alterações, se necessário
+  }
 
   return (
     <div>
@@ -71,20 +80,28 @@ export default function MinhaConta() {
           </div>
 
           <div className='divMain_InformacoesPessoais'>
-            <h4>editar informações</h4>
-            <InputBranco texto='Tipo' placeholder={profissionalData.tipo} />
-            <InputBranco texto='Nome' placeholder={profissionalData.nome_completo} />
-            <InputBranco texto='Telefone' placeholder={profissionalData.telefone} />
-            <InputBranco texto='Email' placeholder={profissionalData.email} />
-            <InputBranco texto='CPF' placeholder={profissionalData.cpf} />
-            <InputBranco texto='Município' placeholder={profissionalData.municipio} />
-            <InputBranco texto='Estado' placeholder={profissionalData.estado} />
-            <InputBranco texto='Bairro' placeholder={profissionalData.bairro} />
-            <InputBranco texto='Endereço' placeholder={profissionalData.endereco} />
-            <InputBranco texto='Complemento' placeholder={profissionalData.complemento} />
-            <InputBranco texto='Avaliações' placeholder={profissionalData.avaliacoes} />
-            <InputBranco texto='Descrição' placeholder={profissionalData.descricao} />
-            <InputBranco texto='Profissão' placeholder={profissionalData.profissao} />
+            <div className='informacoesPessoais_div'>
+              <span className='informacoesPessoais_div_span'>Informações Pessoais</span>
+              {disabledEdit === true ?(
+              <img className='informacoesPessoais_div_img' src={editar} alt="editar informações" onClick={handleEdit} />
+              ):(
+                <button onClick={handleConfirm}>Confirmar</button>
+              )
+              }
+            </div>
+            <InputBranco texto='Tipo' disabled={disabledEdit} valor={profissionalData.tipo} />
+            <InputBranco texto='Nome' disabled={disabledEdit} valor={profissionalData.nome_completo} />
+            <InputBranco texto='Telefone' disabled={disabledEdit} valor={profissionalData.telefone} />
+            <InputBranco texto='Email' disabled={disabledEdit} valor={profissionalData.email} />
+            <InputBranco texto='CPF' disabled={disabledEdit} valor={profissionalData.cpf} />
+            <InputBranco texto='Município' disabled={disabledEdit} valor={profissionalData.municipio} />
+            <InputBranco texto='Estado' disabled={disabledEdit} valor={profissionalData.estado} />
+            <InputBranco texto='Bairro' disabled={disabledEdit} valor={profissionalData.bairro} />
+            <InputBranco texto='Endereço' disabled={disabledEdit} valor={profissionalData.endereco} />
+            <InputBranco texto='Complemento' disabled={disabledEdit} valor={profissionalData.complemento} />
+            <InputBranco texto='Avaliações' disabled={disabledEdit} valor={profissionalData.avaliacoes} />
+            <InputBranco texto='Descrição' disabled={disabledEdit} valor={profissionalData.descricao} />
+            <InputBranco texto='Profissão' disabled={disabledEdit} valor={profissionalData.profissao} />
 
           </div>
 
