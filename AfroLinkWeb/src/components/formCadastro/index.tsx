@@ -45,6 +45,7 @@ export default function FormCadastro() {
             bairro: bairro,
             endereco: endereco,
             complemento: complemento,
+            descricao: "",
         }
         const url = "https://67d355c78bca322cc269d90d.mockapi.io/api/v1/users"
 

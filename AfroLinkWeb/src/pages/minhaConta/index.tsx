@@ -2,13 +2,13 @@ import { useContext, useEffect, useState } from 'react';
 import UploadBtn from '../../components/ui/uploadBtn';
 import './minhaConta.css';
 import { useParams } from 'react-router';
-import InputBranco from '../../components/ui/inputBranco';
 import FotoPerfil from '../../components/ui/fotoPerfil';
 import users from '../../assets/users.svg';
 import Context from '../../context/Context';
 import avatarFoto from '../../assets/userfoto.png';
 import editar from '../../assets/edit.svg';
 import { useUsuarios } from '../../hooks/useUsuarios';
+import FormMinhaConta from '../../components/formMinhaConta';
 
 export default function MinhaConta() {
 
@@ -19,7 +19,7 @@ export default function MinhaConta() {
 
   const { dadosTodosUsers } = useContext(Context);
 
-  const{ handleConfirm } = useUsuarios( profissionalData, setDisabledEdit, params);
+  const { handleConfirm } = useUsuarios();
 
 
   const params = useParams();
@@ -57,13 +57,17 @@ export default function MinhaConta() {
   function handleEdit() {
     setDisabledEdit(false);
   }
-  function handleChange(e) {
-    const { name, value } = e.target;
-    setProfissionalData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+
+  function handleChange(evento) {
+    const campoEditado = evento.target.name;  
+    const novoValor = evento.target.value;   
+
+    setProfissionalData({
+      ...profissionalData,
+      [campoEditado]: novoValor
+    });
   }
+
 
 
 
@@ -93,23 +97,17 @@ export default function MinhaConta() {
               {disabledEdit === true ? (
                 <img className='informacoesPessoais_div_img' src={editar} alt="editar informações" onClick={handleEdit} />
               ) : (
-                <button className='informacoesPessoais_div_btn' onClick={handleConfirm}>Confirmar</button>
+                <button
+                  className='informacoesPessoais_div_btn'
+                  onClick={() => handleConfirm(params, profissionalData, setDisabledEdit)}
+                >
+                  Confirmar
+                </button>
               )
               }
             </div>
 
-            <InputBranco texto='Tipo' name="tipo" disabled={disabledEdit} valor={profissionalData.tipo} onChange={handleChange} />
-            <InputBranco texto='Nome' name="nome_completo" disabled={disabledEdit} valor={profissionalData.nome_completo} onChange={handleChange} />
-            <InputBranco texto='Telefone' name="telefone" disabled={disabledEdit} valor={profissionalData.telefone} onChange={handleChange} />
-            <InputBranco texto='Email' name="email" disabled={disabledEdit} valor={profissionalData.email} onChange={handleChange} />
-            <InputBranco texto='CPF' name="cpf" disabled={disabledEdit} valor={profissionalData.cpf} onChange={handleChange} />
-            <InputBranco texto='Município' name="municipio" disabled={disabledEdit} valor={profissionalData.municipio} onChange={handleChange} />
-            <InputBranco texto='Estado' name="estado" disabled={disabledEdit} valor={profissionalData.estado} onChange={handleChange} />
-            <InputBranco texto='Bairro' name="bairro" disabled={disabledEdit} valor={profissionalData.bairro} onChange={handleChange} />
-            <InputBranco texto='Endereço' name="endereco" disabled={disabledEdit} valor={profissionalData.endereco} onChange={handleChange} />
-            <InputBranco texto='Complemento' name="complemento" disabled={disabledEdit} valor={profissionalData.complemento} onChange={handleChange} />
-            <InputBranco texto='Descrição' name="descricao" disabled={disabledEdit} valor={profissionalData.descricao} onChange={handleChange} />
-            <InputBranco texto='Profissão' name="profissao" disabled={disabledEdit} valor={profissionalData.profissao} onChange={handleChange} />
+              <FormMinhaConta handleChange={handleChange} profissionalData={profissionalData} disabledEdit={disabledEdit}/>
 
           </div>
 

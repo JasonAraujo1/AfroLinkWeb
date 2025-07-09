@@ -80,49 +80,48 @@ export function useUsuarios() {
         window.location.reload();
     }
     function handleMinhaConta() {
-         navigate(`/minha-conta/${dadosUser.id}`)
+        navigate(`/minha-conta/${dadosUser.id}`)
     }
 
-      async function handleConfirm({profissionalData, setDisabledEdit, params}) {
+
+    async function handleConfirm(params, profissionalData, setDisabledEdit) {
         setDisabledEdit(true);
-        const data = {
-          tipo: profissionalData.tipo,
-          nome_completo: profissionalData.nome_completo,
-          telefone: profissionalData.telefone,
-          email: profissionalData.email,
-          cpf: profissionalData.cpf,
-          municipio: profissionalData.municipio,
-          estado: profissionalData.estado,
-          bairro: profissionalData.bairro,
-          endereco: profissionalData.endereco,
-          complemento: profissionalData.complemento,
-          avaliacoes: profissionalData.avaliacoes,
-          descricao: profissionalData.descricao,
-          profissao: profissionalData.profissao
-        }
-    
-        if (params.id) {
-          const url = `https://67d355c78bca322cc269d90d.mockapi.io/api/v1/users/${params.id}`
-    
-          const req = await fetch(url, {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-          })
-          const res = await req.json()
-          alert("Informações atualizadas com sucesso!");
-        }
-      }
 
-    return {
-        handleVerMais,
-        handleSolicitar,
-        handleBuscaPorIcone,
-        handleSair,
-        handleSolicitacoes,
-        handleMinhaConta,
-        handleConfirm
+        const data = {
+            tipo: profissionalData.tipo,
+            nome_completo: profissionalData.nome_completo,
+            telefone: profissionalData.telefone,
+            email: profissionalData.email,
+            cpf: profissionalData.cpf,
+            municipio: profissionalData.municipio,
+            estado: profissionalData.estado,
+            bairro: profissionalData.bairro,
+            endereco: profissionalData.endereco,
+            complemento: profissionalData.complemento,
+            avaliacoes: profissionalData.avaliacoes,
+            descricao: profissionalData.descricao,
+            profissao: profissionalData.profissao,
+        };
+
+        if (params?.id) {
+            const url = `https://67d355c78bca322cc269d90d.mockapi.io/api/v1/users/${params.id}`;
+            const req = await fetch(url, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+            const res = await req.json();
+            alert('Informações atualizadas com sucesso!');
+        }}
+
+
+        return {
+            handleVerMais,
+            handleSolicitar,
+            handleBuscaPorIcone,
+            handleSair,
+            handleSolicitacoes,
+            handleMinhaConta,
+            handleConfirm
+        }
     }
-}
