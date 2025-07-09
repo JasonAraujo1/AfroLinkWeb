@@ -65,6 +65,7 @@ export default function MinhaConta() {
               }
               <span className='divMain_InformacoesGerais_div_span'>{profissionalData.nome_completo}</span>
               <span className='divMain_InformacoesGerais_div_span'>{profissionalData.estado}</span>
+              <span className='divMain_InformacoesGerais_div_span'>{profissionalData.avaliacoes} Avaliações</span>
               <span className='divMain_InformacoesGerais_div_span'>Início: {new Date(profissionalData?.createdAt).toLocaleDateString()}</span>
             </div>
           </div>
