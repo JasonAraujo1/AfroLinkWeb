@@ -29,15 +29,7 @@ export async function fetchProfissao(profissao) {
   }
 }
 
-export async function fetchApiUserCep(cepUsuario) {
-  try {
-    const response = await fetch(`https://viacep.com.br/ws/${cepUsuario}/json/`)
-    const data = await response.json()
-    return data
-  } catch (error) {
-    console.log("erro no fetch", error)
-  }
-}
+
 export async function fetchApiEstados() {
   try {
     const response = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados`)

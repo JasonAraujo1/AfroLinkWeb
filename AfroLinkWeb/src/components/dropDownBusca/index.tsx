@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import {  useEffect, useState } from 'react';
 import { fetchApiEstados, fetchApiMunicipios, fetchApiProfissoes } from '../../services/fetchApi';
 import ComboBox from '../ui/comboBox';
 import './dropDownBusca.css';
@@ -13,7 +13,6 @@ export default function DropDownBusca() {
   const [municipioSelecionado, setMunicipioSelecionado] = useState('');
   const [profissaoSelecionada, setProfissaoSelecionada] = useState('');
 
-  // const { setFiltros, dadosTodosUsers } = useContext(Context);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -41,30 +40,7 @@ export default function DropDownBusca() {
   }, [estadoSelecionado]);
 
   function handleFiltroProfissional() {
-    // const filtrosAtivos = {
-    //   estado: estadoSelecionado,
-    //   municipio: municipioSelecionado,
-    //   profissao: profissaoSelecionada,
-    // };
-
-    // setFiltros(filtrosAtivos);
-
-    // Filtra localmente os dados disponíveis
-    // const resultados = dadosTodosUsers.filter(user => {
-    //   const matchEstado = !estadoSelecionado || user.estado === estadoSelecionado;
-    //   const matchMunicipio = !municipioSelecionado || user.municipio === municipioSelecionado;
-    //   const matchProfissao = !profissaoSelecionada || user.profissao === profissaoSelecionada;
-    //   return matchEstado && matchMunicipio && matchProfissao;
-    // });
-
-    // if (resultados.length > 0) {
-    //   localStorage.setItem("profissionalEscohidoInput", JSON.stringify(resultados));
-    //   navigate('/resultado')
-    // }else{
-    //   alert('Nenhum profissional encontrado com os filtros selecionados.');
-     
-
-    // }
+    
     if (!estadoSelecionado && !municipioSelecionado && !profissaoSelecionada) {
       alert('Selecione um estado, um município e uma profissão para buscar um profissional.');
     } 
