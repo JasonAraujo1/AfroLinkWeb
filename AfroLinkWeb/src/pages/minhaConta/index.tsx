@@ -12,12 +12,11 @@ import FormMinhaConta from '../../components/formMinhaConta';
 
 export default function MinhaConta() {
 
-  const [profissionalData, setProfissionalData] = useState([])
   const [solicitacoes, setSolicitacoes] = useState([])
 
   const [disabledEdit, setDisabledEdit] = useState(true)
 
-  const { dadosTodosUsers } = useContext(Context);
+  const { dadosTodosUsers , profissionalData, setProfissionalData } = useContext(Context);
 
   const { handleConfirm } = useUsuarios();
 
@@ -107,7 +106,7 @@ export default function MinhaConta() {
               }
             </div>
 
-              <FormMinhaConta handleChange={handleChange} profissionalData={profissionalData} disabledEdit={disabledEdit}/>
+              <FormMinhaConta handleChange={handleChange} disabledEdit={disabledEdit} />
 
           </div>
 
