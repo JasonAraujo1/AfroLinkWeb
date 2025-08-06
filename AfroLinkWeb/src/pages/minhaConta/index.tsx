@@ -20,7 +20,6 @@ export default function MinhaConta() {
 
   const { handleConfirm } = useUsuarios();
 
-
   const params = useParams();
 
   useEffect(() => {
