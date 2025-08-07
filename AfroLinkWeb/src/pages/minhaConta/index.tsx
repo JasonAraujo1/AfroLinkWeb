@@ -22,6 +22,7 @@ export default function MinhaConta() {
 
   const params = useParams();
 
+  
   useEffect(() => {
     async function onLoad() {
       if (params.id) {
