@@ -6,7 +6,7 @@ export type AppContextType = {
     setDadosTodosUsers: React.Dispatch<React.SetStateAction<UserType[]>>;
     filtros: UserType | null;
     setFiltros: React.Dispatch<React.SetStateAction<UserType | null>>;
-    filtroIDProfissionalSelecionado: UserType | null; // 👈 alterado aqui
-    setFiltroIDProfissionalSelecionado: React.Dispatch<React.SetStateAction<UserType | null>>; // 👈 e aqui
+    filtroIDProfissionalSelecionado: UserType | null; 
+    setFiltroIDProfissionalSelecionado: React.Dispatch<React.SetStateAction<UserType | null>>; 
     
 };
