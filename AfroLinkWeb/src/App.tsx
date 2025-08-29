@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router'
 import './App.css'
 import HomeComum from './pages/homeComum'
-import Solicitacoes from './pages/Solicitacoes'
+import Solicitacoes from './pages/solicitacoes'
 import Cadastro from './pages/cadastro'
 import Login from './pages/login'
 import VerMaisProfissional from './pages/verMaisProfissional'
